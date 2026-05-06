@@ -1,24 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
 ****************************************************************************
-*  Copyright (c),  Skyline Communications NV  All Rights Reserved.    *
+*  Copyright (c),  Skyline Communications NV  All Rights Reserved.        *
 ****************************************************************************
 
 -->
 
 <Protocol xmlns="http://www.skyline.be/protocol">
-	<Name>Exercise HTTP CoinMarketCap</Name>
-	<Description>Exercise HTTP CoinMarketCap DataMiner connector</Description>
-	<Version>1.0.0.1</Version>
+	<Name>Exercise HTTP CoinMarketCap AMO</Name>
+	<Description>Exercise HTTP CoinMarketCap DataMiner connector AMO</Description>
+	<Version>1.0.0.2</Version>
 	<IntegrationID>DMS-DRV-0001</IntegrationID>
 	<Provider>Skyline Communications</Provider>
-	<Vendor>Skyline Communications</Vendor>
+	<Vendor>CoinMarketCap</Vendor>
 	<VendorOID>1.3.6.1.4.1.8813.2.1</VendorOID>
 	<DeviceOID>1</DeviceOID>
 	<ElementType>Monitor</ElementType>
 	<Type relativeTimers="true">http</Type>
-	<Display defaultPage="General" pageOrder="General"/>
+	<Display defaultPage="General" pageOrder="General;Latest Listings;Categories;Latest Quotes" wideColumnPages="Latest Quotes;Latest Listings;Categories" />
 	<SNMP includepages="true">auto</SNMP>
 
 	<Compliancies>
@@ -27,29 +27,1187 @@
 	</Compliancies>
 
 	<Params>
+		<Param id="1">
+			<Name>Title_Begin_LatestQuotes</Name>
+			<Description>Latest Quotes</Description>
+			<Type>fixed</Type>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="begin">title</Type>
+			</Measurement>
+		</Param>
 		<Param id="2">
-			<Name>AfterStartup</Name>
-			<Description>After Startup</Description>
-			<Type>dummy</Type>
+			<Name>Title_End_LatestQuotes</Name>
+			<Description>Latest Quotes Tilte End</Description>
+			<Type>fixed</Type>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>8</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="end">title</Type>
+			</Measurement>
+		</Param>
+		
+		<Param id="20" save="true">
+			<Name>BearerToken</Name>
+			<Description>Bearer Token</Description>
+			<Information>
+				<Subtext>Bearer Token</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="password">string</Type>
+			</Measurement>
+		</Param>
+		<Param id="21" setter="true">
+			<Name>BearerToken</Name>
+			<Description>Bearer Token</Description>
+			<Information>
+				<Subtext>Bearer Token</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="password">string</Type>
+			</Measurement>
+		</Param>
+		
+		<Param id="100">
+			<Name>LatestListingsStatusCode</Name>
+			<Description>Latest Listings Status Code</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Latest Listings Status Code</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+		</Param>
+		<Param id="101">
+			<Name>LatestListingsResponse</Name>
+			<Description>Latest Listings Response</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+		</Param>
+		<Param id="110">
+			<Name>CategoriesStatusCode</Name>
+			<Description>Categories Status Code</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Information>
+				<Subtext>Categories Status Code</Subtext>
+			</Information>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+			</Display>
+		</Param>
+		<Param id="111">
+			<Name>CategoriesResponse</Name>
+			<Description>Categories Response</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+		</Param>
+		<Param id="120">
+			<Name>CategoryDetailStatusCode</Name>
+			<Description>Category Detail Status Code</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Information>
+				<Subtext>Category Detail Status Code</Subtext>
+			</Information>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+			</Display>
+		</Param>
+		<Param id="121">
+			<Name>CategoryDetailResponse</Name>
+			<Description>Category Detail Response</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+		</Param>
+		<Param id="130">
+			<Name>LatestQuotesStatusCode</Name>
+			<Description>Latest Quotes Status Code</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Information>
+				<Subtext>Latest Quotes Status Code</Subtext>
+			</Information>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>4</Row>
+					</Position>
+				</Positions>
+			</Display>
+		</Param>
+		<Param id="131">
+			<Name>LatestQuotesResponse</Name>
+			<Description>Latest Quotes Response</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+		</Param>
+		<Param id="140">
+			<Name>CategoryRefreshId</Name>
+			<Description>Category Refresh ID</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Information>
+				<Subtext>Category Refresh ID</Subtext>
+			</Information>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+		</Param>
+		
+		<Param id="1000">
+			<Name>LatestListingsTable</Name>
+			<Description>Latest Listings Table</Description>
+			<Information>
+				<Subtext>Latest Listings Table</Subtext>
+			</Information>
+			<Type>array</Type>
+			<ArrayOptions index="0" options=";naming=/1001">
+				<ColumnOption idx="0" pid="1001" type="custom" options="" />
+				<ColumnOption idx="1" pid="1002" type="retrieved" options="" />
+				<ColumnOption idx="2" pid="1003" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="1004" type="retrieved" options="" />
+				<ColumnOption idx="4" pid="1005" type="retrieved" options="" />
+				<ColumnOption idx="5" pid="1006" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="6" pid="1007" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="7" pid="1008" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="8" pid="1009" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="9" pid="1010" type="retrieved" options="" />
+				<ColumnOption idx="10" pid="1011" type="retrieved" options="" />
+				<ColumnOption idx="11" pid="1012" type="retrieved" options=""/>
+			</ArrayOptions>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				
+				<Positions>
+					<Position>
+						<Page>Latest Listings</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4-1006|5-1007|6-1008|7-1009|8-1010|9-1011|10-1012|11,width:156-176-185-168-201-198-255-236-238-246-210-217,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-STRING,lines:25,filter:true">table</Type>
+			</Measurement>
+		</Param>
+		<Param id="1001">
+			<Name>LatestListingsTableId</Name>
+			<Description>ID (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - ID (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1002">
+			<Name>LatestListingsTableName</Name>
+			<Description>Name (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Name (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1003">
+			<Name>LatestListingsTableSymbol</Name>
+			<Description>Symbol (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Symbol (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1004">
+			<Name>LatestListingsTableSlug</Name>
+			<Description>Slug (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Slug (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1005">
+			<Name>LatestListingsTableCmcRank</Name>
+			<Description>CMC Rank (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - CMC Rank (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1006" trending="true">
+			<Name>LatestListingsTablePriceUsd</Name>
+			<Description>Price USD (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Price USD (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>0</Low>
+				</Range>
+				<!-- SuppressValidator 2.9.4 new unit $ -->
+				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1007" trending="true">
+			<Name>LatestListingsTablePercentChange24h</Name>
+			<Description>Percent Change 24h (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Percent Change 24h (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Units>%</Units>
+				<Range>
+					<Low>-100</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1008" trending="true">
+			<Name>LatestListingsTableMarketCapUsd</Name>
+			<Description>Market Cap USD (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Market Cap USD (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>0</Low>
+				</Range>
+				<!-- SuppressValidator 2.9.4 new unit $ -->
+				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1009" trending="true">
+			<Name>LatestListingsTableVolume24hUsd</Name>
+			<Description>Volume 24h USD (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Volume 24h USD (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<!-- SuppressValidator 2.9.4 new unit $ -->
+				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
+				<Range>
+					<Low>0</Low>
+					<High>999999999999999</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1010" trending="true">
+			<Name>LatestListingsTableCirculatingSupply</Name>
+			<Description>Circulating Supply (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Circulating Supply (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1011">
+			<Name>LatestListingsTableMaxSupply</Name>
+			<Description>Max Supply (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Max Supply (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1012">
+			<Name>LatestListingsTableLastUpdated</Name>
+			<Description>Last Updated (Latest Listings Table)</Description>
+			<Information>
+				<Subtext>Latest Listings Table - Last Updated (Latest Listings Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		
+		<Param id="2000">
+			<Name>CategoriesTable</Name>
+			<Description>Categories Table</Description>
+			<Information>
+				<Subtext>Categories Table</Subtext>
+			</Information>
+			<Type>array</Type>
+			<ArrayOptions index="0" options=";naming=/2001">
+				<ColumnOption idx="0" pid="2001" type="custom" options="" />
+				<ColumnOption idx="1" pid="2002" type="retrieved" options="" />
+				<ColumnOption idx="2" pid="2003" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="2004" type="retrieved" options="" />
+				<ColumnOption idx="4" pid="2005" type="retrieved" options="" />
+				<ColumnOption idx="5" pid="2006" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="6" pid="2007" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="7" pid="2008" type="retrieved" options="" />
+				<ColumnOption idx="8" pid="2009" type="retrieved" options="" />
+				<ColumnOption idx="9" pid="2010" type="custom" options="" />
+			</ArrayOptions>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				
+				<Positions>
+					<Position>
+						<Page>Categories</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="tab=columns:2001|0-2002|1-2003|2-2004|3-2005|4-2006|5-2007|6-2008|7-2009|8-2010|9,width:136-160-227-219-216-234-190-197-222-100,sort:STRING-STRING-INT-INT-INT-INT-INT-STRING-INT-STRING,lines:25,filter:true">table</Type>
+			</Measurement>
+		</Param>
+		<Param id="2001">
+			<Name>CategoriesTableId</Name>
+			<Description>ID (Categories Table)</Description>
+			<Information>
+				<Subtext>ID (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2002">
+			<Name>CategoriesTableName</Name>
+			<Description>Name (Categories Table)</Description>
+			<Information>
+				<Subtext>Name (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2003" trending="true">
+			<Name>CategoriesTableNumTokens</Name>
+			<Description>Number of Tokens (Categories Table)</Description>
+			<Information>
+				<Subtext>Number of Tokens (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2004" trending="true">
+			<Name>CategoriesTableAvgPriceChange</Name>
+			<Description>Average Price Change (Categories Table)</Description>
+			<Information>
+				<Subtext>Average Price Change (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2005" trending="true">
+			<Name>CategoriesTableVolumeChange</Name>
+			<Description>Volume Change (Categories Table)</Description>
+			<Information>
+				<Subtext>Volume Change (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2006" trending="true">
+			<Name>CategoriesTableMarketCapUsd</Name>
+			<Description>Market Cap USD (Categories Table)</Description>
+			<Information>
+				<Subtext>Market Cap USD (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>0</Low>
+				</Range>
+				<!-- SuppressValidator 2.9.4 new unit $ -->
+				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2007" trending="true">
+			<Name>CategoriesTableMarketCapChange</Name>
+			<Description>Market Cap Change (Categories Table)</Description>
+			<Information>
+				<Subtext>Market Cap Change (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>-100</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2008" trending="true">
+			<Name>CategoriesTableVolume24h</Name>
+			<Description>Volume 24h (Categories Table)</Description>
+			<Information>
+				<Subtext>Volume 24h (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2009">
+			<Name>CategoriesTableLastUpdated</Name>
+			<Description>Last Updated (Categories Table)</Description>
+			<Information>
+				<Subtext>Last Updated (Categories Table)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2010">
+			<Name>CategoriesTableRefreshButton</Name>
+			<Description>Refresh (Categories Table)</Description>
+			<Information>
+				<Subtext>Refresh (Categories Table)</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>button</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Refresh</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="300" trending="true">
+			<Name>LatestQuotesTotalMarketCap</Name>
+			<Description>Total Market Cap (USD)</Description>
+			<Information>
+				<Subtext>Latest Quotes - Total Market Cap (USD)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<!-- SuppressValidator 2.9.4 new unit $ -->
+				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
+				<Range>
+					<Low>0</Low>
+				</Range>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="301" trending="true">
+			<Name>LatestQuotesTotalVolume24h</Name>
+			<Description>Total Volume 24h (USD)</Description>
+			<Information>
+				<Subtext>Latest Quotes - Total Volume 24h (USD)</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<!-- SuppressValidator 2.9.4 new unit $ -->
+				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
+				<Range>
+					<Low>0</Low>
+				</Range>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="302" trending="true">
+			<Name>LatestQuotesBtcDominance</Name>
+			<Description>BTC Dominance</Description>
+			<Information>
+				<Subtext>Latest Quotes - BTC Dominance</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>2</Decimals>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="303" trending="true">
+			<Name>LatestQuotesEthDominance</Name>
+			<Description>ETH Dominance</Description>
+			<Information>
+				<Subtext>Latest Quotes - ETH Dominance</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>4</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="304" trending="true">
+			<Name>LatestQuotesActiveCryptocurrencies</Name>
+			<Description>Active Cryptocurrencies</Description>
+			<Information>
+				<Subtext>Latest Quotes - Active Cryptocurrencies</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Range>
+					<Low>0</Low>
+				</Range>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="305">
+			<Name>LatestQuotesLastUpdated</Name>
+			<Description>Last Updated</Description>
+			<Information>
+				<Subtext>Latest Quotes - Last Updated</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>7</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="306" trending="true">
+			<Name>LatestQuotesDefi24hPercentageChange</Name>
+			<Description>DeFi 24h Percentage Change</Description>
+			<Information>
+				<Subtext>Latest Quotes - DeFi 24h Percentage Change</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="307" trending="true">
+			<Name>ActiveExchanges</Name>
+			<Description>Active Exchanges</Description>
+			<Information>
+				<Subtext>Latest Quotes - Active Exchanges</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Range>
+					<Low>0</Low>
+				</Range>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>0</Column>
+						<Row>6</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
 		</Param>
 	</Params>
 
+	<HTTP>
+		<Session id="1" name="Get Latest Listings">
+			<Connection id="1">
+				<Request verb="GET" url="/api/custom/coinmarketcap?content=latestlistings">
+					<Headers>
+						<Header key="Authorization" pid="20"></Header>
+					</Headers>
+				</Request>
+				<Response statusCode="100">
+					<Content pid="101" />
+				</Response>
+			</Connection>
+		</Session>
+		<Session id="2" name="Get Categories">
+			<Connection id="1">
+				<Request verb="GET" url="/api/custom/coinmarketcap?content=categories">
+					<Headers>
+						<Header key="Authorization" pid="20"></Header>
+					</Headers>
+				</Request>
+				<Response statusCode="110">
+					<Content pid="111" />
+				</Response>
+			</Connection>
+		</Session>
+		<Session id="3" name="Get Category Detail">
+			<Connection id="1">
+				<Request verb="GET" url="/api/custom/coinmarketcap?content=category">
+					<Headers>
+						<Header key="Authorization" pid="20"></Header>
+					</Headers>
+					<Parameters>
+						<Parameter key="id" pid="140" />
+					</Parameters>
+				</Request>
+				<Response statusCode="120">
+					<Content pid="121" />
+				</Response>
+			</Connection>
+		</Session>
+		<Session id="4" name="Get Latest Quotes">
+			<Connection id="1">
+				<Request verb="GET" url="/api/custom/coinmarketcap?content=latestquotes">
+					<Headers >
+						<Header key="Authorization" pid="20"></Header>
+					</Headers>
+				</Request>
+				<Response statusCode="130">
+					<Content pid="131" />
+				</Response>
+			</Connection>
+		</Session>
+	</HTTP>
+
 	<QActions>
-		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile" />
-		<QAction id="2" name="After Startup" encoding="csharp" triggers="2" />
+		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile">
+		</QAction>
+		<QAction id="101" name="Parse Latest Listings" encoding="csharp" triggers="101">
+		</QAction>
+		<QAction id="111" name="Parse Categories" encoding="csharp" triggers="111">
+		</QAction>
+		<QAction id="209" name="Category Row Refresh" encoding="csharp" triggers="2010" row="true">
+		</QAction>
+		<QAction id="121" name="Parse Category Detail" encoding="csharp" triggers="121">
+		</QAction>
+		<QAction id="131" name="Parse Latest Quotes" encoding="csharp" triggers="131">
+		</QAction>
+		<QAction id="21" name="Set Bearer Token" encoding="csharp" triggers="21">
+		</QAction>
 	</QActions>
-
-	<Groups>
-		<Group id="2">
-			<Name>After Startup</Name>
-			<Description>After Startup</Description>
-			<Type>poll action</Type>
-			<Content>
-				<Action>2</Action>
-			</Content>
-		</Group>
-	</Groups>
-
 	<Triggers>
 		<Trigger id="1">
 			<Name>After Startup</Name>
@@ -60,6 +1218,15 @@
 				<Id>1</Id>
 			</Content>
 		</Trigger>
+		<Trigger id="2010">
+			<Name>On Category Refresh Button</Name>
+			<On id="2010">parameter</On>
+			<Time>change</Time>
+			<Type>action</Type>
+			<Content>
+				<Id>300</Id>
+			</Content>
+		</Trigger>
 	</Triggers>
 
 	<Actions>
@@ -68,40 +1235,82 @@
 			<On id="2">group</On>
 			<Type>execute next</Type>
 		</Action>
-		<Action id="2">
-			<Name>After Startup QAction</Name>
-			<On id="2">parameter</On>
-			<Type>run actions</Type>
+		<Action id="300">
+			<Name>Execute Category Detail Group</Name>
+			<On id="300">group</On>
+			<Type>execute</Type>
 		</Action>
 	</Actions>
 
-	<Timers>
-		<Timer id="1">
-			<Name>Fast Timer (10s)</Name>
-			<Time initial="true">10000</Time>
-			<Interval>75</Interval>
+	<Groups>
+		<Group id="2">
+			<Name>After Startup</Name>
+			<Description>After Startup</Description>
+			<Type>poll</Type>
 			<Content>
+				<Session>1</Session>
+				<Session>2</Session>
+				<Session>4</Session>
 			</Content>
-		</Timer>
+		</Group>
+		<Group id="100">
+			<Name>Get Latest Listings</Name>
+			<Description>Get Latest Listings</Description>
+			<Type>poll</Type>
+			<Content>
+				<Session>1</Session>
+			</Content>
+		</Group>
+		<Group id="200">
+			<Name>Get Categories</Name>
+			<Description>Get Categories</Description>
+			<Type>poll</Type>
+			<Content>
+				<Session>2</Session>
+			</Content>
+		</Group>
+		<Group id="300">
+			<Name>Get Category Detail</Name>
+			<Description>Get Category Detail</Description>
+			<Type>poll</Type>
+			<Content>
+				<Session>3</Session>
+			</Content>
+		</Group>
+		<Group id="400">
+			<Name>Get Latest Quotes</Name>
+			<Description>Get Latest Quotes</Description>
+			<Type>poll</Type>
+			<Content>
+				<Session>4</Session>
+			</Content>
+		</Group>
+	</Groups>
+	<Timers>
 		<Timer id="2">
 			<Name>Medium Timer (1m)</Name>
 			<Time initial="true" dataDisplay="30000">60000</Time>
 			<Interval>75</Interval>
 			<Content>
+				<Group>100</Group>
+				<Group>200</Group>
 			</Content>
 		</Timer>
+
 		<Timer id="3">
-			<Name>Slow Timer (1h)</Name>
-			<Time initial="true">3600000</Time>
+			<Name>Slow Timer (3m)</Name>
+			<Time initial="true">180000</Time>
 			<Interval>75</Interval>
 			<Content>
+				<Group>400</Group>
 			</Content>
 		</Timer>
 	</Timers>
-
-	<PortSettings>
+	<PortSettings name="HTTP Connection">
+		<BusAddress>
+			<Disabled>true</Disabled>
+		</BusAddress>
 	</PortSettings>
-
 	<VersionHistory>
 		<Branches>
 			<Branch id="1">
@@ -114,11 +1323,11 @@
 									<MinorVersion id="1">
 										<Date>2024-01-11</Date>
 										<Provider>
-											<Author>XXX</Author>
+											<Author>AMO</Author>
 											<Company>Skyline Communications</Company>
 										</Provider>
 										<Changes>
-											<NewFeature>Initial version</NewFeature>
+											<NewFeature>Initial version – Latest Listings, Categories (with row-level refresh), Latest Quotes</NewFeature>
 										</Changes>
 									</MinorVersion>
 								</MinorVersions>
@@ -129,5 +1338,4 @@
 			</Branch>
 		</Branches>
 	</VersionHistory>
-
 </Protocol>
