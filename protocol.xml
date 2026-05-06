@@ -879,6 +879,7 @@
 				</Discreets>
 			</Measurement>
 		</Param>
+		
 		<Param id="300" trending="true">
 			<Name>LatestQuotesTotalMarketCap</Name>
 			<Description>Total Market Cap (USD)</Description>
