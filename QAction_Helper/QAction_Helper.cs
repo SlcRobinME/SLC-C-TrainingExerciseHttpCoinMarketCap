@@ -98,6 +98,71 @@ public static class Parameter
 	public const int activeexchanges_307 = 307;
 	/// <summary>PID: 307 | Type: read</summary>
 	public const int activeexchanges = 307;
+	/// <summary>PID: 308 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotestotalmarketcapyesterday_308 = 308;
+	/// <summary>PID: 308 | Type: read</summary>
+	public const int latestquotestotalmarketcapyesterday = 308;
+	/// <summary>PID: 309 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotestotalmarketcapyesterdaypercentagechange_309 = 309;
+	/// <summary>PID: 309 | Type: read</summary>
+	public const int latestquotestotalmarketcapyesterdaypercentagechange = 309;
+	/// <summary>PID: 310 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotestotalvolume24hyesterday_310 = 310;
+	/// <summary>PID: 310 | Type: read</summary>
+	public const int latestquotestotalvolume24hyesterday = 310;
+	/// <summary>PID: 311 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotestotalvolume24hyesterdaypercentagechange_311 = 311;
+	/// <summary>PID: 311 | Type: read</summary>
+	public const int latestquotestotalvolume24hyesterdaypercentagechange = 311;
+	/// <summary>PID: 312 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesaltcoinmarketcap_312 = 312;
+	/// <summary>PID: 312 | Type: read</summary>
+	public const int latestquotesaltcoinmarketcap = 312;
+	/// <summary>PID: 313 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesaltcoinvolume24h_313 = 313;
+	/// <summary>PID: 313 | Type: read</summary>
+	public const int latestquotesaltcoinvolume24h = 313;
+	/// <summary>PID: 314 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesdefimarketcap_314 = 314;
+	/// <summary>PID: 314 | Type: read</summary>
+	public const int latestquotesdefimarketcap = 314;
+	/// <summary>PID: 315 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesdefivolume24h_315 = 315;
+	/// <summary>PID: 315 | Type: read</summary>
+	public const int latestquotesdefivolume24h = 315;
+	/// <summary>PID: 316 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesstablecoinmarketcap_316 = 316;
+	/// <summary>PID: 316 | Type: read</summary>
+	public const int latestquotesstablecoinmarketcap = 316;
+	/// <summary>PID: 317 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesstablecoinvolume24h_317 = 317;
+	/// <summary>PID: 317 | Type: read</summary>
+	public const int latestquotesstablecoinvolume24h = 317;
+	/// <summary>PID: 318 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesstablecoin24hpercentagechange_318 = 318;
+	/// <summary>PID: 318 | Type: read</summary>
+	public const int latestquotesstablecoin24hpercentagechange = 318;
+	/// <summary>PID: 319 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesderivativesvolume24h_319 = 319;
+	/// <summary>PID: 319 | Type: read</summary>
+	public const int latestquotesderivativesvolume24h = 319;
+	/// <summary>PID: 320 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesderivatives24hpercentagechange_320 = 320;
+	/// <summary>PID: 320 | Type: read</summary>
+	public const int latestquotesderivatives24hpercentagechange = 320;
 	public class Write
 	{
 		/// <summary>PID: 21 | Type: write</summary>
@@ -176,6 +241,41 @@ public static class Parameter
 			public const int latestlistingstablelastupdated_1012 = 1012;
 			/// <summary>PID: 1012 | Type: read</summary>
 			public const int latestlistingstablelastupdated = 1012;
+			/// <summary>PID: 1013 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablepercentchange1h_1013 = 1013;
+			/// <summary>PID: 1013 | Type: read</summary>
+			public const int latestlistingstablepercentchange1h = 1013;
+			/// <summary>PID: 1014 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablepercentchange7d_1014 = 1014;
+			/// <summary>PID: 1014 | Type: read</summary>
+			public const int latestlistingstablepercentchange7d = 1014;
+			/// <summary>PID: 1015 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablepercentchange30d_1015 = 1015;
+			/// <summary>PID: 1015 | Type: read</summary>
+			public const int latestlistingstablepercentchange30d = 1015;
+			/// <summary>PID: 1016 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablevolumechange24h_1016 = 1016;
+			/// <summary>PID: 1016 | Type: read</summary>
+			public const int latestlistingstablevolumechange24h = 1016;
+			/// <summary>PID: 1017 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablefullydilutedmarketcap_1017 = 1017;
+			/// <summary>PID: 1017 | Type: read</summary>
+			public const int latestlistingstablefullydilutedmarketcap = 1017;
+			/// <summary>PID: 1018 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstabletotalsupply_1018 = 1018;
+			/// <summary>PID: 1018 | Type: read</summary>
+			public const int latestlistingstabletotalsupply = 1018;
+			/// <summary>PID: 1019 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstableinfinitesupply_1019 = 1019;
+			/// <summary>PID: 1019 | Type: read</summary>
+			public const int latestlistingstableinfinitesupply = 1019;
 			public class Write
 			{
 			}
@@ -242,6 +342,41 @@ public static class Parameter
 			public const int latestlistingstablelastupdated_1012 = 11;
 			/// <summary>IDX: 11 | Type: read</summary>
 			public const int latestlistingstablelastupdated = 11;
+			/// <summary>IDX: 12 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablepercentchange1h_1013 = 12;
+			/// <summary>IDX: 12 | Type: read</summary>
+			public const int latestlistingstablepercentchange1h = 12;
+			/// <summary>IDX: 13 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablepercentchange7d_1014 = 13;
+			/// <summary>IDX: 13 | Type: read</summary>
+			public const int latestlistingstablepercentchange7d = 13;
+			/// <summary>IDX: 14 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablepercentchange30d_1015 = 14;
+			/// <summary>IDX: 14 | Type: read</summary>
+			public const int latestlistingstablepercentchange30d = 14;
+			/// <summary>IDX: 15 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablevolumechange24h_1016 = 15;
+			/// <summary>IDX: 15 | Type: read</summary>
+			public const int latestlistingstablevolumechange24h = 15;
+			/// <summary>IDX: 16 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstablefullydilutedmarketcap_1017 = 16;
+			/// <summary>IDX: 16 | Type: read</summary>
+			public const int latestlistingstablefullydilutedmarketcap = 16;
+			/// <summary>IDX: 17 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstabletotalsupply_1018 = 17;
+			/// <summary>IDX: 17 | Type: read</summary>
+			public const int latestlistingstabletotalsupply = 17;
+			/// <summary>IDX: 18 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingstableinfinitesupply_1019 = 18;
+			/// <summary>IDX: 18 | Type: read</summary>
+			public const int latestlistingstableinfinitesupply = 18;
 		}
 	}
 	public class Categoriestable
@@ -415,6 +550,32 @@ public interface SLProtocolExt : SLProtocol
 	object Latestquotesdefi24hpercentagechange { get; set; }
 	object Activeexchanges_307 { get; set; }
 	object Activeexchanges { get; set; }
+	object Latestquotestotalmarketcapyesterday_308 { get; set; }
+	object Latestquotestotalmarketcapyesterday { get; set; }
+	object Latestquotestotalmarketcapyesterdaypercentagechange_309 { get; set; }
+	object Latestquotestotalmarketcapyesterdaypercentagechange { get; set; }
+	object Latestquotestotalvolume24hyesterday_310 { get; set; }
+	object Latestquotestotalvolume24hyesterday { get; set; }
+	object Latestquotestotalvolume24hyesterdaypercentagechange_311 { get; set; }
+	object Latestquotestotalvolume24hyesterdaypercentagechange { get; set; }
+	object Latestquotesaltcoinmarketcap_312 { get; set; }
+	object Latestquotesaltcoinmarketcap { get; set; }
+	object Latestquotesaltcoinvolume24h_313 { get; set; }
+	object Latestquotesaltcoinvolume24h { get; set; }
+	object Latestquotesdefimarketcap_314 { get; set; }
+	object Latestquotesdefimarketcap { get; set; }
+	object Latestquotesdefivolume24h_315 { get; set; }
+	object Latestquotesdefivolume24h { get; set; }
+	object Latestquotesstablecoinmarketcap_316 { get; set; }
+	object Latestquotesstablecoinmarketcap { get; set; }
+	object Latestquotesstablecoinvolume24h_317 { get; set; }
+	object Latestquotesstablecoinvolume24h { get; set; }
+	object Latestquotesstablecoin24hpercentagechange_318 { get; set; }
+	object Latestquotesstablecoin24hpercentagechange { get; set; }
+	object Latestquotesderivativesvolume24h_319 { get; set; }
+	object Latestquotesderivativesvolume24h { get; set; }
+	object Latestquotesderivatives24hpercentagechange_320 { get; set; }
+	object Latestquotesderivatives24hpercentagechange { get; set; }
 	object Latestlistingstableid_1001 { get; set; }
 	object Latestlistingstableid { get; set; }
 	object Latestlistingstablename_1002 { get; set; }
@@ -439,6 +600,20 @@ public interface SLProtocolExt : SLProtocol
 	object Latestlistingstablemaxsupply { get; set; }
 	object Latestlistingstablelastupdated_1012 { get; set; }
 	object Latestlistingstablelastupdated { get; set; }
+	object Latestlistingstablepercentchange1h_1013 { get; set; }
+	object Latestlistingstablepercentchange1h { get; set; }
+	object Latestlistingstablepercentchange7d_1014 { get; set; }
+	object Latestlistingstablepercentchange7d { get; set; }
+	object Latestlistingstablepercentchange30d_1015 { get; set; }
+	object Latestlistingstablepercentchange30d { get; set; }
+	object Latestlistingstablevolumechange24h_1016 { get; set; }
+	object Latestlistingstablevolumechange24h { get; set; }
+	object Latestlistingstablefullydilutedmarketcap_1017 { get; set; }
+	object Latestlistingstablefullydilutedmarketcap { get; set; }
+	object Latestlistingstabletotalsupply_1018 { get; set; }
+	object Latestlistingstabletotalsupply { get; set; }
+	object Latestlistingstableinfinitesupply_1019 { get; set; }
+	object Latestlistingstableinfinitesupply { get; set; }
 	object Categoriestableid_2001 { get; set; }
 	object Categoriestableid { get; set; }
 	object Categoriestablename_2002 { get; set; }
@@ -564,6 +739,71 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Activeexchanges_307 {get { return GetParameter(307); }set { SetParameter(307, value); }}
 	/// <summary>PID: 307  | Type: read</summary>
 	public System.Object Activeexchanges {get { return GetParameter(307); }set { SetParameter(307, value); }}
+	/// <summary>PID: 308  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotestotalmarketcapyesterday_308 {get { return GetParameter(308); }set { SetParameter(308, value); }}
+	/// <summary>PID: 308  | Type: read</summary>
+	public System.Object Latestquotestotalmarketcapyesterday {get { return GetParameter(308); }set { SetParameter(308, value); }}
+	/// <summary>PID: 309  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotestotalmarketcapyesterdaypercentagechange_309 {get { return GetParameter(309); }set { SetParameter(309, value); }}
+	/// <summary>PID: 309  | Type: read</summary>
+	public System.Object Latestquotestotalmarketcapyesterdaypercentagechange {get { return GetParameter(309); }set { SetParameter(309, value); }}
+	/// <summary>PID: 310  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotestotalvolume24hyesterday_310 {get { return GetParameter(310); }set { SetParameter(310, value); }}
+	/// <summary>PID: 310  | Type: read</summary>
+	public System.Object Latestquotestotalvolume24hyesterday {get { return GetParameter(310); }set { SetParameter(310, value); }}
+	/// <summary>PID: 311  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotestotalvolume24hyesterdaypercentagechange_311 {get { return GetParameter(311); }set { SetParameter(311, value); }}
+	/// <summary>PID: 311  | Type: read</summary>
+	public System.Object Latestquotestotalvolume24hyesterdaypercentagechange {get { return GetParameter(311); }set { SetParameter(311, value); }}
+	/// <summary>PID: 312  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesaltcoinmarketcap_312 {get { return GetParameter(312); }set { SetParameter(312, value); }}
+	/// <summary>PID: 312  | Type: read</summary>
+	public System.Object Latestquotesaltcoinmarketcap {get { return GetParameter(312); }set { SetParameter(312, value); }}
+	/// <summary>PID: 313  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesaltcoinvolume24h_313 {get { return GetParameter(313); }set { SetParameter(313, value); }}
+	/// <summary>PID: 313  | Type: read</summary>
+	public System.Object Latestquotesaltcoinvolume24h {get { return GetParameter(313); }set { SetParameter(313, value); }}
+	/// <summary>PID: 314  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesdefimarketcap_314 {get { return GetParameter(314); }set { SetParameter(314, value); }}
+	/// <summary>PID: 314  | Type: read</summary>
+	public System.Object Latestquotesdefimarketcap {get { return GetParameter(314); }set { SetParameter(314, value); }}
+	/// <summary>PID: 315  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesdefivolume24h_315 {get { return GetParameter(315); }set { SetParameter(315, value); }}
+	/// <summary>PID: 315  | Type: read</summary>
+	public System.Object Latestquotesdefivolume24h {get { return GetParameter(315); }set { SetParameter(315, value); }}
+	/// <summary>PID: 316  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesstablecoinmarketcap_316 {get { return GetParameter(316); }set { SetParameter(316, value); }}
+	/// <summary>PID: 316  | Type: read</summary>
+	public System.Object Latestquotesstablecoinmarketcap {get { return GetParameter(316); }set { SetParameter(316, value); }}
+	/// <summary>PID: 317  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesstablecoinvolume24h_317 {get { return GetParameter(317); }set { SetParameter(317, value); }}
+	/// <summary>PID: 317  | Type: read</summary>
+	public System.Object Latestquotesstablecoinvolume24h {get { return GetParameter(317); }set { SetParameter(317, value); }}
+	/// <summary>PID: 318  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesstablecoin24hpercentagechange_318 {get { return GetParameter(318); }set { SetParameter(318, value); }}
+	/// <summary>PID: 318  | Type: read</summary>
+	public System.Object Latestquotesstablecoin24hpercentagechange {get { return GetParameter(318); }set { SetParameter(318, value); }}
+	/// <summary>PID: 319  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesderivativesvolume24h_319 {get { return GetParameter(319); }set { SetParameter(319, value); }}
+	/// <summary>PID: 319  | Type: read</summary>
+	public System.Object Latestquotesderivativesvolume24h {get { return GetParameter(319); }set { SetParameter(319, value); }}
+	/// <summary>PID: 320  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesderivatives24hpercentagechange_320 {get { return GetParameter(320); }set { SetParameter(320, value); }}
+	/// <summary>PID: 320  | Type: read</summary>
+	public System.Object Latestquotesderivatives24hpercentagechange {get { return GetParameter(320); }set { SetParameter(320, value); }}
 	/// <summary>PID: 1001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstableid_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
@@ -624,6 +864,41 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Latestlistingstablelastupdated_1012 {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
 	/// <summary>PID: 1012  | Type: read</summary>
 	public System.Object Latestlistingstablelastupdated {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
+	/// <summary>PID: 1013  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablepercentchange1h_1013 {get { return GetParameter(1013); }set { SetParameter(1013, value); }}
+	/// <summary>PID: 1013  | Type: read</summary>
+	public System.Object Latestlistingstablepercentchange1h {get { return GetParameter(1013); }set { SetParameter(1013, value); }}
+	/// <summary>PID: 1014  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablepercentchange7d_1014 {get { return GetParameter(1014); }set { SetParameter(1014, value); }}
+	/// <summary>PID: 1014  | Type: read</summary>
+	public System.Object Latestlistingstablepercentchange7d {get { return GetParameter(1014); }set { SetParameter(1014, value); }}
+	/// <summary>PID: 1015  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablepercentchange30d_1015 {get { return GetParameter(1015); }set { SetParameter(1015, value); }}
+	/// <summary>PID: 1015  | Type: read</summary>
+	public System.Object Latestlistingstablepercentchange30d {get { return GetParameter(1015); }set { SetParameter(1015, value); }}
+	/// <summary>PID: 1016  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablevolumechange24h_1016 {get { return GetParameter(1016); }set { SetParameter(1016, value); }}
+	/// <summary>PID: 1016  | Type: read</summary>
+	public System.Object Latestlistingstablevolumechange24h {get { return GetParameter(1016); }set { SetParameter(1016, value); }}
+	/// <summary>PID: 1017  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablefullydilutedmarketcap_1017 {get { return GetParameter(1017); }set { SetParameter(1017, value); }}
+	/// <summary>PID: 1017  | Type: read</summary>
+	public System.Object Latestlistingstablefullydilutedmarketcap {get { return GetParameter(1017); }set { SetParameter(1017, value); }}
+	/// <summary>PID: 1018  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstabletotalsupply_1018 {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
+	/// <summary>PID: 1018  | Type: read</summary>
+	public System.Object Latestlistingstabletotalsupply {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
+	/// <summary>PID: 1019  | Type: read | DISCREETS: No = 0, Yes = 1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstableinfinitesupply_1019 {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
+	/// <summary>PID: 1019  | Type: read | DISCREETS: No = 0, Yes = 1</summary>
+	public System.Object Latestlistingstableinfinitesupply {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
 	/// <summary>PID: 2001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoriestableid_2001 {get { return GetParameter(2001); }set { SetParameter(2001, value); }}
@@ -758,8 +1033,43 @@ public class LatestlistingstableQActionRow : QActionTableRow
 	public System.Object Latestlistingstablelastupdated_1012 { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
 	/// <summary>PID: 1012 | Type: read</summary>
 	public System.Object Latestlistingstablelastupdated { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
-	public LatestlistingstableQActionRow() : base(0, 12) { }
-	public LatestlistingstableQActionRow(System.Object[] oRow) : base(0, 12, oRow) { }
+	/// <summary>PID: 1013 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablepercentchange1h_1013 { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	/// <summary>PID: 1013 | Type: read</summary>
+	public System.Object Latestlistingstablepercentchange1h { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	/// <summary>PID: 1014 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablepercentchange7d_1014 { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	/// <summary>PID: 1014 | Type: read</summary>
+	public System.Object Latestlistingstablepercentchange7d { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	/// <summary>PID: 1015 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablepercentchange30d_1015 { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	/// <summary>PID: 1015 | Type: read</summary>
+	public System.Object Latestlistingstablepercentchange30d { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	/// <summary>PID: 1016 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablevolumechange24h_1016 { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	/// <summary>PID: 1016 | Type: read</summary>
+	public System.Object Latestlistingstablevolumechange24h { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	/// <summary>PID: 1017 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstablefullydilutedmarketcap_1017 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 1017 | Type: read</summary>
+	public System.Object Latestlistingstablefullydilutedmarketcap { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 1018 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstabletotalsupply_1018 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 1018 | Type: read</summary>
+	public System.Object Latestlistingstabletotalsupply { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 1019 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingstableinfinitesupply_1019 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	/// <summary>PID: 1019 | Type: read</summary>
+	public System.Object Latestlistingstableinfinitesupply { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public LatestlistingstableQActionRow() : base(0, 19) { }
+	public LatestlistingstableQActionRow(System.Object[] oRow) : base(0, 19, oRow) { }
 	public static implicit operator LatestlistingstableQActionRow(System.Object[] source) { return new LatestlistingstableQActionRow(source); }
 	public static implicit operator System.Object[](LatestlistingstableQActionRow source) { return source.ToObjectArray(); }
 }

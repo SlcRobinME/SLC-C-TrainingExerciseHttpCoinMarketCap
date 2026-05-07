@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using QuickType;
+﻿using QuickType;
 using Skyline.DataMiner.Scripting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class CoinMarketCapService
 {
@@ -34,6 +35,13 @@ public class CoinMarketCapService
                 Latestlistingstablecirculatingsupply_1010 = item.CirculatingSupply,
                 Latestlistingstablemaxsupply_1011 = item.MaxSupply ?? 0,
                 Latestlistingstablelastupdated_1012 = quoteUsd?.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss") ?? string.Empty,
+                Latestlistingstablepercentchange1h_1013 = quoteUsd?.PercentChange1H ?? 0,
+                Latestlistingstablepercentchange7d_1014 = quoteUsd?.PercentChange7D ?? 0,
+                Latestlistingstablepercentchange30d_1015 = quoteUsd?.PercentChange30D ?? 0,
+                Latestlistingstablevolumechange24h_1016 = quoteUsd?.VolumeChange24H ?? 0,
+                Latestlistingstablefullydilutedmarketcap_1017 = quoteUsd?.FullyDilutedMarketCap ?? 0,
+                Latestlistingstabletotalsupply_1018 = item.TotalSupply,
+                Latestlistingstableinfinitesupply_1019 = item.InfiniteSupply ? 1 : 0,
             });
         }
 
@@ -67,15 +75,33 @@ public class CoinMarketCapService
     public void FillLatestQuotes(GlobalQuotesData data)
     {
         GlobalUsd usd = data.Quote?.Usd;
-        _protocol.SetParameter(Parameter.latestquotestotalmarketcap_300, usd?.TotalMarketCap ?? 0);
-        _protocol.SetParameter(Parameter.latestquotestotalvolume24h_301, usd?.TotalVolume24H ?? 0);
-        _protocol.SetParameter(Parameter.latestquotesbtcdominance_302, data.BtcDominance);
-        _protocol.SetParameter(Parameter.latestquotesethdominance_303, data.EthDominance);
-        _protocol.SetParameter(Parameter.latestquotesactivecryptocurrencies_304, data.ActiveCryptocurrencies);
-        _protocol.SetParameter(Parameter.latestquoteslastupdated_305, data.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss"));
-        _protocol.SetParameter(Parameter.latestquotesdefi24hpercentagechange_306, data.Defi24hPercentageChange);
-        _protocol.SetParameter(Parameter.activeexchanges_307, data.ActiveExchanges);
 
+        var parameters = new Dictionary<int, object>
+        {
+            { Parameter.latestquotestotalmarketcap_300,                          usd?.TotalMarketCap ?? 0 },
+            { Parameter.latestquotestotalvolume24h_301,                          usd?.TotalVolume24H ?? 0 },
+            { Parameter.latestquotesbtcdominance_302,                            data.BtcDominance },
+            { Parameter.latestquotesethdominance_303,                            data.EthDominance },
+            { Parameter.latestquotesactivecryptocurrencies_304,                  data.ActiveCryptocurrencies },
+            { Parameter.latestquoteslastupdated_305,                             data.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss") },
+            { Parameter.latestquotesdefi24hpercentagechange_306,                 data.Defi24hPercentageChange },
+            { Parameter.activeexchanges_307,                                     data.ActiveExchanges },
+            { Parameter.latestquotestotalmarketcapyesterday_308,                 usd?.TotalMarketCapYesterday ?? 0 },
+            { Parameter.latestquotestotalmarketcapyesterdaypercentagechange_309, usd?.TotalMarketCapYesterdayPercentageChange ?? 0 },
+            { Parameter.latestquotestotalvolume24hyesterday_310,                 usd?.TotalVolume24hYesterday ?? 0 },
+            { Parameter.latestquotestotalvolume24hyesterdaypercentagechange_311, usd?.TotalVolume24hYesterdayPercentageChange ?? 0 },
+            { Parameter.latestquotesaltcoinmarketcap_312,                        usd?.AltcoinMarketCap ?? 0 },
+            { Parameter.latestquotesaltcoinvolume24h_313,                        usd?.AltcoinVolume24h ?? 0 },
+            { Parameter.latestquotesdefimarketcap_314,                           usd?.DefiMarketCap ?? 0 },
+            { Parameter.latestquotesdefivolume24h_315,                           usd?.DefiVolume24h ?? 0 },
+            { Parameter.latestquotesstablecoinmarketcap_316,                     usd?.StablecoinMarketCap ?? 0 },
+            { Parameter.latestquotesstablecoinvolume24h_317,                     usd?.StablecoinVolume24h ?? 0 },
+            { Parameter.latestquotesstablecoin24hpercentagechange_318,           usd?.Stablecoin24hPercentageChange ?? 0 },
+            { Parameter.latestquotesderivativesvolume24h_319,                    usd?.DerivativesVolume24h ?? 0 },
+            { Parameter.latestquotesderivatives24hpercentagechange_320,          usd?.Derivatives24hPercentageChange ?? 0 },
+        };
+
+        _protocol.SetParameters(parameters.Keys.ToArray(), parameters.Values.ToArray());
     }
 
     private CategoriestableQActionRow BuildCategoryRow(CategoryItem item)
