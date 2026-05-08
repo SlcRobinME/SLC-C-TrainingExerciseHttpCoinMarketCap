@@ -9,7 +9,9 @@ public static class QAction
 	{
 		try
 		{
-			// The row key (Category ID) is available via the trigger row index
+			int triggerid = 2010;
+
+            // The row key (Category ID) is available via the trigger row index
 			string categoryId = Convert.ToString(protocol.RowKey());
 			if (string.IsNullOrWhiteSpace(categoryId))
 			{
@@ -20,7 +22,7 @@ public static class QAction
 			// Store the category ID so the HTTP session can use it
 			protocol.SetParameter(SLParameter.categoryrefreshid_140, categoryId);
 
-			protocol.CheckTrigger(2010);
+			protocol.CheckTrigger(triggerid);
         }
         catch (Exception ex)
 		{
