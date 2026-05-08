@@ -135,18 +135,18 @@
 			<Information>
 				<Subtext>Latest Listings Status Code</Subtext>
 			</Information>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>HTTP/1.1 200 OK</Normal>
-				<WaH>HTTP/1.1 400 Bad Request</WaH>
-				<MiH>HTTP/1.1 401 Unauthorized;HTTP/1.1 403 Forbidden;HTTP/1.1 404 Not Found;HTTP/1.1 429 Too Many Requests</MiH>
-				<MaH>HTTP/1.1 500 Internal Server Error;HTTP/1.1 502 Bad Gateway;HTTP/1.1 503 Service Unavailable</MaH>
-			</Alarm>
 			<Interprete>
 				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>*200*</Normal>
+				<WaH>*400*</WaH>
+				<MiH>*401*;*403*;*404*;*429*</MiH>
+				<MaH>*500*;*502*;*503*</MaH>
+			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -157,6 +157,9 @@
 					</Position>
 				</Positions>
 			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
 		</Param>
 		<Param id="101">
 			<Name>LatestListingsResponse</Name>
@@ -185,10 +188,10 @@
 			</Information>
 			<Alarm>
 				<Monitored>true</Monitored>
-				<Normal>HTTP/1.1 200 OK</Normal>
-				<WaH>HTTP/1.1 400 Bad Request</WaH>
-				<MiH>HTTP/1.1 401 Unauthorized;HTTP/1.1 403 Forbidden;HTTP/1.1 404 Not Found;HTTP/1.1 429 Too Many Requests</MiH>
-				<MaH>HTTP/1.1 500 Internal Server Error;HTTP/1.1 502 Bad Gateway;HTTP/1.1 503 Service Unavailable</MaH>
+				<Normal>*200*</Normal>
+				<WaH>*400*</WaH>
+				<MiH>*401*;*403*;*404*;*429*</MiH>
+				<MaH>*500*;*502*;*503*</MaH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -200,6 +203,9 @@
 					</Position>
 				</Positions>
 			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
 		</Param>
 		<Param id="111">
 			<Name>CategoriesResponse</Name>
@@ -228,10 +234,10 @@
 			</Information>
 			<Alarm>
 				<Monitored>true</Monitored>
-				<Normal>HTTP/1.1 200 OK</Normal>
-				<WaH>HTTP/1.1 400 Bad Request</WaH>
-				<MiH>HTTP/1.1 401 Unauthorized;HTTP/1.1 403 Forbidden;HTTP/1.1 404 Not Found;HTTP/1.1 429 Too Many Requests</MiH>
-				<MaH>HTTP/1.1 500 Internal Server Error;HTTP/1.1 502 Bad Gateway;HTTP/1.1 503 Service Unavailable</MaH>
+				<Normal>*200*</Normal>
+				<WaH>*400*</WaH>
+				<MiH>*401*;*403*;*404*;*429*</MiH>
+				<MaH>*500*;*502*;*503*</MaH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -243,6 +249,9 @@
 					</Position>
 				</Positions>
 			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
 		</Param>
 		<Param id="121">
 			<Name>CategoryDetailResponse</Name>
@@ -271,10 +280,10 @@
 			</Information>
 			<Alarm>
 				<Monitored>true</Monitored>
-				<Normal>HTTP/1.1 200 OK</Normal>
-				<WaH>HTTP/1.1 400 Bad Request</WaH>
-				<MiH>HTTP/1.1 401 Unauthorized;HTTP/1.1 403 Forbidden;HTTP/1.1 404 Not Found;HTTP/1.1 429 Too Many Requests</MiH>
-				<MaH>HTTP/1.1 500 Internal Server Error;HTTP/1.1 502 Bad Gateway;HTTP/1.1 503 Service Unavailable</MaH>
+				<Normal>*200*</Normal>
+				<WaH>*400*</WaH>
+				<MiH>*401*;*403*;*404*;*429*</MiH>
+				<MaH>*500*;*502*;*503*</MaH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -286,6 +295,9 @@
 					</Position>
 				</Positions>
 			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
 		</Param>
 		<Param id="131">
 			<Name>LatestQuotesResponse</Name>
@@ -349,6 +361,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -386,6 +399,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -408,8 +422,8 @@
 				<Decimals>2</Decimals>
 				<Units>%</Units>
 				<Range>
-					<Low>0</Low>
-					<High>100</High>
+					<Low>-9999999999999999</Low>
+					<High>9999999999999999</High>
 				</Range>
 				<Positions>
 					<Position>
@@ -422,6 +436,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -443,8 +458,8 @@
 				<RTDisplay>true</RTDisplay>
 				<Units>%</Units>
 				<Range>
-					<Low>0</Low>
-					<High>100</High>
+					<Low>-9999999999999999</Low>
+					<High>9999999999999999</High>
 				</Range>
 				<Positions>
 					<Position>
@@ -457,6 +472,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -471,6 +487,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Type>read</Type>
 			<Interprete>
@@ -595,9 +612,10 @@
 				</Positions>
 			</Display>
 			<!-- /SuppressValidator 2.9.7 -->
-			 <Alarm>
+			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -618,6 +636,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -716,6 +735,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -797,6 +817,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -834,6 +855,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -871,6 +893,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -908,6 +931,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -945,6 +969,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -982,6 +1007,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1063,6 +1089,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1281,6 +1308,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1348,6 +1376,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1368,6 +1397,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1377,7 +1407,7 @@
 				<!-- /SuppressValidator 2.9.4 -->
 				<Range>
 					<Low>0</Low>
-					<High>999999999999999</High>
+					<High>9999999999999999</High>
 				</Range>
 			</Display>
 			<Measurement>
@@ -1399,6 +1429,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
 			<Display>
@@ -1428,13 +1459,14 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CL>-1</CL>
 			</Alarm>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Range>
-					<Low>0</Low>
+					<Low>-1</Low>
 				</Range>
 			</Display>
 			<!-- /SuppressValidator 2.9.7 -->
@@ -1624,6 +1656,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1654,6 +1687,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<!-- SuppressValidator 2.9.7 no need for units -->
 			<Display>
@@ -1785,6 +1819,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -1902,6 +1937,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1954,6 +1990,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
+				<CH>9999999999999999</CH>
 			</Alarm>
 			<Type>read</Type>
 			<Interprete>
@@ -2098,6 +2135,18 @@
 				<Id>1</Id>
 			</Content>
 		</Trigger>
+		<Trigger id="20">
+			<Name>On Bearer Token Change</Name>
+			<On id="20">parameter</On>
+			<Time>change</Time>
+			<Type>action</Type>
+			<Content>
+				<Id>21</Id>
+				<Id>22</Id>
+				<Id>300</Id>
+				<Id>24</Id>
+			</Content>
+		</Trigger>
 		<Trigger id="2010">
 			<Name>On Category Refresh Button</Name>
 			<On id="2010">parameter</On>
@@ -2112,6 +2161,21 @@
 		<Action id="1">
 			<Name>After Startup Group</Name>
 			<On id="2">group</On>
+			<Type>execute next</Type>
+		</Action>
+		<Action id="21">
+			<Name>Execute Group 100</Name>
+			<On id="100">group</On>
+			<Type>execute next</Type>
+		</Action>
+		<Action id="22">
+			<Name>Execute Group 200</Name>
+			<On id="200">group</On>
+			<Type>execute next</Type>
+		</Action>
+		<Action id="24">
+			<Name>Execute Group 400</Name>
+			<On id="400">group</On>
 			<Type>execute next</Type>
 		</Action>
 		<Action id="300">
@@ -2174,10 +2238,9 @@
 				<Group>200</Group>
 			</Content>
 		</Timer>
-
 		<Timer id="3">
-			<Name>Slow Timer (3m)</Name>
-			<Time initial="true">180000</Time>
+			<Name>Slow Timer (5m)</Name>
+			<Time initial="true">300000</Time>
 			<Interval>75</Interval>
 			<Content>
 				<Group>400</Group>

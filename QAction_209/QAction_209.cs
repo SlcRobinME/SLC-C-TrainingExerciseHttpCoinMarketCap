@@ -20,7 +20,6 @@ public static class QAction
 			// Store the category ID so the HTTP session can use it
 			protocol.SetParameter(SLParameter.categoryrefreshid_140, categoryId);
 
-            // Execute the Category Detail HTTP session
 			protocol.CheckTrigger(2010);
         }
         catch (Exception ex)

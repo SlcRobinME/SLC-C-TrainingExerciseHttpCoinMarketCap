@@ -10,10 +10,32 @@ namespace QuickType
 {
     using System;
     using System.Collections.Generic;
-
     using System.Globalization;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
+
+    public static class NotAvailable
+    {
+        public const double Numeric = 9999999999999999d;
+        public const long Long = -1L;
+        public const string Text = "N/A";
+        public const string DateTime = "";
+    }
+
+    public static class DataMinerValue
+    {
+        public static object Resolve(double? value) =>
+            value.HasValue ? (object)value.Value : NotAvailable.Numeric;
+
+        public static object Resolve(long? value) =>
+            value.HasValue ? (object)value.Value : NotAvailable.Long;
+
+        public static object Resolve(string value) =>
+            string.IsNullOrEmpty(value) ? NotAvailable.Text : value;
+
+        public static object Resolve(DateTimeOffset? value, string format = "yyyy-MM-dd HH:mm:ss") =>
+            value.HasValue ? (object)value.Value.ToString(format) : NotAvailable.DateTime;
+    }
 
     public partial class Welcome
     {
@@ -22,6 +44,15 @@ namespace QuickType
 
         [JsonProperty("data")]
         public Datum[] Data { get; set; }
+
+        public static Welcome FromJson(string json) =>
+            JsonConvert.DeserializeObject<Welcome>(json, Converter.Settings);
+    }
+
+    public static class Serialize
+    {
+        public static string ToJson(this Welcome self) =>
+            JsonConvert.SerializeObject(self, Converter.Settings);
     }
 
     public partial class Datum
@@ -174,33 +205,13 @@ namespace QuickType
         public long TotalCount { get; set; }
     }
 
-    public partial class Welcome
-    {
-        public static Welcome FromJson(string json) => JsonConvert.DeserializeObject<Welcome>(json, QuickType.Converter.Settings);
-    }
-
-    public static class Serialize
-    {
-        public static string ToJson(this Welcome self) => JsonConvert.SerializeObject(self, QuickType.Converter.Settings);
-    }
-
-    internal static class Converter
-    {
-        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-        {
-            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-            DateParseHandling = DateParseHandling.None,
-            Converters =
-            {
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
-        };
-    }
-    
     public partial class GlobalQuotesResponse
     {
         [JsonProperty("data")]
         public GlobalQuotesData Data { get; set; }
+
+        public static GlobalQuotesResponse FromJson(string json) =>
+            JsonConvert.DeserializeObject<GlobalQuotesResponse>(json, Converter.Settings);
     }
 
     public partial class GlobalQuotesData
@@ -332,16 +343,13 @@ namespace QuickType
         public DateTimeOffset LastUpdated { get; set; }
     }
 
-    public partial class GlobalQuotesResponse
-    {
-        public static GlobalQuotesResponse FromJson(string json) =>
-            JsonConvert.DeserializeObject<GlobalQuotesResponse>(json, Converter.Settings);
-    }
-
     public partial class CategoriesResponse
     {
         [JsonProperty("data")]
         public CategoryItem[] Data { get; set; }
+
+        public static CategoriesResponse FromJson(string json) =>
+            JsonConvert.DeserializeObject<CategoriesResponse>(json, Converter.Settings);
     }
 
     public partial class CategoryItem
@@ -377,12 +385,6 @@ namespace QuickType
         public double VolumeChange { get; set; }
     }
 
-    public partial class CategoriesResponse
-    {
-        public static CategoriesResponse FromJson(string json) =>
-            JsonConvert.DeserializeObject<CategoriesResponse>(json, Converter.Settings);
-    }
-
     public partial class CategoryDetailResponse
     {
         [JsonProperty("data")]
@@ -390,5 +392,18 @@ namespace QuickType
 
         public static CategoryDetailResponse FromJson(string json) =>
             JsonConvert.DeserializeObject<CategoryDetailResponse>(json, Converter.Settings);
+    }
+
+    internal static class Converter
+    {
+        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+        {
+            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+            DateParseHandling = DateParseHandling.None,
+            Converters =
+            {
+                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
+            },
+        };
     }
 }
