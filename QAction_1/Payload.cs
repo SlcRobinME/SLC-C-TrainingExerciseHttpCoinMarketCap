@@ -17,7 +17,7 @@ namespace QuickType
     public static class NotAvailable
     {
         public const double Numeric = 9999999999999999d;
-        public const long Long = -1L;
+        public const double LongDouble = -1L;
         public const string Text = "N/A";
         public const string DateTime = "";
     }
@@ -27,8 +27,8 @@ namespace QuickType
         public static object Resolve(double? value) =>
             value.HasValue ? (object)value.Value : NotAvailable.Numeric;
 
-        public static object Resolve(long? value) =>
-            value.HasValue ? (object)value.Value : NotAvailable.Long;
+        public static object ResolveLongDouble(double? value) =>
+            value.HasValue ? (object)value.Value : NotAvailable.LongDouble;
 
         public static object Resolve(string value) =>
             string.IsNullOrEmpty(value) ? NotAvailable.Text : value;

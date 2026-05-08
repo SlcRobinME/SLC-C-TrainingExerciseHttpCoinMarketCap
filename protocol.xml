@@ -39,11 +39,6 @@
 						<Column>0</Column>
 						<Row>0</Row>
 					</Position>
-					<Position>
-						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>0</Row>
-					</Position>
 				</Positions>
 				<!-- /SuppressValidator 2.22.5 -->
 			</Display>
@@ -61,12 +56,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>12</Row>
-					</Position>
-					<Position>
-						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>11</Row>
+						<Row>22</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -532,7 +522,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>7</Row>
+						<Row>21</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -574,8 +564,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>1</Row>
+						<Column>0</Column>
+						<Row>7</Row>
 					</Position>
 				</Positions>
 				<Units>%</Units>
@@ -651,7 +641,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>8</Row>
+						<Row>17</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -679,7 +669,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>9</Row>
+						<Row>18</Row>
 					</Position>
 				</Positions>
 				<Range>
@@ -728,7 +718,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>10</Row>
+						<Row>19</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -761,7 +751,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>11</Row>
+						<Row>20</Row>
 					</Position>
 				</Positions>
 				<Range>
@@ -809,8 +799,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>7</Row>
+						<Column>0</Column>
+						<Row>13</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -847,8 +837,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>8</Row>
+						<Column>0</Column>
+						<Row>14</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -885,8 +875,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>2</Row>
+						<Column>0</Column>
+						<Row>8</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -923,8 +913,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>3</Row>
+						<Column>0</Column>
+						<Row>9</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -961,8 +951,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>4</Row>
+						<Column>0</Column>
+						<Row>10</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -999,8 +989,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>5</Row>
+						<Column>0</Column>
+						<Row>11</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -1032,8 +1022,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>6</Row>
+						<Column>0</Column>
+						<Row>12</Row>
 					</Position>
 				</Positions>
 				<Range>
@@ -1081,8 +1071,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>9</Row>
+						<Column>0</Column>
+						<Row>15</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -1114,8 +1104,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>1</Column>
-						<Row>10</Row>
+						<Column>0</Column>
+						<Row>16</Row>
 					</Position>
 				</Positions>
 				<Range>
@@ -2255,7 +2245,7 @@
 	<VersionHistory>
 		<Branches>
 			<Branch id="1">
-				<Comment>Main Branch</Comment>
+				<Comment>Amers-HttpExerciseCoinMarketCap</Comment>
 				<SystemVersions>
 					<SystemVersion id="0">
 						<MajorVersions>
@@ -2269,6 +2259,16 @@
 										</Provider>
 										<Changes>
 											<NewFeature>Initial version – Latest Listings, Categories (with row-level refresh), Latest Quotes</NewFeature>
+										</Changes>
+									</MinorVersion>
+									<MinorVersion id="2" basedOn="1.0.0.1">
+										<Date>2026-05-08</Date>
+										<Provider>
+											<Author>AMO</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<NewFeature>latest version – unit tests, service classes for api, full functionality satisfied</NewFeature>
 										</Changes>
 									</MinorVersion>
 								</MinorVersions>

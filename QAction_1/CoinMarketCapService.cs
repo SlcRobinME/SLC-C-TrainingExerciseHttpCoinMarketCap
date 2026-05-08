@@ -34,7 +34,7 @@ public class CoinMarketCapService
                 Latestlistingstablemarketcapusd_1008 = usd?.MarketCap ?? NotAvailable.Numeric,
                 Latestlistingstablevolume24husd_1009 = usd?.Volume24H ?? NotAvailable.Numeric,
                 Latestlistingstablecirculatingsupply_1010 = item.CirculatingSupply,
-                Latestlistingstablemaxsupply_1011 = DataMinerValue.Resolve((long?)item.MaxSupply),
+                Latestlistingstablemaxsupply_1011 = DataMinerValue.ResolveLongDouble(item.MaxSupply),
                 Latestlistingstablelastupdated_1012 = DataMinerValue.Resolve(usd?.LastUpdated),
                 Latestlistingstablepercentchange1h_1013 = usd?.PercentChange1H ?? NotAvailable.Numeric,
                 Latestlistingstablepercentchange7d_1014 = usd?.PercentChange7D ?? NotAvailable.Numeric,

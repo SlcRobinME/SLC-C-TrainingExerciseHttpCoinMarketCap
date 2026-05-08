@@ -112,7 +112,7 @@
 			Assert.AreEqual(NotAvailable.Numeric, row.Latestlistingstablepercentchange24h_1007);
 			Assert.AreEqual(NotAvailable.Numeric, row.Latestlistingstablemarketcapusd_1008);
 			Assert.AreEqual(NotAvailable.Numeric, row.Latestlistingstablevolume24husd_1009);
-			Assert.AreEqual(NotAvailable.Numeric, row.Latestlistingstablemaxsupply_1011);
+			Assert.AreEqual(NotAvailable.LongDouble, row.Latestlistingstablemaxsupply_1011);
 			Assert.AreEqual(NotAvailable.DateTime, row.Latestlistingstablelastupdated_1012);
 		}
 
@@ -359,6 +359,17 @@
 		public void Resolve_String_ReturnsExpected(string input, string expected)
 		{
 			var result = DataMinerValue.Resolve(input);
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod]
+		[DataRow(null, NotAvailable.LongDouble)]
+		[DataRow(0d, 0d)]
+		[DataRow(42.5, 42.5)]
+		[DataRow(-0.5, -0.5)]
+		public void Resolve_LongDouble_ReturnsExpected(double? input, double expected)
+		{
+			var result = DataMinerValue.ResolveLongDouble(input);
 			Assert.AreEqual(expected, result);
 		}
 	}
