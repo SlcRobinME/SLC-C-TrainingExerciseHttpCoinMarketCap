@@ -18,7 +18,7 @@
 	<DeviceOID>1</DeviceOID>
 	<ElementType>Monitor</ElementType>
 	<Type relativeTimers="true">http</Type>
-	<Display defaultPage="General" pageOrder="General;Latest Listings;Categories;Latest Quotes" wideColumnPages="Latest Quotes;Latest Listings;Categories" />
+	<Display defaultPage="General" pageOrder="General;Latest Listings;Categories;Latest Quotes" wideColumnPages="Latest Listings;Categories" />
 	<SNMP includepages="true">auto</SNMP>
 	<Compliancies>
 		<CassandraReady>true</CassandraReady>
@@ -56,7 +56,85 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>22</Row>
+						<Row>9</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="end">title</Type>
+			</Measurement>
+		</Param>
+		<Param id="3">
+			<Name>Title_Begin_StableCoinMarket</Name>
+			<Description>Stable Coin Market</Description>
+			<Type>fixed</Type>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<!-- SuppressValidator 2.22.5 I want the title so span to 3 columns
+ -->
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>1</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+				<!-- /SuppressValidator 2.22.5 -->
+			</Display>
+			<Measurement>
+				<Type options="begin">title</Type>
+			</Measurement>
+		</Param>
+		<Param id="4">
+			<Name>Title_End_StableCoinMarket</Name>
+			<Description>Stable Coin Market Title End</Description>
+			<Type>fixed</Type>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>1</Column>
+						<Row>4</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="end">title</Type>
+			</Measurement>
+		</Param>
+		<Param id="5">
+			<Name>Title_Begin_Defi</Name>
+			<Description>Defi</Description>
+			<Type>fixed</Type>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<!-- SuppressValidator 2.22.5 I want the title so span to 3 columns
+ -->
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>1</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+				<!-- /SuppressValidator 2.22.5 -->
+			</Display>
+			<Measurement>
+				<Type options="begin">title</Type>
+			</Measurement>
+		</Param>
+		<Param id="6">
+			<Name>Title_End_Defi</Name>
+			<Description>Defi Title End</Description>
+			<Type>fixed</Type>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Latest Quotes</Page>
+						<Column>1</Column>
+						<Row>9</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -419,7 +497,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>3</Row>
+						<Row>7</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -455,7 +533,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>4</Row>
+						<Row>8</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -494,8 +572,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>5</Row>
+						<Column>1</Column>
+						<Row>10</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -521,8 +599,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>21</Row>
+						<Column>1</Column>
+						<Row>12</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -564,8 +642,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>7</Row>
+						<Column>1</Column>
+						<Row>6</Row>
 					</Position>
 				</Positions>
 				<Units>%</Units>
@@ -596,8 +674,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>6</Row>
+						<Column>1</Column>
+						<Row>11</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -641,7 +719,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>17</Row>
+						<Row>3</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -669,7 +747,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>18</Row>
+						<Row>4</Row>
 					</Position>
 				</Positions>
 				<Range>
@@ -718,7 +796,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>19</Row>
+						<Row>5</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -751,7 +829,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>20</Row>
+						<Row>6</Row>
 					</Position>
 				</Positions>
 				<Range>
@@ -800,7 +878,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>13</Row>
+						<Row>10</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -838,7 +916,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>14</Row>
+						<Row>11</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -875,8 +953,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>8</Row>
+						<Column>1</Column>
+						<Row>7</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -913,8 +991,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>9</Row>
+						<Column>1</Column>
+						<Row>8</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -951,8 +1029,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>10</Row>
+						<Column>1</Column>
+						<Row>1</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -989,8 +1067,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>11</Row>
+						<Column>1</Column>
+						<Row>2</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -1022,8 +1100,8 @@
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
-						<Column>0</Column>
-						<Row>12</Row>
+						<Column>1</Column>
+						<Row>3</Row>
 					</Position>
 				</Positions>
 				<Range>
@@ -1072,7 +1150,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>15</Row>
+						<Row>12</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -1105,7 +1183,7 @@
 					<Position>
 						<Page>Latest Quotes</Page>
 						<Column>0</Column>
-						<Row>16</Row>
+						<Row>13</Row>
 					</Position>
 				</Positions>
 				<Range>
@@ -1173,7 +1251,7 @@
 				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4-1006|5-1007|6-1008|7-1009|8-1010|9-1011|10-1012|11-1013|12-1014|13-1015|14-1016|15-1017|16-1018|17-1019|18,width:156-176-185-168-201-198-255-236-238-246-210-217-180-180-180-180-220-200-160,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
-		<Param id="1001">
+		<Param id="1001" trending="false">
 			<Name>LatestListingsTableId</Name>
 			<Description>ID (Latest Listings Table)</Description>
 			<Information>
@@ -1192,7 +1270,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1002">
+		<Param id="1002" trending="false">
 			<Name>LatestListingsTableName</Name>
 			<Description>Name (Latest Listings Table)</Description>
 			<Information>
@@ -1211,7 +1289,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1003">
+		<Param id="1003" trending="false">
 			<Name>LatestListingsTableSymbol</Name>
 			<Description>Symbol (Latest Listings Table)</Description>
 			<Information>
@@ -1230,7 +1308,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1004">
+		<Param id="1004" trending="false">
 			<Name>LatestListingsTableSlug</Name>
 			<Description>Slug (Latest Listings Table)</Description>
 			<Information>
@@ -1249,7 +1327,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1005">
+		<Param id="1005" trending="false">
 			<Name>LatestListingsTableCmcRank</Name>
 			<Description>CMC Rank (Latest Listings Table)</Description>
 			<Information>
@@ -1761,7 +1839,7 @@
 				<Type options="tab=columns:2001|0-2002|1-2003|2-2004|3-2005|4-2006|5-2007|6-2008|7-2009|8-2010|9,width:136-160-227-219-216-234-190-197-222-100,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-STRING-STRING,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
-		<Param id="2001">
+		<Param id="2001" trending="false">
 			<Name>CategoriesTableId</Name>
 			<Description>ID (Categories Table)</Description>
 			<Information>
@@ -1780,7 +1858,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2002">
+		<Param id="2002" trending="false">
 			<Name>CategoriesTableName</Name>
 			<Description>Name (Categories Table)</Description>
 			<Information>
@@ -2139,8 +2217,6 @@
 		</Trigger>
 		<Trigger id="2010">
 			<Name>On Category Refresh Button</Name>
-			<On id="2010">parameter</On>
-			<Time>change</Time>
 			<Type>action</Type>
 			<Content>
 				<Id>300</Id>

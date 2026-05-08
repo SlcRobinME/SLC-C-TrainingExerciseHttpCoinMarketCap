@@ -513,6 +513,10 @@ public interface SLProtocolExt : SLProtocol
 	CategoriestableQActionTable categoriestable { get; set; }
 	object Title_begin_latestquotes__fixed { get; set; }
 	object Title_end_latestquotes__fixed { get; set; }
+	object Title_begin_stablecoinmarket__fixed { get; set; }
+	object Title_end_stablecoinmarket__fixed { get; set; }
+	object Title_begin_defi__fixed { get; set; }
+	object Title_end_defi__fixed { get; set; }
 	object Bearertoken_20 { get; set; }
 	object Bearertoken { get; set; }
 	object Bearertoken_21 { get; set; }
@@ -646,6 +650,14 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Title_begin_latestquotes__fixed {get { return GetParameter(1); }set { SetParameter(1, value); }}
 	/// <summary>PID: 2  | Type: fixed</summary>
 	public System.Object Title_end_latestquotes__fixed {get { return GetParameter(2); }set { SetParameter(2, value); }}
+	/// <summary>PID: 3  | Type: fixed</summary>
+	public System.Object Title_begin_stablecoinmarket__fixed {get { return GetParameter(3); }set { SetParameter(3, value); }}
+	/// <summary>PID: 4  | Type: fixed</summary>
+	public System.Object Title_end_stablecoinmarket__fixed {get { return GetParameter(4); }set { SetParameter(4, value); }}
+	/// <summary>PID: 5  | Type: fixed</summary>
+	public System.Object Title_begin_defi__fixed {get { return GetParameter(5); }set { SetParameter(5, value); }}
+	/// <summary>PID: 6  | Type: fixed</summary>
+	public System.Object Title_end_defi__fixed {get { return GetParameter(6); }set { SetParameter(6, value); }}
 	/// <summary>PID: 20  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Bearertoken_20 {get { return GetParameter(20); }set { SetParameter(20, value); }}
