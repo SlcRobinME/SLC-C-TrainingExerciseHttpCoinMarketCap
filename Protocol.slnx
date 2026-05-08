@@ -20,9 +20,16 @@
   <Folder Name="/QActions/">
     <Project Path="QAction_1/QAction_1.csproj" />
     <Project Path="QAction_2/QAction_2.csproj" />
+    <Project Path="QAction_3/QAction_3.csproj" />
+    <Project Path="QAction_4/QAction_4.csproj" />
+    <Project Path="QAction_5/QAction_5.csproj" />
+    <Project Path="QAction_6/QAction_6.csproj" />
+    <Project Path="QAction_7/QAction_7.csproj" />
+    <Project Path="QAction_8/QAction_8.csproj" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path="protocol.xml" />
   </Folder>
   <Folder Name="/Tests/" />
+  <Project Path="CoinMarketCapTests/CoinMarketCapTests.csproj" Id="fb7d334b-8120-4fa0-97c7-feb298474219" />
 </Solution>

@@ -8,12 +8,383 @@ namespace Skyline.DataMiner.Scripting
 {
 public static class Parameter
 {
+	/// <summary>PID: 10 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int bearertoken_10 = 10;
+	/// <summary>PID: 10 | Type: read</summary>
+	public const int bearertoken = 10;
+	/// <summary>PID: 100 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestlistingsstatuscode_100 = 100;
+	/// <summary>PID: 100 | Type: read</summary>
+	public const int latestlistingsstatuscode = 100;
+	/// <summary>PID: 101 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestlistingsresponse_101 = 101;
+	/// <summary>PID: 101 | Type: read</summary>
+	public const int latestlistingsresponse = 101;
+	/// <summary>PID: 200 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categoriesstatuscode_200 = 200;
+	/// <summary>PID: 200 | Type: read</summary>
+	public const int categoriesstatuscode = 200;
+	/// <summary>PID: 201 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categoriesresponse_201 = 201;
+	/// <summary>PID: 201 | Type: read</summary>
+	public const int categoriesresponse = 201;
+	/// <summary>PID: 202 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categorydetailstatuscode_202 = 202;
+	/// <summary>PID: 202 | Type: read</summary>
+	public const int categorydetailstatuscode = 202;
+	/// <summary>PID: 203 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categorydetailresponse_203 = 203;
+	/// <summary>PID: 203 | Type: read</summary>
+	public const int categorydetailresponse = 203;
+	/// <summary>PID: 210 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categorydetailrequestid_210 = 210;
+	/// <summary>PID: 210 | Type: read</summary>
+	public const int categorydetailrequestid = 210;
+	/// <summary>PID: 300 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesstatuscode_300 = 300;
+	/// <summary>PID: 300 | Type: read</summary>
+	public const int latestquotesstatuscode = 300;
+	/// <summary>PID: 301 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesresponse_301 = 301;
+	/// <summary>PID: 301 | Type: read</summary>
+	public const int latestquotesresponse = 301;
+	/// <summary>PID: 310 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesactivecryptocurrencies_310 = 310;
+	/// <summary>PID: 310 | Type: read</summary>
+	public const int latestquotesactivecryptocurrencies = 310;
+	/// <summary>PID: 311 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesbtcdominance_311 = 311;
+	/// <summary>PID: 311 | Type: read</summary>
+	public const int latestquotesbtcdominance = 311;
+	/// <summary>PID: 312 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesethdominance_312 = 312;
+	/// <summary>PID: 312 | Type: read</summary>
+	public const int latestquotesethdominance = 312;
+	/// <summary>PID: 313 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotestotalmarketcap_313 = 313;
+	/// <summary>PID: 313 | Type: read</summary>
+	public const int latestquotestotalmarketcap = 313;
+	/// <summary>PID: 314 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotestotalvolume24h_314 = 314;
+	/// <summary>PID: 314 | Type: read</summary>
+	public const int latestquotestotalvolume24h = 314;
+	/// <summary>PID: 315 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesdefimarketcap_315 = 315;
+	/// <summary>PID: 315 | Type: read</summary>
+	public const int latestquotesdefimarketcap = 315;
+	/// <summary>PID: 316 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesstablecoinmarketcap_316 = 316;
+	/// <summary>PID: 316 | Type: read</summary>
+	public const int latestquotesstablecoinmarketcap = 316;
+	/// <summary>PID: 317 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquoteslastupdated_317 = 317;
+	/// <summary>PID: 317 | Type: read</summary>
+	public const int latestquoteslastupdated = 317;
 	public class Write
 	{
+		/// <summary>PID: 11 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int bearertoken_11 = 11;
+		/// <summary>PID: 11 | Type: write</summary>
+		public const int bearertoken = 11;
+		/// <summary>PID: 50 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int getlatestlistingsbutton_50 = 50;
+		/// <summary>PID: 50 | Type: write</summary>
+		public const int getlatestlistingsbutton = 50;
+		/// <summary>PID: 51 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int getcategoriesbutton_51 = 51;
+		/// <summary>PID: 51 | Type: write</summary>
+		public const int getcategoriesbutton = 51;
+		/// <summary>PID: 52 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int getlatestquotesbutton_52 = 52;
+		/// <summary>PID: 52 | Type: write</summary>
+		public const int getlatestquotesbutton = 52;
+	}
+	public class Latestlistings
+	{
+		/// <summary>PID: 1000</summary>
+		public const int tablePid = 1000;
+		/// <summary>IDX: 0</summary>
+		public const int indexColumn = 0;
+		/// <summary>PID: 1001</summary>
+		public const int indexColumnPid = 1001;
+		public class Pid
+		{
+			/// <summary>PID: 1001 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsid_1001 = 1001;
+			/// <summary>PID: 1001 | Type: read</summary>
+			public const int latestlistingsid = 1001;
+			/// <summary>PID: 1002 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsname_1002 = 1002;
+			/// <summary>PID: 1002 | Type: read</summary>
+			public const int latestlistingsname = 1002;
+			/// <summary>PID: 1003 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingssymbol_1003 = 1003;
+			/// <summary>PID: 1003 | Type: read</summary>
+			public const int latestlistingssymbol = 1003;
+			/// <summary>PID: 1004 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsrank_1004 = 1004;
+			/// <summary>PID: 1004 | Type: read</summary>
+			public const int latestlistingsrank = 1004;
+			/// <summary>PID: 1005 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingscirculatingsupply_1005 = 1005;
+			/// <summary>PID: 1005 | Type: read</summary>
+			public const int latestlistingscirculatingsupply = 1005;
+			/// <summary>PID: 1006 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsmaxsupply_1006 = 1006;
+			/// <summary>PID: 1006 | Type: read</summary>
+			public const int latestlistingsmaxsupply = 1006;
+			/// <summary>PID: 1007 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingspriceusd_1007 = 1007;
+			/// <summary>PID: 1007 | Type: read</summary>
+			public const int latestlistingspriceusd = 1007;
+			/// <summary>PID: 1008 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsmarketcap_1008 = 1008;
+			/// <summary>PID: 1008 | Type: read</summary>
+			public const int latestlistingsmarketcap = 1008;
+			/// <summary>PID: 1009 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsvolume24h_1009 = 1009;
+			/// <summary>PID: 1009 | Type: read</summary>
+			public const int latestlistingsvolume24h = 1009;
+			/// <summary>PID: 1010 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingspercentchange1h_1010 = 1010;
+			/// <summary>PID: 1010 | Type: read</summary>
+			public const int latestlistingspercentchange1h = 1010;
+			/// <summary>PID: 1011 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingspercentchange24h_1011 = 1011;
+			/// <summary>PID: 1011 | Type: read</summary>
+			public const int latestlistingspercentchange24h = 1011;
+			/// <summary>PID: 1012 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingspercentchange7d_1012 = 1012;
+			/// <summary>PID: 1012 | Type: read</summary>
+			public const int latestlistingspercentchange7d = 1012;
+			public class Write
+			{
+			}
+		}
+		public class Idx
+		{
+			/// <summary>IDX: 0 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsid_1001 = 0;
+			/// <summary>IDX: 0 | Type: read</summary>
+			public const int latestlistingsid = 0;
+			/// <summary>IDX: 1 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsname_1002 = 1;
+			/// <summary>IDX: 1 | Type: read</summary>
+			public const int latestlistingsname = 1;
+			/// <summary>IDX: 2 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingssymbol_1003 = 2;
+			/// <summary>IDX: 2 | Type: read</summary>
+			public const int latestlistingssymbol = 2;
+			/// <summary>IDX: 3 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsrank_1004 = 3;
+			/// <summary>IDX: 3 | Type: read</summary>
+			public const int latestlistingsrank = 3;
+			/// <summary>IDX: 4 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingscirculatingsupply_1005 = 4;
+			/// <summary>IDX: 4 | Type: read</summary>
+			public const int latestlistingscirculatingsupply = 4;
+			/// <summary>IDX: 5 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsmaxsupply_1006 = 5;
+			/// <summary>IDX: 5 | Type: read</summary>
+			public const int latestlistingsmaxsupply = 5;
+			/// <summary>IDX: 6 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingspriceusd_1007 = 6;
+			/// <summary>IDX: 6 | Type: read</summary>
+			public const int latestlistingspriceusd = 6;
+			/// <summary>IDX: 7 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsmarketcap_1008 = 7;
+			/// <summary>IDX: 7 | Type: read</summary>
+			public const int latestlistingsmarketcap = 7;
+			/// <summary>IDX: 8 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingsvolume24h_1009 = 8;
+			/// <summary>IDX: 8 | Type: read</summary>
+			public const int latestlistingsvolume24h = 8;
+			/// <summary>IDX: 9 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingspercentchange1h_1010 = 9;
+			/// <summary>IDX: 9 | Type: read</summary>
+			public const int latestlistingspercentchange1h = 9;
+			/// <summary>IDX: 10 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingspercentchange24h_1011 = 10;
+			/// <summary>IDX: 10 | Type: read</summary>
+			public const int latestlistingspercentchange24h = 10;
+			/// <summary>IDX: 11 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int latestlistingspercentchange7d_1012 = 11;
+			/// <summary>IDX: 11 | Type: read</summary>
+			public const int latestlistingspercentchange7d = 11;
+		}
+	}
+	public class Categories
+	{
+		/// <summary>PID: 2000</summary>
+		public const int tablePid = 2000;
+		/// <summary>IDX: 0</summary>
+		public const int indexColumn = 0;
+		/// <summary>PID: 2001</summary>
+		public const int indexColumnPid = 2001;
+		public class Pid
+		{
+			/// <summary>PID: 2001 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesid_2001 = 2001;
+			/// <summary>PID: 2001 | Type: read</summary>
+			public const int categoriesid = 2001;
+			/// <summary>PID: 2002 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesname_2002 = 2002;
+			/// <summary>PID: 2002 | Type: read</summary>
+			public const int categoriesname = 2002;
+			/// <summary>PID: 2003 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesnumtokens_2003 = 2003;
+			/// <summary>PID: 2003 | Type: read</summary>
+			public const int categoriesnumtokens = 2003;
+			/// <summary>PID: 2004 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesavgpricechange_2004 = 2004;
+			/// <summary>PID: 2004 | Type: read</summary>
+			public const int categoriesavgpricechange = 2004;
+			/// <summary>PID: 2005 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesmarketcap_2005 = 2005;
+			/// <summary>PID: 2005 | Type: read</summary>
+			public const int categoriesmarketcap = 2005;
+			/// <summary>PID: 2006 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesmarketcapchange_2006 = 2006;
+			/// <summary>PID: 2006 | Type: read</summary>
+			public const int categoriesmarketcapchange = 2006;
+			/// <summary>PID: 2007 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesvolume_2007 = 2007;
+			/// <summary>PID: 2007 | Type: read</summary>
+			public const int categoriesvolume = 2007;
+			/// <summary>PID: 2008 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesvolumechange_2008 = 2008;
+			/// <summary>PID: 2008 | Type: read</summary>
+			public const int categoriesvolumechange = 2008;
+			/// <summary>PID: 2009 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categorieslastupdated_2009 = 2009;
+			/// <summary>PID: 2009 | Type: read</summary>
+			public const int categorieslastupdated = 2009;
+			public class Write
+			{
+				/// <summary>PID: 2050 | Type: write</summary>
+				[EditorBrowsable(EditorBrowsableState.Never)]
+				public const int categoriesrefreshbutton_2050 = 2050;
+				/// <summary>PID: 2050 | Type: write</summary>
+				public const int categoriesrefreshbutton = 2050;
+			}
+		}
+		public class Idx
+		{
+			/// <summary>IDX: 0 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesid_2001 = 0;
+			/// <summary>IDX: 0 | Type: read</summary>
+			public const int categoriesid = 0;
+			/// <summary>IDX: 1 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesname_2002 = 1;
+			/// <summary>IDX: 1 | Type: read</summary>
+			public const int categoriesname = 1;
+			/// <summary>IDX: 2 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesnumtokens_2003 = 2;
+			/// <summary>IDX: 2 | Type: read</summary>
+			public const int categoriesnumtokens = 2;
+			/// <summary>IDX: 3 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesavgpricechange_2004 = 3;
+			/// <summary>IDX: 3 | Type: read</summary>
+			public const int categoriesavgpricechange = 3;
+			/// <summary>IDX: 4 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesmarketcap_2005 = 4;
+			/// <summary>IDX: 4 | Type: read</summary>
+			public const int categoriesmarketcap = 4;
+			/// <summary>IDX: 5 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesmarketcapchange_2006 = 5;
+			/// <summary>IDX: 5 | Type: read</summary>
+			public const int categoriesmarketcapchange = 5;
+			/// <summary>IDX: 6 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesvolume_2007 = 6;
+			/// <summary>IDX: 6 | Type: read</summary>
+			public const int categoriesvolume = 6;
+			/// <summary>IDX: 7 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categoriesvolumechange_2008 = 7;
+			/// <summary>IDX: 7 | Type: read</summary>
+			public const int categoriesvolumechange = 7;
+			/// <summary>IDX: 8 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int categorieslastupdated_2009 = 8;
+			/// <summary>IDX: 8 | Type: read</summary>
+			public const int categorieslastupdated = 8;
+		}
 	}
 }
 public class WriteParameters
 {
+	/// <summary>PID: 11  | Type: write</summary>
+	public System.Object Bearertoken {get { return Protocol.GetParameter(11); }set { Protocol.SetParameter(11, value); }}
+	/// <summary>PID: 50  | Type: write | DISCREETS: Get Latest Listings = 1</summary>
+	public System.Object Getlatestlistingsbutton {get { return Protocol.GetParameter(50); }set { Protocol.SetParameter(50, value); }}
+	/// <summary>PID: 51  | Type: write | DISCREETS: Get Categories = 1</summary>
+	public System.Object Getcategoriesbutton {get { return Protocol.GetParameter(51); }set { Protocol.SetParameter(51, value); }}
+	/// <summary>PID: 52  | Type: write | DISCREETS: Get Latest Quotes = 1</summary>
+	public System.Object Getlatestquotesbutton {get { return Protocol.GetParameter(52); }set { Protocol.SetParameter(52, value); }}
+	/// <summary>PID: 2050  | Type: write | DISCREETS: Refresh = 1</summary>
+	public System.Object Categoriesrefreshbutton {get { return Protocol.GetParameter(2050); }set { Protocol.SetParameter(2050, value); }}
 	public SLProtocolExt Protocol;
 	public WriteParameters(SLProtocolExt protocol)
 	{
@@ -22,17 +393,467 @@ public class WriteParameters
 }
 public interface SLProtocolExt : SLProtocol
 {
+	/// <summary>PID: 1000</summary>
+	LatestlistingsQActionTable latestlistings { get; set; }
+	/// <summary>PID: 2000</summary>
+	CategoriesQActionTable categories { get; set; }
 	object Afterstartup_dummy { get; set; }
+	object Bearertoken_10 { get; set; }
+	object Bearertoken { get; set; }
+	object Bearertoken_11 { get; set; }
+	object Getlatestlistingsbutton_50 { get; set; }
+	object Getlatestlistingsbutton { get; set; }
+	object Getcategoriesbutton_51 { get; set; }
+	object Getcategoriesbutton { get; set; }
+	object Getlatestquotesbutton_52 { get; set; }
+	object Getlatestquotesbutton { get; set; }
+	object Latestlistingsstatuscode_100 { get; set; }
+	object Latestlistingsstatuscode { get; set; }
+	object Latestlistingsresponse_101 { get; set; }
+	object Latestlistingsresponse { get; set; }
+	object Categoriesstatuscode_200 { get; set; }
+	object Categoriesstatuscode { get; set; }
+	object Categoriesresponse_201 { get; set; }
+	object Categoriesresponse { get; set; }
+	object Categorydetailstatuscode_202 { get; set; }
+	object Categorydetailstatuscode { get; set; }
+	object Categorydetailresponse_203 { get; set; }
+	object Categorydetailresponse { get; set; }
+	object Categorydetailrequestid_210 { get; set; }
+	object Categorydetailrequestid { get; set; }
+	object Latestquotesstatuscode_300 { get; set; }
+	object Latestquotesstatuscode { get; set; }
+	object Latestquotesresponse_301 { get; set; }
+	object Latestquotesresponse { get; set; }
+	object Latestquotesactivecryptocurrencies_310 { get; set; }
+	object Latestquotesactivecryptocurrencies { get; set; }
+	object Latestquotesbtcdominance_311 { get; set; }
+	object Latestquotesbtcdominance { get; set; }
+	object Latestquotesethdominance_312 { get; set; }
+	object Latestquotesethdominance { get; set; }
+	object Latestquotestotalmarketcap_313 { get; set; }
+	object Latestquotestotalmarketcap { get; set; }
+	object Latestquotestotalvolume24h_314 { get; set; }
+	object Latestquotestotalvolume24h { get; set; }
+	object Latestquotesdefimarketcap_315 { get; set; }
+	object Latestquotesdefimarketcap { get; set; }
+	object Latestquotesstablecoinmarketcap_316 { get; set; }
+	object Latestquotesstablecoinmarketcap { get; set; }
+	object Latestquoteslastupdated_317 { get; set; }
+	object Latestquoteslastupdated { get; set; }
+	object Latestlistingsid_1001 { get; set; }
+	object Latestlistingsid { get; set; }
+	object Latestlistingsname_1002 { get; set; }
+	object Latestlistingsname { get; set; }
+	object Latestlistingssymbol_1003 { get; set; }
+	object Latestlistingssymbol { get; set; }
+	object Latestlistingsrank_1004 { get; set; }
+	object Latestlistingsrank { get; set; }
+	object Latestlistingscirculatingsupply_1005 { get; set; }
+	object Latestlistingscirculatingsupply { get; set; }
+	object Latestlistingsmaxsupply_1006 { get; set; }
+	object Latestlistingsmaxsupply { get; set; }
+	object Latestlistingspriceusd_1007 { get; set; }
+	object Latestlistingspriceusd { get; set; }
+	object Latestlistingsmarketcap_1008 { get; set; }
+	object Latestlistingsmarketcap { get; set; }
+	object Latestlistingsvolume24h_1009 { get; set; }
+	object Latestlistingsvolume24h { get; set; }
+	object Latestlistingspercentchange1h_1010 { get; set; }
+	object Latestlistingspercentchange1h { get; set; }
+	object Latestlistingspercentchange24h_1011 { get; set; }
+	object Latestlistingspercentchange24h { get; set; }
+	object Latestlistingspercentchange7d_1012 { get; set; }
+	object Latestlistingspercentchange7d { get; set; }
+	object Categoriesid_2001 { get; set; }
+	object Categoriesid { get; set; }
+	object Categoriesname_2002 { get; set; }
+	object Categoriesname { get; set; }
+	object Categoriesnumtokens_2003 { get; set; }
+	object Categoriesnumtokens { get; set; }
+	object Categoriesavgpricechange_2004 { get; set; }
+	object Categoriesavgpricechange { get; set; }
+	object Categoriesmarketcap_2005 { get; set; }
+	object Categoriesmarketcap { get; set; }
+	object Categoriesmarketcapchange_2006 { get; set; }
+	object Categoriesmarketcapchange { get; set; }
+	object Categoriesvolume_2007 { get; set; }
+	object Categoriesvolume { get; set; }
+	object Categoriesvolumechange_2008 { get; set; }
+	object Categoriesvolumechange { get; set; }
+	object Categorieslastupdated_2009 { get; set; }
+	object Categorieslastupdated { get; set; }
+	object Categoriesrefreshbutton_2050 { get; set; }
+	object Categoriesrefreshbutton { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 {
+	/// <summary>PID: 1000</summary>
+	public LatestlistingsQActionTable latestlistings { get; set; }
+	/// <summary>PID: 2000</summary>
+	public CategoriesQActionTable categories { get; set; }
 	/// <summary>PID: 2  | Type: dummy</summary>
 	public System.Object Afterstartup_dummy {get { return GetParameter(2); }set { SetParameter(2, value); }}
+	/// <summary>PID: 10  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Bearertoken_10 {get { return GetParameter(10); }set { SetParameter(10, value); }}
+	/// <summary>PID: 10  | Type: read</summary>
+	public System.Object Bearertoken {get { return GetParameter(10); }set { SetParameter(10, value); }}
+	/// <summary>PID: 11  | Type: write</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Bearertoken_11 {get { return GetParameter(11); }set { SetParameter(11, value); }}
+	/// <summary>PID: 50  | Type: write | DISCREETS: Get Latest Listings = 1</summary>
+	public System.Object Getlatestlistingsbutton_50 {get { return GetParameter(50); }set { SetParameter(50, value); }}
+	/// <summary>PID: 50  | Type: write | DISCREETS: Get Latest Listings = 1</summary>
+	public System.Object Getlatestlistingsbutton {get { return Write.Getlatestlistingsbutton; }set { Write.Getlatestlistingsbutton = value; }}
+	/// <summary>PID: 51  | Type: write | DISCREETS: Get Categories = 1</summary>
+	public System.Object Getcategoriesbutton_51 {get { return GetParameter(51); }set { SetParameter(51, value); }}
+	/// <summary>PID: 51  | Type: write | DISCREETS: Get Categories = 1</summary>
+	public System.Object Getcategoriesbutton {get { return Write.Getcategoriesbutton; }set { Write.Getcategoriesbutton = value; }}
+	/// <summary>PID: 52  | Type: write | DISCREETS: Get Latest Quotes = 1</summary>
+	public System.Object Getlatestquotesbutton_52 {get { return GetParameter(52); }set { SetParameter(52, value); }}
+	/// <summary>PID: 52  | Type: write | DISCREETS: Get Latest Quotes = 1</summary>
+	public System.Object Getlatestquotesbutton {get { return Write.Getlatestquotesbutton; }set { Write.Getlatestquotesbutton = value; }}
+	/// <summary>PID: 100  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsstatuscode_100 {get { return GetParameter(100); }set { SetParameter(100, value); }}
+	/// <summary>PID: 100  | Type: read</summary>
+	public System.Object Latestlistingsstatuscode {get { return GetParameter(100); }set { SetParameter(100, value); }}
+	/// <summary>PID: 101  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsresponse_101 {get { return GetParameter(101); }set { SetParameter(101, value); }}
+	/// <summary>PID: 101  | Type: read</summary>
+	public System.Object Latestlistingsresponse {get { return GetParameter(101); }set { SetParameter(101, value); }}
+	/// <summary>PID: 200  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesstatuscode_200 {get { return GetParameter(200); }set { SetParameter(200, value); }}
+	/// <summary>PID: 200  | Type: read</summary>
+	public System.Object Categoriesstatuscode {get { return GetParameter(200); }set { SetParameter(200, value); }}
+	/// <summary>PID: 201  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesresponse_201 {get { return GetParameter(201); }set { SetParameter(201, value); }}
+	/// <summary>PID: 201  | Type: read</summary>
+	public System.Object Categoriesresponse {get { return GetParameter(201); }set { SetParameter(201, value); }}
+	/// <summary>PID: 202  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categorydetailstatuscode_202 {get { return GetParameter(202); }set { SetParameter(202, value); }}
+	/// <summary>PID: 202  | Type: read</summary>
+	public System.Object Categorydetailstatuscode {get { return GetParameter(202); }set { SetParameter(202, value); }}
+	/// <summary>PID: 203  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categorydetailresponse_203 {get { return GetParameter(203); }set { SetParameter(203, value); }}
+	/// <summary>PID: 203  | Type: read</summary>
+	public System.Object Categorydetailresponse {get { return GetParameter(203); }set { SetParameter(203, value); }}
+	/// <summary>PID: 210  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categorydetailrequestid_210 {get { return GetParameter(210); }set { SetParameter(210, value); }}
+	/// <summary>PID: 210  | Type: read</summary>
+	public System.Object Categorydetailrequestid {get { return GetParameter(210); }set { SetParameter(210, value); }}
+	/// <summary>PID: 300  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesstatuscode_300 {get { return GetParameter(300); }set { SetParameter(300, value); }}
+	/// <summary>PID: 300  | Type: read</summary>
+	public System.Object Latestquotesstatuscode {get { return GetParameter(300); }set { SetParameter(300, value); }}
+	/// <summary>PID: 301  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesresponse_301 {get { return GetParameter(301); }set { SetParameter(301, value); }}
+	/// <summary>PID: 301  | Type: read</summary>
+	public System.Object Latestquotesresponse {get { return GetParameter(301); }set { SetParameter(301, value); }}
+	/// <summary>PID: 310  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesactivecryptocurrencies_310 {get { return GetParameter(310); }set { SetParameter(310, value); }}
+	/// <summary>PID: 310  | Type: read</summary>
+	public System.Object Latestquotesactivecryptocurrencies {get { return GetParameter(310); }set { SetParameter(310, value); }}
+	/// <summary>PID: 311  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesbtcdominance_311 {get { return GetParameter(311); }set { SetParameter(311, value); }}
+	/// <summary>PID: 311  | Type: read</summary>
+	public System.Object Latestquotesbtcdominance {get { return GetParameter(311); }set { SetParameter(311, value); }}
+	/// <summary>PID: 312  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesethdominance_312 {get { return GetParameter(312); }set { SetParameter(312, value); }}
+	/// <summary>PID: 312  | Type: read</summary>
+	public System.Object Latestquotesethdominance {get { return GetParameter(312); }set { SetParameter(312, value); }}
+	/// <summary>PID: 313  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotestotalmarketcap_313 {get { return GetParameter(313); }set { SetParameter(313, value); }}
+	/// <summary>PID: 313  | Type: read</summary>
+	public System.Object Latestquotestotalmarketcap {get { return GetParameter(313); }set { SetParameter(313, value); }}
+	/// <summary>PID: 314  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotestotalvolume24h_314 {get { return GetParameter(314); }set { SetParameter(314, value); }}
+	/// <summary>PID: 314  | Type: read</summary>
+	public System.Object Latestquotestotalvolume24h {get { return GetParameter(314); }set { SetParameter(314, value); }}
+	/// <summary>PID: 315  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesdefimarketcap_315 {get { return GetParameter(315); }set { SetParameter(315, value); }}
+	/// <summary>PID: 315  | Type: read</summary>
+	public System.Object Latestquotesdefimarketcap {get { return GetParameter(315); }set { SetParameter(315, value); }}
+	/// <summary>PID: 316  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesstablecoinmarketcap_316 {get { return GetParameter(316); }set { SetParameter(316, value); }}
+	/// <summary>PID: 316  | Type: read</summary>
+	public System.Object Latestquotesstablecoinmarketcap {get { return GetParameter(316); }set { SetParameter(316, value); }}
+	/// <summary>PID: 317  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquoteslastupdated_317 {get { return GetParameter(317); }set { SetParameter(317, value); }}
+	/// <summary>PID: 317  | Type: read</summary>
+	public System.Object Latestquoteslastupdated {get { return GetParameter(317); }set { SetParameter(317, value); }}
+	/// <summary>PID: 1001  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsid_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	/// <summary>PID: 1001  | Type: read</summary>
+	public System.Object Latestlistingsid {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	/// <summary>PID: 1002  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsname_1002 {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	/// <summary>PID: 1002  | Type: read</summary>
+	public System.Object Latestlistingsname {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	/// <summary>PID: 1003  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingssymbol_1003 {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	/// <summary>PID: 1003  | Type: read</summary>
+	public System.Object Latestlistingssymbol {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	/// <summary>PID: 1004  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsrank_1004 {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
+	/// <summary>PID: 1004  | Type: read</summary>
+	public System.Object Latestlistingsrank {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
+	/// <summary>PID: 1005  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingscirculatingsupply_1005 {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
+	/// <summary>PID: 1005  | Type: read</summary>
+	public System.Object Latestlistingscirculatingsupply {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
+	/// <summary>PID: 1006  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsmaxsupply_1006 {get { return GetParameter(1006); }set { SetParameter(1006, value); }}
+	/// <summary>PID: 1006  | Type: read</summary>
+	public System.Object Latestlistingsmaxsupply {get { return GetParameter(1006); }set { SetParameter(1006, value); }}
+	/// <summary>PID: 1007  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingspriceusd_1007 {get { return GetParameter(1007); }set { SetParameter(1007, value); }}
+	/// <summary>PID: 1007  | Type: read</summary>
+	public System.Object Latestlistingspriceusd {get { return GetParameter(1007); }set { SetParameter(1007, value); }}
+	/// <summary>PID: 1008  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsmarketcap_1008 {get { return GetParameter(1008); }set { SetParameter(1008, value); }}
+	/// <summary>PID: 1008  | Type: read</summary>
+	public System.Object Latestlistingsmarketcap {get { return GetParameter(1008); }set { SetParameter(1008, value); }}
+	/// <summary>PID: 1009  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsvolume24h_1009 {get { return GetParameter(1009); }set { SetParameter(1009, value); }}
+	/// <summary>PID: 1009  | Type: read</summary>
+	public System.Object Latestlistingsvolume24h {get { return GetParameter(1009); }set { SetParameter(1009, value); }}
+	/// <summary>PID: 1010  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingspercentchange1h_1010 {get { return GetParameter(1010); }set { SetParameter(1010, value); }}
+	/// <summary>PID: 1010  | Type: read</summary>
+	public System.Object Latestlistingspercentchange1h {get { return GetParameter(1010); }set { SetParameter(1010, value); }}
+	/// <summary>PID: 1011  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingspercentchange24h_1011 {get { return GetParameter(1011); }set { SetParameter(1011, value); }}
+	/// <summary>PID: 1011  | Type: read</summary>
+	public System.Object Latestlistingspercentchange24h {get { return GetParameter(1011); }set { SetParameter(1011, value); }}
+	/// <summary>PID: 1012  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingspercentchange7d_1012 {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
+	/// <summary>PID: 1012  | Type: read</summary>
+	public System.Object Latestlistingspercentchange7d {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
+	/// <summary>PID: 2001  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesid_2001 {get { return GetParameter(2001); }set { SetParameter(2001, value); }}
+	/// <summary>PID: 2001  | Type: read</summary>
+	public System.Object Categoriesid {get { return GetParameter(2001); }set { SetParameter(2001, value); }}
+	/// <summary>PID: 2002  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesname_2002 {get { return GetParameter(2002); }set { SetParameter(2002, value); }}
+	/// <summary>PID: 2002  | Type: read</summary>
+	public System.Object Categoriesname {get { return GetParameter(2002); }set { SetParameter(2002, value); }}
+	/// <summary>PID: 2003  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesnumtokens_2003 {get { return GetParameter(2003); }set { SetParameter(2003, value); }}
+	/// <summary>PID: 2003  | Type: read</summary>
+	public System.Object Categoriesnumtokens {get { return GetParameter(2003); }set { SetParameter(2003, value); }}
+	/// <summary>PID: 2004  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesavgpricechange_2004 {get { return GetParameter(2004); }set { SetParameter(2004, value); }}
+	/// <summary>PID: 2004  | Type: read</summary>
+	public System.Object Categoriesavgpricechange {get { return GetParameter(2004); }set { SetParameter(2004, value); }}
+	/// <summary>PID: 2005  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesmarketcap_2005 {get { return GetParameter(2005); }set { SetParameter(2005, value); }}
+	/// <summary>PID: 2005  | Type: read</summary>
+	public System.Object Categoriesmarketcap {get { return GetParameter(2005); }set { SetParameter(2005, value); }}
+	/// <summary>PID: 2006  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesmarketcapchange_2006 {get { return GetParameter(2006); }set { SetParameter(2006, value); }}
+	/// <summary>PID: 2006  | Type: read</summary>
+	public System.Object Categoriesmarketcapchange {get { return GetParameter(2006); }set { SetParameter(2006, value); }}
+	/// <summary>PID: 2007  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesvolume_2007 {get { return GetParameter(2007); }set { SetParameter(2007, value); }}
+	/// <summary>PID: 2007  | Type: read</summary>
+	public System.Object Categoriesvolume {get { return GetParameter(2007); }set { SetParameter(2007, value); }}
+	/// <summary>PID: 2008  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesvolumechange_2008 {get { return GetParameter(2008); }set { SetParameter(2008, value); }}
+	/// <summary>PID: 2008  | Type: read</summary>
+	public System.Object Categoriesvolumechange {get { return GetParameter(2008); }set { SetParameter(2008, value); }}
+	/// <summary>PID: 2009  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categorieslastupdated_2009 {get { return GetParameter(2009); }set { SetParameter(2009, value); }}
+	/// <summary>PID: 2009  | Type: read</summary>
+	public System.Object Categorieslastupdated {get { return GetParameter(2009); }set { SetParameter(2009, value); }}
+	/// <summary>PID: 2050  | Type: write | DISCREETS: Refresh = 1</summary>
+	public System.Object Categoriesrefreshbutton_2050 {get { return GetParameter(2050); }set { SetParameter(2050, value); }}
+	/// <summary>PID: 2050  | Type: write | DISCREETS: Refresh = 1</summary>
+	public System.Object Categoriesrefreshbutton {get { return Write.Categoriesrefreshbutton; }set { Write.Categoriesrefreshbutton = value; }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{
+		latestlistings = new LatestlistingsQActionTable(this, 1000, "latestlistings");
+		categories = new CategoriesQActionTable(this, 2000, "categories");
 		Write = new WriteParameters(this);
 	}
+}
+/// <summary>IDX: 0</summary>
+public class LatestlistingsQActionTable : QActionTable, IEnumerable<LatestlistingsQActionRow>
+{
+	public LatestlistingsQActionTable(SLProtocol protocol, int tableId, string tableName) : base(protocol, tableId, tableName) { }
+	IEnumerator IEnumerable.GetEnumerator() { return (IEnumerator) GetEnumerator(); }
+	public IEnumerator<LatestlistingsQActionRow> GetEnumerator() { return new QActionTableEnumerator<LatestlistingsQActionRow>(this); }
+}
+/// <summary>IDX: 0</summary>
+public class CategoriesQActionTable : QActionTable, IEnumerable<CategoriesQActionRow>
+{
+	public CategoriesQActionTable(SLProtocol protocol, int tableId, string tableName) : base(protocol, tableId, tableName) { }
+	IEnumerator IEnumerable.GetEnumerator() { return (IEnumerator) GetEnumerator(); }
+	public IEnumerator<CategoriesQActionRow> GetEnumerator() { return new QActionTableEnumerator<CategoriesQActionRow>(this); }
+}
+/// <summary>IDX: 0</summary>
+public class LatestlistingsQActionRow : QActionTableRow
+{
+	/// <summary>PID: 1001 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsid_1001 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 1001 | Type: read</summary>
+	public System.Object Latestlistingsid { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 1002 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsname_1002 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 1002 | Type: read</summary>
+	public System.Object Latestlistingsname { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 1003 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingssymbol_1003 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 1003 | Type: read</summary>
+	public System.Object Latestlistingssymbol { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 1004 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsrank_1004 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 1004 | Type: read</summary>
+	public System.Object Latestlistingsrank { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 1005 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingscirculatingsupply_1005 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 1005 | Type: read</summary>
+	public System.Object Latestlistingscirculatingsupply { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 1006 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsmaxsupply_1006 { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 1006 | Type: read</summary>
+	public System.Object Latestlistingsmaxsupply { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 1007 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingspriceusd_1007 { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 1007 | Type: read</summary>
+	public System.Object Latestlistingspriceusd { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 1008 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsmarketcap_1008 { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 1008 | Type: read</summary>
+	public System.Object Latestlistingsmarketcap { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 1009 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingsvolume24h_1009 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 1009 | Type: read</summary>
+	public System.Object Latestlistingsvolume24h { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 1010 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingspercentchange1h_1010 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 1010 | Type: read</summary>
+	public System.Object Latestlistingspercentchange1h { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 1011 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingspercentchange24h_1011 { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	/// <summary>PID: 1011 | Type: read</summary>
+	public System.Object Latestlistingspercentchange24h { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	/// <summary>PID: 1012 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestlistingspercentchange7d_1012 { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	/// <summary>PID: 1012 | Type: read</summary>
+	public System.Object Latestlistingspercentchange7d { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	public LatestlistingsQActionRow() : base(0, 12) { }
+	public LatestlistingsQActionRow(System.Object[] oRow) : base(0, 12, oRow) { }
+	public static implicit operator LatestlistingsQActionRow(System.Object[] source) { return new LatestlistingsQActionRow(source); }
+	public static implicit operator System.Object[](LatestlistingsQActionRow source) { return source.ToObjectArray(); }
+}
+/// <summary>IDX: 0</summary>
+public class CategoriesQActionRow : QActionTableRow
+{
+	/// <summary>PID: 2001 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesid_2001 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 2001 | Type: read</summary>
+	public System.Object Categoriesid { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 2002 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesname_2002 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 2002 | Type: read</summary>
+	public System.Object Categoriesname { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 2003 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesnumtokens_2003 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 2003 | Type: read</summary>
+	public System.Object Categoriesnumtokens { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 2004 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesavgpricechange_2004 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 2004 | Type: read</summary>
+	public System.Object Categoriesavgpricechange { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 2005 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesmarketcap_2005 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 2005 | Type: read</summary>
+	public System.Object Categoriesmarketcap { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 2006 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesmarketcapchange_2006 { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 2006 | Type: read</summary>
+	public System.Object Categoriesmarketcapchange { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 2007 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesvolume_2007 { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 2007 | Type: read</summary>
+	public System.Object Categoriesvolume { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 2008 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriesvolumechange_2008 { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 2008 | Type: read</summary>
+	public System.Object Categoriesvolumechange { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 2009 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categorieslastupdated_2009 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2009 | Type: read</summary>
+	public System.Object Categorieslastupdated { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2050 | Type: write</summary>
+	public System.Object Categoriesrefreshbutton_2050 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 2050 | Type: write</summary>
+	public System.Object Categoriesrefreshbutton { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	public CategoriesQActionRow() : base(0, 10) { }
+	public CategoriesQActionRow(System.Object[] oRow) : base(0, 10, oRow) { }
+	public static implicit operator CategoriesQActionRow(System.Object[] source) { return new CategoriesQActionRow(source); }
+	public static implicit operator System.Object[](CategoriesQActionRow source) { return source.ToObjectArray(); }
 }
 }

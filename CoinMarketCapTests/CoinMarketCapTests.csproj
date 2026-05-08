@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB7D334B-8120-4FA0-97C7-FEB298474219}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinMarketCapTests</RootNamespace>
+    <AssemblyName>CoinMarketCapTests</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TestData.cs" />
+    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions">
+      <Version>8.9.0</Version>
+    </PackageReference>
+    <PackageReference Include="MSTest.TestAdapter">
+      <Version>2.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="MSTest.TestFramework">
+      <Version>2.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="Skyline.DataMiner.Utils.UnitTestingFramework.Protocol">
+      <Version>1.0.4</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QAction_1\QAction_1.csproj">
+      <Project>{f3663cfe-88be-c668-4e1a-b1e1edf79c8b}</Project>
+      <Name>QAction_1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QAction_2\QAction_2.csproj">
+      <Project>{b81b949e-fe2c-df14-5d9e-21a027b0dd8e}</Project>
+      <Name>QAction_2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QAction_3\QAction_3.csproj">
+      <Project>{bb70c48b-a116-6c00-503d-8614f9cd9212}</Project>
+      <Name>QAction_3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QAction_4\QAction_4.csproj">
+      <Project>{2c0c5ae5-3ffb-6668-4dac-b1539d36a99e}</Project>
+      <Name>QAction_4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QAction_5\QAction_5.csproj">
+      <Project>{ccf336a8-c51a-2f9c-dc45-7f11199d003d}</Project>
+      <Name>QAction_5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QAction_6\QAction_6.csproj">
+      <Project>{30098b4d-1844-3ccb-549d-fa2de830b222}</Project>
+      <Name>QAction_6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QAction_7\QAction_7.csproj">
+      <Project>{0841e697-b756-fa52-490e-43092b04e237}</Project>
+      <Name>QAction_7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QAction_8\QAction_8.csproj">
+      <Project>{284ad490-4b43-ca00-1d5e-a5d3868b5fa2}</Project>
+      <Name>QAction_8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QAction_Helper\QAction_Helper.csproj">
+      <Project>{891202c6-5282-a719-8f47-859c22749ee1}</Project>
+      <Name>QAction_Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
