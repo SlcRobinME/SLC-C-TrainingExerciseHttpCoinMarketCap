@@ -15,44 +15,64 @@ public static class Parameter
 	public const int bearertoken = 20;
 	/// <summary>PID: 100 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int latestlistingsstatuscode_100 = 100;
+	public const int latestlistingscommunicationstatus_100 = 100;
 	/// <summary>PID: 100 | Type: read</summary>
-	public const int latestlistingsstatuscode = 100;
+	public const int latestlistingscommunicationstatus = 100;
 	/// <summary>PID: 101 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int latestlistingsresponse_101 = 101;
 	/// <summary>PID: 101 | Type: read</summary>
 	public const int latestlistingsresponse = 101;
+	/// <summary>PID: 102 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestlistingsstatuscode_102 = 102;
+	/// <summary>PID: 102 | Type: read</summary>
+	public const int latestlistingsstatuscode = 102;
 	/// <summary>PID: 110 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int categoriesstatuscode_110 = 110;
+	public const int categoriescommunicationstatus_110 = 110;
 	/// <summary>PID: 110 | Type: read</summary>
-	public const int categoriesstatuscode = 110;
+	public const int categoriescommunicationstatus = 110;
 	/// <summary>PID: 111 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int categoriesresponse_111 = 111;
 	/// <summary>PID: 111 | Type: read</summary>
 	public const int categoriesresponse = 111;
+	/// <summary>PID: 112 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categoriesstatuscode_112 = 112;
+	/// <summary>PID: 112 | Type: read</summary>
+	public const int categoriesstatuscode = 112;
 	/// <summary>PID: 120 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int categorydetailstatuscode_120 = 120;
+	public const int categorydetailcommunicationstatus_120 = 120;
 	/// <summary>PID: 120 | Type: read</summary>
-	public const int categorydetailstatuscode = 120;
+	public const int categorydetailcommunicationstatus = 120;
 	/// <summary>PID: 121 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int categorydetailresponse_121 = 121;
 	/// <summary>PID: 121 | Type: read</summary>
 	public const int categorydetailresponse = 121;
+	/// <summary>PID: 122 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categorydetailstatuscode_122 = 122;
+	/// <summary>PID: 122 | Type: read</summary>
+	public const int categorydetailstatuscode = 122;
 	/// <summary>PID: 130 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int latestquotesstatuscode_130 = 130;
+	public const int latestquotescommunicationstatus_130 = 130;
 	/// <summary>PID: 130 | Type: read</summary>
-	public const int latestquotesstatuscode = 130;
+	public const int latestquotescommunicationstatus = 130;
 	/// <summary>PID: 131 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int latestquotesresponse_131 = 131;
 	/// <summary>PID: 131 | Type: read</summary>
 	public const int latestquotesresponse = 131;
+	/// <summary>PID: 132 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int latestquotesstatuscode_132 = 132;
+	/// <summary>PID: 132 | Type: read</summary>
+	public const int latestquotesstatuscode = 132;
 	/// <summary>PID: 140 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int categoryrefreshid_140 = 140;
@@ -520,22 +540,30 @@ public interface SLProtocolExt : SLProtocol
 	object Bearertoken_20 { get; set; }
 	object Bearertoken { get; set; }
 	object Bearertoken_21 { get; set; }
-	object Latestlistingsstatuscode_100 { get; set; }
-	object Latestlistingsstatuscode { get; set; }
+	object Latestlistingscommunicationstatus_100 { get; set; }
+	object Latestlistingscommunicationstatus { get; set; }
 	object Latestlistingsresponse_101 { get; set; }
 	object Latestlistingsresponse { get; set; }
-	object Categoriesstatuscode_110 { get; set; }
-	object Categoriesstatuscode { get; set; }
+	object Latestlistingsstatuscode_102 { get; set; }
+	object Latestlistingsstatuscode { get; set; }
+	object Categoriescommunicationstatus_110 { get; set; }
+	object Categoriescommunicationstatus { get; set; }
 	object Categoriesresponse_111 { get; set; }
 	object Categoriesresponse { get; set; }
-	object Categorydetailstatuscode_120 { get; set; }
-	object Categorydetailstatuscode { get; set; }
+	object Categoriesstatuscode_112 { get; set; }
+	object Categoriesstatuscode { get; set; }
+	object Categorydetailcommunicationstatus_120 { get; set; }
+	object Categorydetailcommunicationstatus { get; set; }
 	object Categorydetailresponse_121 { get; set; }
 	object Categorydetailresponse { get; set; }
-	object Latestquotesstatuscode_130 { get; set; }
-	object Latestquotesstatuscode { get; set; }
+	object Categorydetailstatuscode_122 { get; set; }
+	object Categorydetailstatuscode { get; set; }
+	object Latestquotescommunicationstatus_130 { get; set; }
+	object Latestquotescommunicationstatus { get; set; }
 	object Latestquotesresponse_131 { get; set; }
 	object Latestquotesresponse { get; set; }
+	object Latestquotesstatuscode_132 { get; set; }
+	object Latestquotesstatuscode { get; set; }
 	object Categoryrefreshid_140 { get; set; }
 	object Categoryrefreshid { get; set; }
 	object Latestquotestotalmarketcap_300 { get; set; }
@@ -666,46 +694,66 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	/// <summary>PID: 21  | Type: write</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Bearertoken_21 {get { return GetParameter(21); }set { SetParameter(21, value); }}
-	/// <summary>PID: 100  | Type: read</summary>
+	/// <summary>PID: 100  | Type: read | DISCREETS: OK = 1, Bad Request = 2, Unauthorized / Not Found / Rate Limited = 3, Server Error = 4</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Latestlistingsstatuscode_100 {get { return GetParameter(100); }set { SetParameter(100, value); }}
-	/// <summary>PID: 100  | Type: read</summary>
-	public System.Object Latestlistingsstatuscode {get { return GetParameter(100); }set { SetParameter(100, value); }}
+	public System.Object Latestlistingscommunicationstatus_100 {get { return GetParameter(100); }set { SetParameter(100, value); }}
+	/// <summary>PID: 100  | Type: read | DISCREETS: OK = 1, Bad Request = 2, Unauthorized / Not Found / Rate Limited = 3, Server Error = 4</summary>
+	public System.Object Latestlistingscommunicationstatus {get { return GetParameter(100); }set { SetParameter(100, value); }}
 	/// <summary>PID: 101  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingsresponse_101 {get { return GetParameter(101); }set { SetParameter(101, value); }}
 	/// <summary>PID: 101  | Type: read</summary>
 	public System.Object Latestlistingsresponse {get { return GetParameter(101); }set { SetParameter(101, value); }}
-	/// <summary>PID: 110  | Type: read</summary>
+	/// <summary>PID: 102  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Categoriesstatuscode_110 {get { return GetParameter(110); }set { SetParameter(110, value); }}
-	/// <summary>PID: 110  | Type: read</summary>
-	public System.Object Categoriesstatuscode {get { return GetParameter(110); }set { SetParameter(110, value); }}
+	public System.Object Latestlistingsstatuscode_102 {get { return GetParameter(102); }set { SetParameter(102, value); }}
+	/// <summary>PID: 102  | Type: read</summary>
+	public System.Object Latestlistingsstatuscode {get { return GetParameter(102); }set { SetParameter(102, value); }}
+	/// <summary>PID: 110  | Type: read | DISCREETS: OK = 1, Bad Request = 2, Unauthorized / Not Found / Rate Limited = 3, Server Error = 4</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoriescommunicationstatus_110 {get { return GetParameter(110); }set { SetParameter(110, value); }}
+	/// <summary>PID: 110  | Type: read | DISCREETS: OK = 1, Bad Request = 2, Unauthorized / Not Found / Rate Limited = 3, Server Error = 4</summary>
+	public System.Object Categoriescommunicationstatus {get { return GetParameter(110); }set { SetParameter(110, value); }}
 	/// <summary>PID: 111  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoriesresponse_111 {get { return GetParameter(111); }set { SetParameter(111, value); }}
 	/// <summary>PID: 111  | Type: read</summary>
 	public System.Object Categoriesresponse {get { return GetParameter(111); }set { SetParameter(111, value); }}
-	/// <summary>PID: 120  | Type: read</summary>
+	/// <summary>PID: 112  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Categorydetailstatuscode_120 {get { return GetParameter(120); }set { SetParameter(120, value); }}
-	/// <summary>PID: 120  | Type: read</summary>
-	public System.Object Categorydetailstatuscode {get { return GetParameter(120); }set { SetParameter(120, value); }}
+	public System.Object Categoriesstatuscode_112 {get { return GetParameter(112); }set { SetParameter(112, value); }}
+	/// <summary>PID: 112  | Type: read</summary>
+	public System.Object Categoriesstatuscode {get { return GetParameter(112); }set { SetParameter(112, value); }}
+	/// <summary>PID: 120  | Type: read | DISCREETS: OK = 1, Bad Request = 2, Unauthorized / Not Found / Rate Limited = 3, Server Error = 4</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categorydetailcommunicationstatus_120 {get { return GetParameter(120); }set { SetParameter(120, value); }}
+	/// <summary>PID: 120  | Type: read | DISCREETS: OK = 1, Bad Request = 2, Unauthorized / Not Found / Rate Limited = 3, Server Error = 4</summary>
+	public System.Object Categorydetailcommunicationstatus {get { return GetParameter(120); }set { SetParameter(120, value); }}
 	/// <summary>PID: 121  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categorydetailresponse_121 {get { return GetParameter(121); }set { SetParameter(121, value); }}
 	/// <summary>PID: 121  | Type: read</summary>
 	public System.Object Categorydetailresponse {get { return GetParameter(121); }set { SetParameter(121, value); }}
-	/// <summary>PID: 130  | Type: read</summary>
+	/// <summary>PID: 122  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Latestquotesstatuscode_130 {get { return GetParameter(130); }set { SetParameter(130, value); }}
-	/// <summary>PID: 130  | Type: read</summary>
-	public System.Object Latestquotesstatuscode {get { return GetParameter(130); }set { SetParameter(130, value); }}
+	public System.Object Categorydetailstatuscode_122 {get { return GetParameter(122); }set { SetParameter(122, value); }}
+	/// <summary>PID: 122  | Type: read</summary>
+	public System.Object Categorydetailstatuscode {get { return GetParameter(122); }set { SetParameter(122, value); }}
+	/// <summary>PID: 130  | Type: read | DISCREETS: OK = 1, Bad Request = 2, Unauthorized / Not Found / Rate Limited = 3, Server Error = 4</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotescommunicationstatus_130 {get { return GetParameter(130); }set { SetParameter(130, value); }}
+	/// <summary>PID: 130  | Type: read | DISCREETS: OK = 1, Bad Request = 2, Unauthorized / Not Found / Rate Limited = 3, Server Error = 4</summary>
+	public System.Object Latestquotescommunicationstatus {get { return GetParameter(130); }set { SetParameter(130, value); }}
 	/// <summary>PID: 131  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesresponse_131 {get { return GetParameter(131); }set { SetParameter(131, value); }}
 	/// <summary>PID: 131  | Type: read</summary>
 	public System.Object Latestquotesresponse {get { return GetParameter(131); }set { SetParameter(131, value); }}
+	/// <summary>PID: 132  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Latestquotesstatuscode_132 {get { return GetParameter(132); }set { SetParameter(132, value); }}
+	/// <summary>PID: 132  | Type: read</summary>
+	public System.Object Latestquotesstatuscode {get { return GetParameter(132); }set { SetParameter(132, value); }}
 	/// <summary>PID: 140  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoryrefreshid_140 {get { return GetParameter(140); }set { SetParameter(140, value); }}
@@ -716,105 +764,105 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Latestquotestotalmarketcap_300 {get { return GetParameter(300); }set { SetParameter(300, value); }}
 	/// <summary>PID: 300  | Type: read</summary>
 	public System.Object Latestquotestotalmarketcap {get { return GetParameter(300); }set { SetParameter(300, value); }}
-	/// <summary>PID: 301  | Type: read</summary>
+	/// <summary>PID: 301  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotestotalvolume24h_301 {get { return GetParameter(301); }set { SetParameter(301, value); }}
-	/// <summary>PID: 301  | Type: read</summary>
+	/// <summary>PID: 301  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotestotalvolume24h {get { return GetParameter(301); }set { SetParameter(301, value); }}
-	/// <summary>PID: 302  | Type: read</summary>
+	/// <summary>PID: 302  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesbtcdominance_302 {get { return GetParameter(302); }set { SetParameter(302, value); }}
-	/// <summary>PID: 302  | Type: read</summary>
+	/// <summary>PID: 302  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesbtcdominance {get { return GetParameter(302); }set { SetParameter(302, value); }}
-	/// <summary>PID: 303  | Type: read</summary>
+	/// <summary>PID: 303  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesethdominance_303 {get { return GetParameter(303); }set { SetParameter(303, value); }}
-	/// <summary>PID: 303  | Type: read</summary>
+	/// <summary>PID: 303  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesethdominance {get { return GetParameter(303); }set { SetParameter(303, value); }}
-	/// <summary>PID: 304  | Type: read</summary>
+	/// <summary>PID: 304  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesactivecryptocurrencies_304 {get { return GetParameter(304); }set { SetParameter(304, value); }}
-	/// <summary>PID: 304  | Type: read</summary>
+	/// <summary>PID: 304  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesactivecryptocurrencies {get { return GetParameter(304); }set { SetParameter(304, value); }}
 	/// <summary>PID: 305  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquoteslastupdated_305 {get { return GetParameter(305); }set { SetParameter(305, value); }}
 	/// <summary>PID: 305  | Type: read</summary>
 	public System.Object Latestquoteslastupdated {get { return GetParameter(305); }set { SetParameter(305, value); }}
-	/// <summary>PID: 306  | Type: read</summary>
+	/// <summary>PID: 306  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesdefi24hpercentagechange_306 {get { return GetParameter(306); }set { SetParameter(306, value); }}
-	/// <summary>PID: 306  | Type: read</summary>
+	/// <summary>PID: 306  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesdefi24hpercentagechange {get { return GetParameter(306); }set { SetParameter(306, value); }}
-	/// <summary>PID: 307  | Type: read</summary>
+	/// <summary>PID: 307  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Activeexchanges_307 {get { return GetParameter(307); }set { SetParameter(307, value); }}
-	/// <summary>PID: 307  | Type: read</summary>
+	/// <summary>PID: 307  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Activeexchanges {get { return GetParameter(307); }set { SetParameter(307, value); }}
-	/// <summary>PID: 308  | Type: read</summary>
+	/// <summary>PID: 308  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotestotalmarketcapyesterday_308 {get { return GetParameter(308); }set { SetParameter(308, value); }}
-	/// <summary>PID: 308  | Type: read</summary>
+	/// <summary>PID: 308  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotestotalmarketcapyesterday {get { return GetParameter(308); }set { SetParameter(308, value); }}
-	/// <summary>PID: 309  | Type: read</summary>
+	/// <summary>PID: 309  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotestotalmarketcapyesterdaypercentagechange_309 {get { return GetParameter(309); }set { SetParameter(309, value); }}
-	/// <summary>PID: 309  | Type: read</summary>
+	/// <summary>PID: 309  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotestotalmarketcapyesterdaypercentagechange {get { return GetParameter(309); }set { SetParameter(309, value); }}
-	/// <summary>PID: 310  | Type: read</summary>
+	/// <summary>PID: 310  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotestotalvolume24hyesterday_310 {get { return GetParameter(310); }set { SetParameter(310, value); }}
-	/// <summary>PID: 310  | Type: read</summary>
+	/// <summary>PID: 310  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotestotalvolume24hyesterday {get { return GetParameter(310); }set { SetParameter(310, value); }}
-	/// <summary>PID: 311  | Type: read</summary>
+	/// <summary>PID: 311  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotestotalvolume24hyesterdaypercentagechange_311 {get { return GetParameter(311); }set { SetParameter(311, value); }}
-	/// <summary>PID: 311  | Type: read</summary>
+	/// <summary>PID: 311  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotestotalvolume24hyesterdaypercentagechange {get { return GetParameter(311); }set { SetParameter(311, value); }}
-	/// <summary>PID: 312  | Type: read</summary>
+	/// <summary>PID: 312  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesaltcoinmarketcap_312 {get { return GetParameter(312); }set { SetParameter(312, value); }}
-	/// <summary>PID: 312  | Type: read</summary>
+	/// <summary>PID: 312  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesaltcoinmarketcap {get { return GetParameter(312); }set { SetParameter(312, value); }}
-	/// <summary>PID: 313  | Type: read</summary>
+	/// <summary>PID: 313  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesaltcoinvolume24h_313 {get { return GetParameter(313); }set { SetParameter(313, value); }}
-	/// <summary>PID: 313  | Type: read</summary>
+	/// <summary>PID: 313  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesaltcoinvolume24h {get { return GetParameter(313); }set { SetParameter(313, value); }}
-	/// <summary>PID: 314  | Type: read</summary>
+	/// <summary>PID: 314  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesdefimarketcap_314 {get { return GetParameter(314); }set { SetParameter(314, value); }}
-	/// <summary>PID: 314  | Type: read</summary>
+	/// <summary>PID: 314  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesdefimarketcap {get { return GetParameter(314); }set { SetParameter(314, value); }}
-	/// <summary>PID: 315  | Type: read</summary>
+	/// <summary>PID: 315  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesdefivolume24h_315 {get { return GetParameter(315); }set { SetParameter(315, value); }}
-	/// <summary>PID: 315  | Type: read</summary>
+	/// <summary>PID: 315  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesdefivolume24h {get { return GetParameter(315); }set { SetParameter(315, value); }}
-	/// <summary>PID: 316  | Type: read</summary>
+	/// <summary>PID: 316  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesstablecoinmarketcap_316 {get { return GetParameter(316); }set { SetParameter(316, value); }}
-	/// <summary>PID: 316  | Type: read</summary>
+	/// <summary>PID: 316  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesstablecoinmarketcap {get { return GetParameter(316); }set { SetParameter(316, value); }}
-	/// <summary>PID: 317  | Type: read</summary>
+	/// <summary>PID: 317  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesstablecoinvolume24h_317 {get { return GetParameter(317); }set { SetParameter(317, value); }}
-	/// <summary>PID: 317  | Type: read</summary>
+	/// <summary>PID: 317  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesstablecoinvolume24h {get { return GetParameter(317); }set { SetParameter(317, value); }}
-	/// <summary>PID: 318  | Type: read</summary>
+	/// <summary>PID: 318  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesstablecoin24hpercentagechange_318 {get { return GetParameter(318); }set { SetParameter(318, value); }}
-	/// <summary>PID: 318  | Type: read</summary>
+	/// <summary>PID: 318  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesstablecoin24hpercentagechange {get { return GetParameter(318); }set { SetParameter(318, value); }}
-	/// <summary>PID: 319  | Type: read</summary>
+	/// <summary>PID: 319  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesderivativesvolume24h_319 {get { return GetParameter(319); }set { SetParameter(319, value); }}
-	/// <summary>PID: 319  | Type: read</summary>
+	/// <summary>PID: 319  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesderivativesvolume24h {get { return GetParameter(319); }set { SetParameter(319, value); }}
-	/// <summary>PID: 320  | Type: read</summary>
+	/// <summary>PID: 320  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesderivatives24hpercentagechange_320 {get { return GetParameter(320); }set { SetParameter(320, value); }}
-	/// <summary>PID: 320  | Type: read</summary>
+	/// <summary>PID: 320  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestquotesderivatives24hpercentagechange {get { return GetParameter(320); }set { SetParameter(320, value); }}
 	/// <summary>PID: 1001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
@@ -841,75 +889,75 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Latestlistingstablecmcrank_1005 {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
 	/// <summary>PID: 1005  | Type: read</summary>
 	public System.Object Latestlistingstablecmcrank {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
-	/// <summary>PID: 1006  | Type: read</summary>
+	/// <summary>PID: 1006  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablepriceusd_1006 {get { return GetParameter(1006); }set { SetParameter(1006, value); }}
-	/// <summary>PID: 1006  | Type: read</summary>
+	/// <summary>PID: 1006  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablepriceusd {get { return GetParameter(1006); }set { SetParameter(1006, value); }}
-	/// <summary>PID: 1007  | Type: read</summary>
+	/// <summary>PID: 1007  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablepercentchange24h_1007 {get { return GetParameter(1007); }set { SetParameter(1007, value); }}
-	/// <summary>PID: 1007  | Type: read</summary>
+	/// <summary>PID: 1007  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablepercentchange24h {get { return GetParameter(1007); }set { SetParameter(1007, value); }}
-	/// <summary>PID: 1008  | Type: read</summary>
+	/// <summary>PID: 1008  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablemarketcapusd_1008 {get { return GetParameter(1008); }set { SetParameter(1008, value); }}
-	/// <summary>PID: 1008  | Type: read</summary>
+	/// <summary>PID: 1008  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablemarketcapusd {get { return GetParameter(1008); }set { SetParameter(1008, value); }}
-	/// <summary>PID: 1009  | Type: read</summary>
+	/// <summary>PID: 1009  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablevolume24husd_1009 {get { return GetParameter(1009); }set { SetParameter(1009, value); }}
-	/// <summary>PID: 1009  | Type: read</summary>
+	/// <summary>PID: 1009  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablevolume24husd {get { return GetParameter(1009); }set { SetParameter(1009, value); }}
-	/// <summary>PID: 1010  | Type: read</summary>
+	/// <summary>PID: 1010  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablecirculatingsupply_1010 {get { return GetParameter(1010); }set { SetParameter(1010, value); }}
-	/// <summary>PID: 1010  | Type: read</summary>
+	/// <summary>PID: 1010  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablecirculatingsupply {get { return GetParameter(1010); }set { SetParameter(1010, value); }}
-	/// <summary>PID: 1011  | Type: read</summary>
+	/// <summary>PID: 1011  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablemaxsupply_1011 {get { return GetParameter(1011); }set { SetParameter(1011, value); }}
-	/// <summary>PID: 1011  | Type: read</summary>
+	/// <summary>PID: 1011  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	public System.Object Latestlistingstablemaxsupply {get { return GetParameter(1011); }set { SetParameter(1011, value); }}
-	/// <summary>PID: 1012  | Type: read</summary>
+	/// <summary>PID: 1012  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablelastupdated_1012 {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
-	/// <summary>PID: 1012  | Type: read</summary>
+	/// <summary>PID: 1012  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablelastupdated {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
-	/// <summary>PID: 1013  | Type: read</summary>
+	/// <summary>PID: 1013  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablepercentchange1h_1013 {get { return GetParameter(1013); }set { SetParameter(1013, value); }}
-	/// <summary>PID: 1013  | Type: read</summary>
+	/// <summary>PID: 1013  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablepercentchange1h {get { return GetParameter(1013); }set { SetParameter(1013, value); }}
-	/// <summary>PID: 1014  | Type: read</summary>
+	/// <summary>PID: 1014  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablepercentchange7d_1014 {get { return GetParameter(1014); }set { SetParameter(1014, value); }}
-	/// <summary>PID: 1014  | Type: read</summary>
+	/// <summary>PID: 1014  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablepercentchange7d {get { return GetParameter(1014); }set { SetParameter(1014, value); }}
-	/// <summary>PID: 1015  | Type: read</summary>
+	/// <summary>PID: 1015  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablepercentchange30d_1015 {get { return GetParameter(1015); }set { SetParameter(1015, value); }}
-	/// <summary>PID: 1015  | Type: read</summary>
+	/// <summary>PID: 1015  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablepercentchange30d {get { return GetParameter(1015); }set { SetParameter(1015, value); }}
-	/// <summary>PID: 1016  | Type: read</summary>
+	/// <summary>PID: 1016  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablevolumechange24h_1016 {get { return GetParameter(1016); }set { SetParameter(1016, value); }}
-	/// <summary>PID: 1016  | Type: read</summary>
+	/// <summary>PID: 1016  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablevolumechange24h {get { return GetParameter(1016); }set { SetParameter(1016, value); }}
-	/// <summary>PID: 1017  | Type: read</summary>
+	/// <summary>PID: 1017  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstablefullydilutedmarketcap_1017 {get { return GetParameter(1017); }set { SetParameter(1017, value); }}
-	/// <summary>PID: 1017  | Type: read</summary>
+	/// <summary>PID: 1017  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstablefullydilutedmarketcap {get { return GetParameter(1017); }set { SetParameter(1017, value); }}
-	/// <summary>PID: 1018  | Type: read</summary>
+	/// <summary>PID: 1018  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstabletotalsupply_1018 {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
-	/// <summary>PID: 1018  | Type: read</summary>
+	/// <summary>PID: 1018  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstabletotalsupply {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
-	/// <summary>PID: 1019  | Type: read | DISCREETS: No = 0, Yes = 1</summary>
+	/// <summary>PID: 1019  | Type: read | DISCREETS: No = 0, Yes = 1 | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingstableinfinitesupply_1019 {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
-	/// <summary>PID: 1019  | Type: read | DISCREETS: No = 0, Yes = 1</summary>
+	/// <summary>PID: 1019  | Type: read | DISCREETS: No = 0, Yes = 1 | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Latestlistingstableinfinitesupply {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
 	/// <summary>PID: 2001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
@@ -921,35 +969,35 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Categoriestablename_2002 {get { return GetParameter(2002); }set { SetParameter(2002, value); }}
 	/// <summary>PID: 2002  | Type: read</summary>
 	public System.Object Categoriestablename {get { return GetParameter(2002); }set { SetParameter(2002, value); }}
-	/// <summary>PID: 2003  | Type: read</summary>
+	/// <summary>PID: 2003  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoriestablenumtokens_2003 {get { return GetParameter(2003); }set { SetParameter(2003, value); }}
-	/// <summary>PID: 2003  | Type: read</summary>
+	/// <summary>PID: 2003  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Categoriestablenumtokens {get { return GetParameter(2003); }set { SetParameter(2003, value); }}
-	/// <summary>PID: 2004  | Type: read</summary>
+	/// <summary>PID: 2004  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoriestableavgpricechange_2004 {get { return GetParameter(2004); }set { SetParameter(2004, value); }}
-	/// <summary>PID: 2004  | Type: read</summary>
+	/// <summary>PID: 2004  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Categoriestableavgpricechange {get { return GetParameter(2004); }set { SetParameter(2004, value); }}
-	/// <summary>PID: 2005  | Type: read</summary>
+	/// <summary>PID: 2005  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoriestablevolumechange_2005 {get { return GetParameter(2005); }set { SetParameter(2005, value); }}
-	/// <summary>PID: 2005  | Type: read</summary>
+	/// <summary>PID: 2005  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Categoriestablevolumechange {get { return GetParameter(2005); }set { SetParameter(2005, value); }}
-	/// <summary>PID: 2006  | Type: read</summary>
+	/// <summary>PID: 2006  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoriestablemarketcapusd_2006 {get { return GetParameter(2006); }set { SetParameter(2006, value); }}
-	/// <summary>PID: 2006  | Type: read</summary>
+	/// <summary>PID: 2006  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Categoriestablemarketcapusd {get { return GetParameter(2006); }set { SetParameter(2006, value); }}
-	/// <summary>PID: 2007  | Type: read</summary>
+	/// <summary>PID: 2007  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoriestablemarketcapchange_2007 {get { return GetParameter(2007); }set { SetParameter(2007, value); }}
-	/// <summary>PID: 2007  | Type: read</summary>
+	/// <summary>PID: 2007  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Categoriestablemarketcapchange {get { return GetParameter(2007); }set { SetParameter(2007, value); }}
-	/// <summary>PID: 2008  | Type: read</summary>
+	/// <summary>PID: 2008  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoriestablevolume24h_2008 {get { return GetParameter(2008); }set { SetParameter(2008, value); }}
-	/// <summary>PID: 2008  | Type: read</summary>
+	/// <summary>PID: 2008  | Type: read | EXCEPTIONS: N/A = 9999999999999999</summary>
 	public System.Object Categoriestablevolume24h {get { return GetParameter(2008); }set { SetParameter(2008, value); }}
 	/// <summary>PID: 2009  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]

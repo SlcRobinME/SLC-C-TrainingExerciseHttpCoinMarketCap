@@ -9,9 +9,11 @@ public static class QAction
     {
         try
         {
-            string statusCode = Convert.ToString(protocol.GetParameter(Parameter.latestlistingsstatuscode_100));
+            string statusCode = Convert.ToString(protocol.GetParameter(Parameter.latestlistingsstatuscode_102));
             string json = Convert.ToString(protocol.GetParameter(Parameter.latestlistingsresponse_101));
-            if (!statusCode.Contains("200"))
+
+            protocol.SetParameter(Parameter.latestlistingscommunicationstatus_100, CoinMarketCapService.GetCommunicationStatus(statusCode));
+            if (CoinMarketCapService.GetCommunicationStatus(statusCode) != 1)
             {
                 protocol.Log($"QA{protocol.QActionID}|Unexpected status: {statusCode}, Response: {json}", LogType.Error, LogLevel.NoLogging);
                 return;
@@ -23,7 +25,7 @@ public static class QAction
                 return;
             }
 
-            Welcome welcome = Welcome.FromJson(json);
+            CryptocurrencyListResponse welcome = CryptocurrencyListResponse.FromJson(json);
             if (welcome?.Data == null)
             {
                 protocol.Log($"QA{protocol.QActionID}|'data' array not found or deserialization failed.", LogType.Error, LogLevel.NoLogging);

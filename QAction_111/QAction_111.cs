@@ -1,8 +1,6 @@
-using QuickType;
-using Skyline.DataMiner.Net.Apps.UserDefinableApis;
-using Skyline.DataMiner.Scripting;
 using System;
-using System.Collections.Generic;
+using QuickType;
+using Skyline.DataMiner.Scripting;
 
 public static class QAction
 {
@@ -10,9 +8,11 @@ public static class QAction
     {
         try
         {
-            string statusCode = Convert.ToString(protocol.GetParameter(Parameter.categoriesstatuscode_110));
+            string statusCode = Convert.ToString(protocol.GetParameter(Parameter.categoriesstatuscode_112));
             string json = Convert.ToString(protocol.GetParameter(Parameter.categoriesresponse_111));
-            if (!statusCode.Contains("200"))
+
+            protocol.SetParameter(Parameter.categoriescommunicationstatus_110, CoinMarketCapService.GetCommunicationStatus(statusCode));
+            if (CoinMarketCapService.GetCommunicationStatus(statusCode) != 1)
             {
                 protocol.Log($"QA{protocol.QActionID}|Unexpected status: {statusCode}, Response: {json}", LogType.Error, LogLevel.NoLogging);
                 return;

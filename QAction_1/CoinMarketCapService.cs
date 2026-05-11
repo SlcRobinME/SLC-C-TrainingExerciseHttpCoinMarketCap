@@ -13,11 +13,25 @@ public class CoinMarketCapService
         _protocol = protocol;
     }
 
-    public void FillLatestListings(Welcome welcome)
+    public static int GetCommunicationStatus(string statusCode)
+    {
+        if (statusCode.Contains("200")) return 1; // OK
+        if (statusCode.Contains("400")) return 2; // Bad Request
+        if (statusCode.Contains("401") ||
+            statusCode.Contains("403") ||
+            statusCode.Contains("404") ||
+            statusCode.Contains("429")) return 3; // Unauthorized / Not Found / Rate Limited
+        if (statusCode.Contains("500") ||
+            statusCode.Contains("502") ||
+            statusCode.Contains("503")) return 4; // Server Error
+        return 4; // Unknown
+    }
+
+    public void FillLatestListings(CryptocurrencyListResponse welcome)
     {
         var tableRows = new List<LatestlistingstableQActionRow>();
 
-        foreach (Datum item in welcome.Data)
+        foreach (CryptocurrencyEntry item in welcome.Data)
         {
             Usd usd = item.Quote?.Usd;
 

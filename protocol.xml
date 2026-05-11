@@ -18,7 +18,7 @@
 	<DeviceOID>1</DeviceOID>
 	<ElementType>Monitor</ElementType>
 	<Type relativeTimers="true">http</Type>
-	<Display defaultPage="General" pageOrder="General;Latest Listings;Categories;Latest Quotes" wideColumnPages="Latest Listings;Categories" />
+	<Display defaultPage="General" pageOrder="General;Communications;----------;Latest Listings;Categories;Latest Quotes" wideColumnPages="Latest Listings;Categories" />
 	<SNMP includepages="true">auto</SNMP>
 	<Compliancies>
 		<CassandraReady>true</CassandraReady>
@@ -159,7 +159,7 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Communications</Page>
 						<Column>0</Column>
 						<Row>0</Row>
 					</Position>
@@ -185,7 +185,7 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Communications</Page>
 						<Column>0</Column>
 						<Row>0</Row>
 					</Position>
@@ -197,23 +197,23 @@
 		</Param>
 		
 		<Param id="100">
-			<Name>LatestListingsStatusCode</Name>
-			<Description>Latest Listings Status Code</Description>
+			<Name>LatestListingsCommunicationStatus</Name>
+			<Description>Latest Listings Communication Status</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>Latest Listings Status Code</Subtext>
+				<Subtext>Latest Listings Communication Status</Subtext>
 			</Information>
 			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
-				<Normal>*200*</Normal>
-				<WaH>*400*</WaH>
-				<MiH>*401*;*403*;*404*;*429*</MiH>
-				<MaH>*500*;*502*;*503*</MaH>
+				<Normal>1</Normal>
+				<WaH>2</WaH>
+				<MiH>3</MiH>
+				<MaH>4</MaH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -221,12 +221,30 @@
 					<Position>
 						<Page>General</Page>
 						<Column>0</Column>
-						<Row>1</Row>
+						<Row>0</Row>
 					</Position>
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type>string</Type>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>OK</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Bad Request</Display>
+						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Unauthorized / Not Found / Rate Limited</Display>
+						<Value>3</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Server Error</Display>
+						<Value>4</Value>
+					</Discreet>
+				</Discreets>
 			</Measurement>
 		</Param>
 		<Param id="101">
@@ -242,18 +260,18 @@
 				<RTDisplay>false</RTDisplay>
 			</Display>
 		</Param>
-		<Param id="110">
-			<Name>CategoriesStatusCode</Name>
-			<Description>Categories Status Code</Description>
+		<Param id="102">
+			<Name>LatestListingsStatusCode</Name>
+			<Description>Latest Listings Status Code</Description>
 			<Type>read</Type>
+			<Information>
+				<Subtext>Latest Listings HTTP Status Code</Subtext>
+			</Information>
 			<Interprete>
 				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Information>
-				<Subtext>Categories Status Code</Subtext>
-			</Information>
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>*200*</Normal>
@@ -265,7 +283,7 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Communications</Page>
 						<Column>0</Column>
 						<Row>2</Row>
 					</Position>
@@ -273,6 +291,57 @@
 			</Display>
 			<Measurement>
 				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="110">
+			<Name>CategoriesCommunicationStatus</Name>
+			<Description>Categories Communication Status</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Categories Communication Status</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>1</Normal>
+				<WaH>2</WaH>
+				<MiH>3</MiH>
+				<MaH>4</MaH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>OK</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Bad Request</Display>
+						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Unauthorized / Not Found / Rate Limited</Display>
+						<Value>3</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Server Error</Display>
+						<Value>4</Value>
+					</Discreet>
+				</Discreets>
 			</Measurement>
 		</Param>
 		<Param id="111">
@@ -288,18 +357,18 @@
 				<RTDisplay>false</RTDisplay>
 			</Display>
 		</Param>
-		<Param id="120">
-			<Name>CategoryDetailStatusCode</Name>
-			<Description>Category Detail Status Code</Description>
+		<Param id="112">
+			<Name>CategoriesStatusCode</Name>
+			<Description>Categories Status Code</Description>
 			<Type>read</Type>
+			<Information>
+				<Subtext>Categories HTTP Status Code</Subtext>
+			</Information>
 			<Interprete>
 				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Information>
-				<Subtext>Category Detail Status Code</Subtext>
-			</Information>
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>*200*</Normal>
@@ -311,7 +380,7 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Communications</Page>
 						<Column>0</Column>
 						<Row>3</Row>
 					</Position>
@@ -319,6 +388,57 @@
 			</Display>
 			<Measurement>
 				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="120">
+			<Name>CategoryDetailCommunicationStatus</Name>
+			<Description>Category Detail Communication Status</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Category Detail Communication Status</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>1</Normal>
+				<WaH>2</WaH>
+				<MiH>3</MiH>
+				<MaH>4</MaH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>OK</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Bad Request</Display>
+						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Unauthorized / Not Found / Rate Limited</Display>
+						<Value>3</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Server Error</Display>
+						<Value>4</Value>
+					</Discreet>
+				</Discreets>
 			</Measurement>
 		</Param>
 		<Param id="121">
@@ -334,18 +454,18 @@
 				<RTDisplay>false</RTDisplay>
 			</Display>
 		</Param>
-		<Param id="130">
-			<Name>LatestQuotesStatusCode</Name>
-			<Description>Latest Quotes Status Code</Description>
+		<Param id="122">
+			<Name>CategoryDetailStatusCode</Name>
+			<Description>Category Detail Status Code</Description>
 			<Type>read</Type>
+			<Information>
+				<Subtext>Category Detail HTTP Status Code</Subtext>
+			</Information>
 			<Interprete>
 				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Information>
-				<Subtext>Latest Quotes Status Code</Subtext>
-			</Information>
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>*200*</Normal>
@@ -357,7 +477,7 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Communications</Page>
 						<Column>0</Column>
 						<Row>4</Row>
 					</Position>
@@ -365,6 +485,57 @@
 			</Display>
 			<Measurement>
 				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="130">
+			<Name>LatestQuotesCommunicationStatus</Name>
+			<Description>Latest Quotes Communication Status</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Latest Quotes Communication Status</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>1</Normal>
+				<WaH>2</WaH>
+				<MiH>3</MiH>
+				<MaH>4</MaH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>OK</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Bad Request</Display>
+						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Unauthorized / Not Found / Rate Limited</Display>
+						<Value>3</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Server Error</Display>
+						<Value>4</Value>
+					</Discreet>
+				</Discreets>
 			</Measurement>
 		</Param>
 		<Param id="131">
@@ -379,6 +550,39 @@
 			<Display>
 				<RTDisplay>false</RTDisplay>
 			</Display>
+		</Param>
+		<Param id="132">
+			<Name>LatestQuotesStatusCode</Name>
+			<Description>Latest Quotes Status Code</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Latest Quotes HTTP Status Code</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>*200*</Normal>
+				<WaH>*400*</WaH>
+				<MiH>*401*;*403*;*404*;*429*</MiH>
+				<MaH>*500*;*502*;*503*</MaH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Communications</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
 		</Param>
 		<Param id="140">
 			<Name>CategoryRefreshId</Name>
@@ -446,6 +650,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -484,15 +694,18 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-9999999999999999</Low>
-					<High>9999999999999999</High>
-				</Range>
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
@@ -501,6 +714,7 @@
 					</Position>
 				</Positions>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
@@ -521,14 +735,17 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>%</Units>
-				<Range>
-					<Low>-9999999999999999</Low>
-					<High>9999999999999999</High>
-				</Range>
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
@@ -537,6 +754,7 @@
 					</Position>
 				</Positions>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
@@ -562,6 +780,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
 			<Display>
@@ -631,14 +855,17 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>-10000</Low>
-					<High>10000</High>
-				</Range>
 				<Positions>
 					<Position>
 						<Page>Latest Quotes</Page>
@@ -648,6 +875,7 @@
 				</Positions>
 				<Units>%</Units>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
@@ -664,6 +892,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
 			<Display>
@@ -700,6 +934,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
@@ -738,7 +978,14 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>4</Decimals>
@@ -750,11 +997,8 @@
 						<Row>4</Row>
 					</Position>
 				</Positions>
-				<Range>
-					<Low>-1000</Low>
-					<High>1000</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -782,6 +1026,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -820,7 +1070,14 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>4</Decimals>
@@ -832,11 +1089,8 @@
 						<Row>6</Row>
 					</Position>
 				</Positions>
-				<Range>
-					<Low>-1000</Low>
-					<High>1000</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -864,6 +1118,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -902,6 +1162,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -940,6 +1206,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -978,6 +1250,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1016,6 +1294,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1054,6 +1338,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1092,7 +1382,14 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>4</Decimals>
@@ -1104,11 +1401,8 @@
 						<Row>3</Row>
 					</Position>
 				</Positions>
-				<Range>
-					<Low>-1000</Low>
-					<High>1000</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -1136,6 +1430,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1174,7 +1474,14 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>4</Decimals>
@@ -1186,11 +1493,8 @@
 						<Row>13</Row>
 					</Position>
 				</Positions>
-				<Range>
-					<Low>-1000</Low>
-					<High>1000</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -1216,7 +1520,7 @@
 			</Information>
 			<Type>array</Type>
 			<ArrayOptions index="0" options=";naming=/1001">
-				<ColumnOption idx="0" pid="1001" type="custom" options="" />
+				<ColumnOption idx="0" pid="1001" type="retrieved" options="" />
 				<ColumnOption idx="1" pid="1002" type="retrieved" options="" />
 				<ColumnOption idx="2" pid="1003" type="retrieved" options="" />
 				<ColumnOption idx="3" pid="1004" type="retrieved" options="" />
@@ -1362,6 +1666,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1393,16 +1703,20 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -1430,6 +1744,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1461,6 +1781,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
@@ -1475,7 +1801,6 @@
 				<!-- /SuppressValidator 2.9.4 -->
 				<Range>
 					<Low>0</Low>
-					<High>9999999999999999</High>
 				</Range>
 			</Display>
 			<Measurement>
@@ -1493,6 +1818,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
@@ -1523,6 +1854,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
@@ -1553,6 +1890,12 @@
 				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1572,16 +1915,20 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -1609,16 +1956,20 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -1646,16 +1997,20 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-10000</Low>
-					<High>10000</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -1683,16 +2038,20 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-10000</Low>
-					<High>10000</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
@@ -1720,6 +2079,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
@@ -1751,6 +2116,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
@@ -1781,6 +2152,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1813,7 +2190,7 @@
 			</Information>
 			<Type>array</Type>
 			<ArrayOptions index="0" options=";naming=/2001">
-				<ColumnOption idx="0" pid="2001" type="custom" options="" />
+				<ColumnOption idx="0" pid="2001" type="retrieved" options="" />
 				<ColumnOption idx="1" pid="2002" type="retrieved" options="" />
 				<ColumnOption idx="2" pid="2003" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
 				<ColumnOption idx="3" pid="2004" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
@@ -1822,7 +2199,7 @@
 				<ColumnOption idx="6" pid="2007" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
 				<ColumnOption idx="7" pid="2008" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
 				<ColumnOption idx="8" pid="2009" type="retrieved" options="" />
-				<ColumnOption idx="9" pid="2010" type="custom" options="" />
+				<ColumnOption idx="9" pid="2010" type="retrieved" options="" />
 			</ArrayOptions>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1893,6 +2270,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
 			<Display>
@@ -1929,16 +2312,20 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-10000</Low>
-					<High>10000</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -1966,16 +2353,20 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-10000</Low>
-					<High>10000</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -1991,6 +2382,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -2022,16 +2419,21 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
+			<!-- SuppressValidator 2.11.1 range not neaded -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
+				<Units>%</Units>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
 			<Alarm>
 				<Monitored>true</Monitored>
@@ -2065,6 +2467,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="9999999999999999">
+						<Display state="disabled">N/A</Display>
+						<Value>9999999999999999</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
 			<Display>
@@ -2132,7 +2540,7 @@
 						<Header key="Authorization" pid="20"></Header>
 					</Headers>
 				</Request>
-				<Response statusCode="100">
+				<Response statusCode="102">
 					<Content pid="101" />
 				</Response>
 			</Connection>
@@ -2144,7 +2552,7 @@
 						<Header key="Authorization" pid="20"></Header>
 					</Headers>
 				</Request>
-				<Response statusCode="110">
+				<Response statusCode="112">
 					<Content pid="111" />
 				</Response>
 			</Connection>
@@ -2159,7 +2567,7 @@
 						<Parameter key="id" pid="140" />
 					</Parameters>
 				</Request>
-				<Response statusCode="120">
+				<Response statusCode="122">
 					<Content pid="121" />
 				</Response>
 			</Connection>
@@ -2171,7 +2579,7 @@
 						<Header key="Authorization" pid="20"></Header>
 					</Headers>
 				</Request>
-				<Response statusCode="130">
+				<Response statusCode="132">
 					<Content pid="131" />
 				</Response>
 			</Connection>
@@ -2194,15 +2602,6 @@
 		</QAction>
 	</QActions>
 	<Triggers>
-		<Trigger id="1">
-			<Name>After Startup</Name>
-			<On>protocol</On>
-			<Time>after startup</Time>
-			<Type>action</Type>
-			<Content>
-				<Id>1</Id>
-			</Content>
-		</Trigger>
 		<Trigger id="20">
 			<Name>On Bearer Token Change</Name>
 			<On id="20">parameter</On>
@@ -2224,11 +2623,6 @@
 		</Trigger>
 	</Triggers>
 	<Actions>
-		<Action id="1">
-			<Name>After Startup Group</Name>
-			<On id="2">group</On>
-			<Type>execute next</Type>
-		</Action>
 		<Action id="21">
 			<Name>Execute Group 100</Name>
 			<On id="100">group</On>
@@ -2251,16 +2645,6 @@
 		</Action>
 	</Actions>
 	<Groups>
-		<Group id="2">
-			<Name>After Startup</Name>
-			<Description>After Startup</Description>
-			<Type>poll</Type>
-			<Content>
-				<Session>1</Session>
-				<Session>2</Session>
-				<Session>4</Session>
-			</Content>
-		</Group>
 		<Group id="100">
 			<Name>Get Latest Listings</Name>
 			<Description>Get Latest Listings</Description>
@@ -2314,9 +2698,18 @@
 		</Timer>
 	</Timers>
 	<PortSettings name="HTTP Connection">
+		<IPport>
+			<DefaultValue>443</DefaultValue>
+		</IPport>
 		<BusAddress>
 			<Disabled>true</Disabled>
 		</BusAddress>
+		<TimeoutTime>
+			<DefaultValue>15000</DefaultValue>
+		</TimeoutTime>
+		<Retries>
+			<DefaultValue>3</DefaultValue>
+		</Retries>
 	</PortSettings>
 	<VersionHistory>
 		<Branches>

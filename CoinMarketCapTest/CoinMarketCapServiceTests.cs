@@ -18,11 +18,11 @@
 			var service = new CoinMarketCapService(protocolMock.Object);
 
 			var lastUpdated = new DateTimeOffset(2024, 1, 15, 10, 30, 0, TimeSpan.Zero);
-			var welcome = new Welcome
+			var cryptocurrencyListResponse = new CryptocurrencyListResponse
 			{
 				Data = new[]
 				{
-					new Datum
+					new CryptocurrencyEntry
 					{
 						Id = 1,
 						Name = "Bitcoin",
@@ -47,7 +47,7 @@
 			};
 
 			// Act
-			service.FillLatestListings(welcome);
+			service.FillLatestListings(cryptocurrencyListResponse);
 
 			// Assert
 			protocolMock.Assert()
@@ -82,11 +82,11 @@
 			var protocolMock = new SLProtocolMock<ConcreteSLProtocolExt>();
 			var service = new CoinMarketCapService(protocolMock.Object);
 
-			var welcome = new Welcome
+			var cryptocurrencyListResponse = new CryptocurrencyListResponse
 			{
 				Data = new[]
 				{
-					new Datum
+					new CryptocurrencyEntry
 					{
 						Id = 2,
 						Name = "SomeCoin",
@@ -101,7 +101,7 @@
 			};
 
 			// Act
-			service.FillLatestListings(welcome);
+			service.FillLatestListings(cryptocurrencyListResponse);
 
 			// Assert
 			var row = protocolMock.Assert()
@@ -123,18 +123,18 @@
 			var protocolMock = new SLProtocolMock<ConcreteSLProtocolExt>();
 			var service = new CoinMarketCapService(protocolMock.Object);
 
-			var welcome = new Welcome
+			var cryptocurrencyListResponse = new CryptocurrencyListResponse
 			{
 				Data = new[]
 				{
-					new Datum { Id = 1, Name = "Bitcoin",  Symbol = "BTC",  Slug = "bitcoin",  CmcRank = 1, Quote = new Quote { Usd = new Usd { LastUpdated = DateTimeOffset.UtcNow } } },
-					new Datum { Id = 2, Name = "Ethereum", Symbol = "ETH",  Slug = "ethereum", CmcRank = 2, Quote = new Quote { Usd = new Usd { LastUpdated = DateTimeOffset.UtcNow } } },
-					new Datum { Id = 3, Name = "Tether",   Symbol = "USDT", Slug = "tether",   CmcRank = 3, Quote = new Quote { Usd = new Usd { LastUpdated = DateTimeOffset.UtcNow } } },
+					new CryptocurrencyEntry { Id = 1, Name = "Bitcoin",  Symbol = "BTC",  Slug = "bitcoin",  CmcRank = 1, Quote = new Quote { Usd = new Usd { LastUpdated = DateTimeOffset.UtcNow } } },
+					new CryptocurrencyEntry { Id = 2, Name = "Ethereum", Symbol = "ETH",  Slug = "ethereum", CmcRank = 2, Quote = new Quote { Usd = new Usd { LastUpdated = DateTimeOffset.UtcNow } } },
+					new CryptocurrencyEntry { Id = 3, Name = "Tether",   Symbol = "USDT", Slug = "tether",   CmcRank = 3, Quote = new Quote { Usd = new Usd { LastUpdated = DateTimeOffset.UtcNow } } },
 				},
 			};
 
 			// Act
-			service.FillLatestListings(welcome);
+			service.FillLatestListings(cryptocurrencyListResponse);
 
 			// Assert
 			protocolMock.Assert()

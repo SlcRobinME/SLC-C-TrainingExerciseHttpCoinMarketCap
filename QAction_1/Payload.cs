@@ -4,7 +4,7 @@
 //
 //    using QuickType;
 //
-//    var welcome = Welcome.FromJson(jsonString);
+//    var cryptocurrencyListResponse = CryptocurrencyListResponse.FromJson(jsonString);
 
 namespace QuickType
 {
@@ -37,25 +37,25 @@ namespace QuickType
             value.HasValue ? (object)value.Value.ToString(format) : NotAvailable.DateTime;
     }
 
-    public partial class Welcome
+    public partial class CryptocurrencyListResponse
     {
         [JsonProperty("status")]
         public Status Status { get; set; }
 
         [JsonProperty("data")]
-        public Datum[] Data { get; set; }
+        public CryptocurrencyEntry[] Data { get; set; }
 
-        public static Welcome FromJson(string json) =>
-            JsonConvert.DeserializeObject<Welcome>(json, Converter.Settings);
+        public static CryptocurrencyListResponse FromJson(string json) =>
+            JsonConvert.DeserializeObject<CryptocurrencyListResponse>(json, Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Welcome self) =>
+        public static string ToJson(this CryptocurrencyListResponse self) =>
             JsonConvert.SerializeObject(self, Converter.Settings);
     }
 
-    public partial class Datum
+    public partial class CryptocurrencyEntry
     {
         [JsonProperty("id")]
         public long Id { get; set; }
