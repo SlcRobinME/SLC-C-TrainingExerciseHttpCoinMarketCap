@@ -15,7 +15,7 @@ public static class QAction
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|MethodName|Exception setting Bearer token", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|MethodName|Exception setting Bearer token: {ex.Message}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
 }

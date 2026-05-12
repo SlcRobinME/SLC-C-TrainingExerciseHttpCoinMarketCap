@@ -15,15 +15,19 @@ public class CoinMarketCapService
 
     public static int GetCommunicationStatus(string statusCode)
     {
-        if (statusCode.Contains("200")) return 1; // OK
-        if (statusCode.Contains("400")) return 2; // Bad Request
+        if (statusCode.Contains("200"))
+            return 1; // OK
+        if (statusCode.Contains("400"))
+            return 2; // Bad Request
         if (statusCode.Contains("401") ||
             statusCode.Contains("403") ||
             statusCode.Contains("404") ||
-            statusCode.Contains("429")) return 3; // Unauthorized / Not Found / Rate Limited
+            statusCode.Contains("429"))
+            return 3; // Unauthorized / Not Found / Rate Limited
         if (statusCode.Contains("500") ||
             statusCode.Contains("502") ||
-            statusCode.Contains("503")) return 4; // Server Error
+            statusCode.Contains("503"))
+            return 4; // Server Error
         return 4; // Unknown
     }
 

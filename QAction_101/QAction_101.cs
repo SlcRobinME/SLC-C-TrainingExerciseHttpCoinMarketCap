@@ -25,14 +25,14 @@ public static class QAction
                 return;
             }
 
-            CryptocurrencyListResponse welcome = CryptocurrencyListResponse.FromJson(json);
-            if (welcome?.Data == null)
+            CryptocurrencyListResponse cryptocurrencyListResponse = CryptocurrencyListResponse.FromJson(json);
+            if (cryptocurrencyListResponse?.Data == null)
             {
                 protocol.Log($"QA{protocol.QActionID}|'data' array not found or deserialization failed.", LogType.Error, LogLevel.NoLogging);
                 return;
             }
 
-            new CoinMarketCapService(protocol).FillLatestListings(welcome);
+            new CoinMarketCapService(protocol).FillLatestListings(cryptocurrencyListResponse);
         }
         catch (Exception ex)
         {
