@@ -1,5 +1,5 @@
-using Skyline.DataMiner.Scripting;
 using System;
+using Skyline.DataMiner.Scripting;
 
 /// <summary>
 /// DataMiner QAction Class.
@@ -26,11 +26,13 @@ public static class QAction
 			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
-    private static string GetRowKey(SLProtocolExt protocol)
+
+	private static string GetRowKey(SLProtocolExt protocol)
     {
         return Convert.ToString(protocol.RowKey());
     }
-    private static void SetCategoryDetailRequestId(SLProtocolExt protocol, string categoryId)
+
+	private static void SetCategoryDetailRequestId(SLProtocolExt protocol, string categoryId)
     {
         protocol.SetParameter(Parameter.categorydetailrequestid_210, categoryId);
     }

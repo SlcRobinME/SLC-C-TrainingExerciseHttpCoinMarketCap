@@ -1,6 +1,6 @@
-using Skyline.DataMiner.Scripting;
 using System;
 using QAction_1;
+using Skyline.DataMiner.Scripting;
 
 /// <summary>
 /// DataMiner QAction Class.
@@ -15,9 +15,7 @@ public static class QAction
 	{
 		try
 		{
-            string statusCode = Convert.ToString(protocol.GetParameter(Parameter.latestquotesstatuscode_300));
-
-            if (!statusCode.Contains("HTTP/1.1 200"))
+            if (!CommunicationHelper.ValidateStatusCode(protocol, Parameter.categorydetailstatuscode_202, Parameter.categoriescommunicationstatus_204, out string statusCode))
             {
                 protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Unexpected status code: {statusCode}", LogType.Error, LogLevel.NoLogging);
                 return;
@@ -34,7 +32,8 @@ public static class QAction
             {
                 return;
             }
-            protocol.Log($"QA{protocol.QActionID}|UpdateCategoryRow|Category ID: '{categoryDetail.Data.Id}'", LogType.Error, LogLevel.NoLogging);
+
+            protocol.Log($"QA{protocol.QActionID}|UpdateCategoryRow|Category ID: '{categoryDetail.Data.Id}'", LogType.DebugInfo, LogLevel.NoLogging);
 
             CategoryDetailHelper.UpdateCategoryRow(protocol, categoryDetail.Data);
         }
@@ -44,7 +43,7 @@ public static class QAction
 		}
 	}
 
-    public static string GetResponse(SLProtocolExt protocol)
+	public static string GetResponse(SLProtocolExt protocol)
     {
         return Convert.ToString(protocol.GetParameter(Parameter.categorydetailresponse_203));
     }

@@ -1,6 +1,6 @@
-using Skyline.DataMiner.Scripting;
 using System;
 using QAction_1;
+using Skyline.DataMiner.Scripting;
 
 /// <summary>
 /// DataMiner QAction Class.
@@ -15,9 +15,7 @@ public static class QAction
 	{
 		try
 		{
-            string statusCode = Convert.ToString(protocol.GetParameter(Parameter.categoriesstatuscode_200));
-
-            if (!statusCode.Contains("HTTP/1.1 200"))
+            if (!CommunicationHelper.ValidateStatusCode(protocol, Parameter.categoriesstatuscode_200, Parameter.categoriescommunicationstatus_204, out string statusCode))
             {
                 protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Unexpected status code: {statusCode}", LogType.Error, LogLevel.NoLogging);
                 return;

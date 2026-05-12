@@ -19,14 +19,16 @@ public static class QAction
         }
         catch (Exception ex)
         {
-            protocol.Log($"QA{protocol.QActionID}|Run|Exception ", LogType.Error, LogLevel.NoLogging);
+            protocol.Log($"QA{protocol.QActionID}|Run|Exception{ex.ToString()} ", LogType.Error, LogLevel.NoLogging);
         }
     }
-    private static string GetWrittenToken(SLProtocol protocol)
+
+	private static string GetWrittenToken(SLProtocol protocol)
     {
         return Convert.ToString(protocol.GetParameter(Parameter.Write.bearertoken_11));
     }
-    private static void SetBearerToken(SLProtocol protocol, string token)
+
+	private static void SetBearerToken(SLProtocol protocol, string token)
     {
         protocol.SetParameter(Parameter.bearertoken_10, "Bearer " + token.Trim());
     }

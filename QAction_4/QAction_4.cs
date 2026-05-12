@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
 using QAction_1;
 using Skyline.DataMiner.Scripting;
-using System.Linq;
 
 public static class QAction
 {
@@ -11,20 +8,19 @@ public static class QAction
     {
         try
         {
-
-            string statusCode = Convert.ToString(protocol.GetParameter(Parameter.latestlistingsstatuscode_100));
-
-            if (!statusCode.Contains("HTTP/1.1 200"))
+            if (!CommunicationHelper.ValidateStatusCode(protocol, Parameter.latestlistingsstatuscode_100, Parameter.latestlistingscommunicationstatus_102, out string statusCode))
             {
                 protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Unexpected status code: {statusCode}", LogType.Error, LogLevel.NoLogging);
                 return;
             }
+
             string response = LatestListingsHelper.GetResponse(protocol);
 
             if (string.IsNullOrEmpty(response))
                 return;
 
             var data = LatestListingsHelper.ParseResponse(response);
+            protocol.Log($"QA4|Debug|First item name: '{data?.Data?[0]?.Name}', Price: '{data?.Data?[0]?.Quote?["USD"]?.Price}'", LogType.DebugInfo, LogLevel.NoLogging);
 
             if (data?.Data == null)
                 return;

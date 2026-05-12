@@ -57,6 +57,9 @@
     <PackageReference Include="MSTest.TestFramework">
       <Version>2.2.10</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Skyline.DataMiner.Utils.UnitTestingFramework.Protocol">
       <Version>1.0.4</Version>
     </PackageReference>
@@ -65,10 +68,6 @@
     <ProjectReference Include="..\QAction_1\QAction_1.csproj">
       <Project>{f3663cfe-88be-c668-4e1a-b1e1edf79c8b}</Project>
       <Name>QAction_1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\QAction_2\QAction_2.csproj">
-      <Project>{b81b949e-fe2c-df14-5d9e-21a027b0dd8e}</Project>
-      <Name>QAction_2</Name>
     </ProjectReference>
     <ProjectReference Include="..\QAction_3\QAction_3.csproj">
       <Project>{bb70c48b-a116-6c00-503d-8614f9cd9212}</Project>

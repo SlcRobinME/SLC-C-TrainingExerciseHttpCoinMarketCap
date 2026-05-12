@@ -1,31 +1,13 @@
-﻿using Alphaleonis.Win32.Filesystem;
-using Castle.Components.DictionaryAdapter.Xml;
-using FluentAssertions;
-using Microsoft.CodeAnalysis;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using QAction_1;
-using Skyline.DataMiner.CICD.Parsers.Protocol.Xml.HTTP;
-using Skyline.DataMiner.Net;
-using Skyline.DataMiner.Net.Messages.SLDataGateway;
-using Skyline.DataMiner.Scripting;
-using Skyline.DataMiner.Utils.UnitTestingFramework.Protocol;
-using SLDataGateway.API.Querying;
-using SLLoggerUtil.LoggerCategoryUtil.DataGateway;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Security.Policy;
-using System.ServiceModel.Channels;
-using System.Xml.Linq;
-using static Skyline.DataMiner.Net.Ticketing.Validators.StateEnum;
-using static Skyline.DataMiner.Net.Time.EventExecutionTimeInfo;
-using static Skyline.DataMiner.Scripting.Parameter;
-
-
-namespace CoinMarketCapTests
+﻿namespace CoinMarketCapTests
 {
+
+	using FluentAssertions;
+
+	using Microsoft.VisualStudio.TestTools.UnitTesting;
+	using QAction_1;
+    using Skyline.DataMiner.Scripting;
+    using Skyline.DataMiner.Utils.UnitTestingFramework.Protocol;
+    using static Skyline.DataMiner.Scripting.Parameter;
     [TestClass]
     public class LatestListingsJsonParsingTests
     {
@@ -64,9 +46,9 @@ namespace CoinMarketCapTests
             var result = LatestListingsHelper.ParseResponse(TestData.SingleListingJson);
             var usd = result.Data[0].Quote["USD"];
             // Assert
-            Assert.AreEqual(101815.90673154943, usd.Price, 0.0001);
-            Assert.AreEqual(45620279708.066856, usd.Volume24h, 0.01);
-            Assert.AreEqual(2022570747272.2815, usd.MarketCap, 0.01);
+            Assert.AreEqual(101815.90673154943, usd.Price.Value, 0.0001);
+            Assert.AreEqual(45620279708.066856, usd.Volume24h.Value, 0.01);
+            Assert.AreEqual(2022570747272.2815, usd.MarketCap.Value, 0.01);
             Assert.AreEqual(-0.4304306, usd.PercentChange1h);
             Assert.AreEqual(-1.83894047, usd.PercentChange24h);
             Assert.AreEqual(2.60309348, usd.PercentChange7d);
@@ -109,7 +91,7 @@ namespace CoinMarketCapTests
             // Act
             var row = LatestListingsHelper.BuildRow(ethereum, usd);
             // Assert
-            Assert.AreEqual(0.0, row.Latestlistingsmaxsupply_1006);
+            Assert.AreEqual(-1.0, row.Latestlistingsmaxsupply_1006);
         }
         //Verifies that the listing ID is correctly converted to string when building a row.
         [TestMethod]
@@ -386,11 +368,11 @@ namespace CoinMarketCapTests
             // Assert
             Assert.AreEqual("6823f463f4035758156a501c", result.Data.Id);
             Assert.AreEqual(8, result.Data.NumTokens);
-            Assert.AreEqual(-19.930721654598546, result.Data.AvgPriceChange, 0.0001);
-            Assert.AreEqual(319300362.08430588, result.Data.MarketCap, 0.01);
-            Assert.AreEqual(-18.342860046142, result.Data.MarketCapChange, 0.0001);
-            Assert.AreEqual(490986489.37452543, result.Data.Volume, 0.01);
-            Assert.AreEqual(-0.565025088224, result.Data.VolumeChange, 0.0001);
+            Assert.AreEqual(-19.930721654598546, result.Data.AvgPriceChange.Value, 0.0001);
+            Assert.AreEqual(319300362.08430588, result.Data.MarketCap.Value, 0.01);
+            Assert.AreEqual(-18.342860046142, result.Data.MarketCapChange.Value, 0.0001);
+            Assert.AreEqual(490986489.37452543, result.Data.Volume.Value, 0.01);
+            Assert.AreEqual(-0.565025088224, result.Data.VolumeChange.Value, 0.0001);
             Assert.AreEqual("2026-05-07T05:57:27.0338434Z", result.Data.LastUpdated);
         }
         //Verifies that a null data property in JSON is correctly mapped to null.

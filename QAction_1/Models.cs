@@ -1,12 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QAction_1
+﻿namespace QAction_1
 {
+    using System.Collections.Generic;
+    using Newtonsoft.Json;
+
     public class LatestListingsResponse
     {
         [JsonProperty("data")]
@@ -28,7 +24,7 @@ namespace QAction_1
         public int CmcRank { get; set; }
 
         [JsonProperty("circulating_supply")]
-        public double CirculatingSupply { get; set; }
+        public double? CirculatingSupply { get; set; }
 
         [JsonProperty("max_supply")]
         public double? MaxSupply { get; set; }
@@ -40,22 +36,22 @@ namespace QAction_1
     public class Quote
     {
         [JsonProperty("price")]
-        public double Price { get; set; }
+        public double? Price { get; set; }
 
         [JsonProperty("market_cap")]
-        public double MarketCap { get; set; }
+        public double? MarketCap { get; set; }
 
         [JsonProperty("volume_24h")]
-        public double Volume24h { get; set; }
+        public double? Volume24h { get; set; }
 
         [JsonProperty("percent_change_1h")]
-        public double PercentChange1h { get; set; }
+        public double? PercentChange1h { get; set; }
 
         [JsonProperty("percent_change_24h")]
-        public double PercentChange24h { get; set; }
+        public double? PercentChange24h { get; set; }
 
         [JsonProperty("percent_change_7d")]
-        public double PercentChange7d { get; set; }
+        public double? PercentChange7d { get; set; }
     }
 
     public class CategoriesResponse
@@ -79,27 +75,26 @@ namespace QAction_1
         public string Name { get; set; }
 
         [JsonProperty("num_tokens")]
-        public int NumTokens { get; set; }
+        public int? NumTokens { get; set; }
 
         [JsonProperty("avg_price_change")]
-        public double AvgPriceChange { get; set; }
+        public double? AvgPriceChange { get; set; }
 
         [JsonProperty("market_cap")]
-        public double MarketCap { get; set; }
+        public double? MarketCap { get; set; }
 
         [JsonProperty("market_cap_change")]
-        public double MarketCapChange { get; set; }
+        public double? MarketCapChange { get; set; }
 
         [JsonProperty("volume")]
-        public double Volume { get; set; }
+        public double? Volume { get; set; }
 
         [JsonProperty("volume_change")]
-        public double VolumeChange { get; set; }
+        public double? VolumeChange { get; set; }
 
         [JsonProperty("last_updated")]
         public string LastUpdated { get; set; }
     }
-
 
     public class LatestQuotesResponse
     {
@@ -110,13 +105,13 @@ namespace QAction_1
     public class LatestQuotesData
     {
         [JsonProperty("active_cryptocurrencies")]
-        public int ActiveCryptocurrencies { get; set; }
+        public int? ActiveCryptocurrencies { get; set; }
 
         [JsonProperty("btc_dominance")]
-        public double BtcDominance { get; set; }
+        public double? BtcDominance { get; set; }
 
         [JsonProperty("eth_dominance")]
-        public double EthDominance { get; set; }
+        public double? EthDominance { get; set; }
 
         [JsonProperty("last_updated")]
         public string LastUpdated { get; set; }
@@ -134,16 +129,16 @@ namespace QAction_1
     public class UsdQuote
     {
         [JsonProperty("total_market_cap")]
-        public double TotalMarketCap { get; set; }
+        public double? TotalMarketCap { get; set; }
 
         [JsonProperty("total_volume_24h")]
-        public double TotalVolume24h { get; set; }
+        public double? TotalVolume24h { get; set; }
 
         [JsonProperty("defi_market_cap")]
-        public double DefiMarketCap { get; set; }
+        public double? DefiMarketCap { get; set; }
 
         [JsonProperty("stablecoin_market_cap")]
-        public double StablecoinMarketCap { get; set; }
+        public double? StablecoinMarketCap { get; set; }
 
         [JsonProperty("last_updated")]
         public string LastUpdated { get; set; }

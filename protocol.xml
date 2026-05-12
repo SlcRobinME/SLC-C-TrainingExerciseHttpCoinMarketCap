@@ -18,21 +18,68 @@
 	<DeviceOID>1</DeviceOID>
 	<ElementType>Monitor</ElementType>
 	<Type relativeTimers="true">http</Type>
-	<Display defaultPage="General" pageOrder="General;Latest Listings;Categories;Latest Quotes" wideColumnPages=""/>
+	<Display defaultPage="General" pageOrder="General;Connection Settings;Latest Listings;Categories;Latest Quotes" wideColumnPages=""/>
 	<SNMP includepages="true">auto</SNMP>
 	<Compliancies>
 		<CassandraReady>true</CassandraReady>
 		<MinimumRequiredVersion>10.4.0.0 - 14003</MinimumRequiredVersion>
 	</Compliancies>
 	<Params>
-		<Param id="2">
-			<Name>AfterStartup</Name>
-			<Description>After Startup</Description>
-			<Type>dummy</Type>
+		<Param id="3">
+			<Name>Title_Begin_Authorization</Name>
+			<Description>Authorization</Description>
+			<Type>fixed</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>fixed</LengthType>
+				<Length>2</Length>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Connection Settings</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="begin">title</Type>
+			</Measurement>
+		</Param>
+		<Param id="4">
+			<Name>General</Name>
+			<Description>General</Description>
+			<Type>fixed</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>fixed</LengthType>
+				<Length>2</Length>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="begin">title</Type>
+			</Measurement>
 		</Param>
 		<Param id="10" save="true" trending="false">
 			<Name>BearerToken</Name>
-			<Description>Bearer Token (General)</Description>
+			<Description>Bearer Token (Connection Settings)</Description>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>other</RawType>
@@ -48,7 +95,7 @@
 		</Param>
 		<Param id="11" setter="true">
 			<Name>BearerToken</Name>
-			<Description>Bearer Token (General)</Description>
+			<Description>Bearer Token (Connection Settings)</Description>
 			<Type>write</Type>
 			<Interprete>
 				<RawType>other</RawType>
@@ -59,9 +106,9 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Connection Settings</Page>
 						<Column>0</Column>
-						<Row>0</Row>
+						<Row>1</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -108,8 +155,8 @@
 				<Positions>
 					<Position>
 						<Page>General</Page>
-						<Row>2</Row>
 						<Column>0</Column>
+						<Row>2</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -135,8 +182,8 @@
 				<Positions>
 					<Position>
 						<Page>General</Page>
-						<Row>3</Row>
 						<Column>0</Column>
+						<Row>3</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -166,9 +213,9 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Connection Settings</Page>
 						<Column>0</Column>
-						<Row>5</Row>
+						<Row>2</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -197,6 +244,47 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
+		<Param id="102" >
+			<Name>LatestListingsCommunicationStatus</Name>
+			<Description>Latest Listings Communication Status</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Communication status of the Latest Listings HTTP connection.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>4</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+				<CH>1</CH>
+			</Alarm>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>OK</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Fail</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
 		<Param id="200">
 			<Name>CategoriesStatusCode</Name>
 			<Description>Categories HTTP Status Code</Description>
@@ -213,16 +301,16 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Connection Settings</Page>
 						<Column>0</Column>
-						<Row>6</Row>
+						<Row>3</Row>
 					</Position>
 				</Positions>
 			</Display>
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>HTTP/1.1 200 OK</Normal>
-				<CH>0</CH>
+				<CH>*</CH>
 			</Alarm>
 			<Measurement>
 				<Type>string</Type>
@@ -282,6 +370,47 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
+		<Param id="204" >
+			<Name>CategoriesCommunicationStatus</Name>
+			<Description>Categories Communication Status</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Communication status of the Categories HTTP connection.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>6</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+				<CH>1</CH>
+			</Alarm>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>OK</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Fail</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
 		<Param id="210">
 			<Name>CategoryDetailRequestId</Name>
 			<Description>Category Detail Request ID</Description>
@@ -316,16 +445,16 @@
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>General</Page>
+						<Page>Connection Settings</Page>
 						<Column>0</Column>
-						<Row>7</Row>
+						<Row>4</Row>
 					</Position>
 				</Positions>
 			</Display>
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>HTTP/1.1 200 OK</Normal>
-				<CH>0</CH>
+				<CH>*</CH>
 			</Alarm>
 			<Measurement>
 				<Type>string</Type>
@@ -349,6 +478,47 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
+		<Param id="302">
+			<Name>LatestQuotesCommunicationStatus</Name>
+			<Description>Latest Quotes Communication Status</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Communication status of the Latest Quotes HTTP connection.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+				<CH>1</CH>
+			</Alarm>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>OK</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Fail</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
 		<Param id="310" trending="true">
 			<Name>LatestQuotesActiveCryptocurrencies</Name>
 			<Description>Active Cryptocurrencies (Latest Quotes)</Description>
@@ -360,6 +530,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -402,6 +578,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -414,10 +596,6 @@
 				</Positions>
 				<Decimals>6</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>0</Low>
-					<High>100</High>
-				</Range>
 				<Range>
 					<Low>0</Low>
 					<High>100</High>
@@ -450,6 +628,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -494,6 +678,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -537,6 +727,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -580,6 +776,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -623,6 +825,12 @@
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -693,11 +901,11 @@
 				<ColumnOption idx="1" pid="1002" type="retrieved" options=""/>
 				<ColumnOption idx="2" pid="1003" type="retrieved" options=""/>
 				<ColumnOption idx="3" pid="1004" type="retrieved" options=""/>
-				<ColumnOption idx="4" pid="1005" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
-				<ColumnOption idx="5" pid="1006" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
-				<ColumnOption idx="6" pid="1007" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
-				<ColumnOption idx="7" pid="1008" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
-				<ColumnOption idx="8" pid="1009" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
+				<ColumnOption idx="4" pid="1005" type="retrieved" options=""/>
+				<ColumnOption idx="5" pid="1006" type="retrieved" options=""/>
+				<ColumnOption idx="6" pid="1007" type="retrieved" options=""/>
+				<ColumnOption idx="7" pid="1008" type="retrieved" options=""/>
+				<ColumnOption idx="8" pid="1009" type="retrieved" options=""/>
 				<ColumnOption idx="9" pid="1010" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
 				<ColumnOption idx="10" pid="1011" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
 				<ColumnOption idx="11" pid="1012" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
@@ -807,6 +1015,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -816,18 +1030,6 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>1000</CL>
-				<MaL>100000</MaL>
-				<MiL>1000000</MiL>
-				<WaL>5000000</WaL>
-				<Normal>10000000</Normal>
-				<WaH>50000000</WaH>
-				<MiH>100000000</MiH>
-				<MaH>500000000</MaH>
-				<CH>1000000000</CH>
-			</Alarm>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -843,6 +1045,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -852,18 +1060,6 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>1000</CL>
-				<MaL>100000</MaL>
-				<MiL>1000000</MiL>
-				<WaL>5000000</WaL>
-				<Normal>21000000</Normal>
-				<WaH>100000000</WaH>
-				<MiH>500000000</MiH>
-				<MaH>1000000000</MaH>
-				<CH>10000000000</CH>
-			</Alarm>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -879,6 +1075,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -888,18 +1090,6 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>100</CL>
-				<MaL>1000</MaL>
-				<MiL>10000</MiL>
-				<WaL>50000</WaL>
-				<Normal>100000</Normal>
-				<WaH>150000</WaH>
-				<MiH>200000</MiH>
-				<MaH>250000</MaH>
-				<CH>300000</CH>
-			</Alarm>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -915,6 +1105,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -924,18 +1120,6 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>1000000</CL>
-				<MaL>10000000</MaL>
-				<MiL>100000000</MiL>
-				<WaL>500000000</WaL>
-				<Normal>1000000000</Normal>
-				<WaH>2000000000</WaH>
-				<MiH>3000000000</MiH>
-				<MaH>3500000000</MaH>
-				<CH>4000000000</CH>
-			</Alarm>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -951,6 +1135,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -960,18 +1150,6 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>1000000</CL>
-				<MaL>5000000</MaL>
-				<MiL>10000000</MiL>
-				<WaL>20000000</WaL>
-				<Normal>50000000</Normal>
-				<WaH>100000000</WaH>
-				<MiH>200000000</MiH>
-				<MaH>500000000</MaH>
-				<CH>1000000000</CH>
-			</Alarm>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -987,6 +1165,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1024,6 +1208,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1061,6 +1251,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1100,9 +1296,9 @@
 				<ColumnOption idx="1" pid="2002" type="retrieved" options=""/>
 				<ColumnOption idx="2" pid="2003" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
 				<ColumnOption idx="3" pid="2004" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
-				<ColumnOption idx="4" pid="2005" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
+				<ColumnOption idx="4" pid="2005" type="retrieved" options=""/>
 				<ColumnOption idx="5" pid="2006" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
-				<ColumnOption idx="6" pid="2007" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
+				<ColumnOption idx="6" pid="2007" type="retrieved" options=""/>
 				<ColumnOption idx="7" pid="2008" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap"/>
 				<ColumnOption idx="8" pid="2009" type="retrieved" options=""/>
 				<ColumnOption idx="9" pid="2050" type="custom" options=""/>
@@ -1118,7 +1314,7 @@
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2001|0-2002|1-2003|2-2004|3-2005|4-2006|5-2007|6-2008|7-2009|8-2050|9,width:100-150-100-100-150-150-150-150-150-150,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2002|1-2003|2-2004|3-2005|4-2006|5-2007|6-2008|7-2009|8-2050|9,width:100-150-122-142-150-150-150-150-150-150,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-STRING-STRING,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2001">
@@ -1170,6 +1366,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -1205,6 +1407,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1242,6 +1450,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -1251,18 +1465,6 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>1000000</CL>
-				<MaL>10000000</MaL>
-				<MiL>50000000</MiL>
-				<WaL>100000000</WaL>
-				<Normal>500000000</Normal>
-				<WaH>1000000000</WaH>
-				<MiH>5000000000</MiH>
-				<MaH>10000000000</MaH>
-				<CH>50000000000</CH>
-			</Alarm>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -1278,6 +1480,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1315,6 +1523,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.9.7 Parameter doesn't need unit -->
 			<!-- SuppressValidator 2.11.1 Parameter doesn't need range -->
@@ -1324,18 +1538,6 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>100000</CL>
-				<MaL>1000000</MaL>
-				<MiL>10000000</MiL>
-				<WaL>50000000</WaL>
-				<Normal>100000000</Normal>
-				<WaH>500000000</WaH>
-				<MiH>1000000000</MiH>
-				<MaH>5000000000</MaH>
-				<CH>10000000000</CH>
-			</Alarm>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -1351,6 +1553,12 @@
 				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
 				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Value>-1</Value>
+						<Display state="disabled">N/A</Display>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1478,7 +1686,6 @@
 	</HTTP>
 	<QActions>
 		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile" />
-		<QAction id="2" name="After Startup" encoding="csharp" triggers="2" />
 		<QAction id="3" name="Set Bearer Token" encoding="csharp" triggers="11" />
 		<QAction id="4" name="Parse Latest Listings" encoding="csharp" triggers="101"/>
 		<QAction id="5" name="Parse Categories" encoding="csharp" triggers="201"/>
@@ -1487,14 +1694,6 @@
 		<QAction id="8" name="Parse Latest Quotes" encoding="csharp" triggers="301"/>
 	</QActions>
 	<Groups>
-		<Group id="2">
-			<Name>After Startup</Name>
-			<Description>After Startup</Description>
-			<Type>poll action</Type>
-			<Content>
-				<Action>2</Action>
-			</Content>
-		</Group>
 		<Group id="3">
 			<Name>Get Latest Listings</Name>
 			<Description>Get Latest Listings</Description>
@@ -1529,15 +1728,6 @@
 		</Group>
 	</Groups>
 	<Triggers>
-		<Trigger id="1">
-			<Name>After Startup</Name>
-			<On>protocol</On>
-			<Time>after startup</Time>
-			<Type>action</Type>
-			<Content>
-				<Id>1</Id>
-			</Content>
-		</Trigger>
 		<Trigger id="2">
 			<Name>On Get Latest Listings Button</Name>
 			<On id="50">parameter</On>
@@ -1576,16 +1766,6 @@
 		</Trigger>
 	</Triggers>
 	<Actions>
-		<Action id="1">
-			<Name>After Startup Group</Name>
-			<On id="2">group</On>
-			<Type>execute next</Type>
-		</Action>
-		<Action id="2">
-			<Name>After Startup QAction</Name>
-			<On id="2">parameter</On>
-			<Type>run actions</Type>
-		</Action>
 		<Action id="3">
 			<Name>Execute Get Latest Listings Session</Name>
 			<On id="3">group</On>
@@ -1627,6 +1807,12 @@
 			<DefaultValue>443</DefaultValue>
 			<Disabled>true</Disabled>
 		</IPport>
+		<TimeoutTime>
+			<DefaultValue>30000</DefaultValue>
+		</TimeoutTime>
+		<Retries>
+			<DefaultValue>3</DefaultValue>
+		</Retries>
 	</PortSettings>
 	<VersionHistory>
 		<Branches>
