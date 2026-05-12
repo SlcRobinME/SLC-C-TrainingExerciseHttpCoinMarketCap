@@ -633,7 +633,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -677,7 +677,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -718,7 +718,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -758,7 +758,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -773,7 +773,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Type>read</Type>
 			<Interprete>
@@ -917,7 +917,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -944,7 +944,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1053,7 +1053,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1145,7 +1145,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1189,7 +1189,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1233,7 +1233,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1277,7 +1277,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1321,7 +1321,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1365,7 +1365,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1457,7 +1457,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1686,7 +1686,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1764,7 +1764,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -1791,7 +1791,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1828,7 +1828,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<!-- SuppressValidator 2.9.7 no nead for units -->
 			<Display>
@@ -2089,7 +2089,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -2126,7 +2126,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<!-- SuppressValidator 2.9.7 no need for units -->
 			<Display>
@@ -2264,7 +2264,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -2402,7 +2402,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Measurement>
 				<Type>number</Type>
@@ -2460,7 +2460,7 @@
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>0</Normal>
-				<CH>9999999999999999</CH>
+				
 			</Alarm>
 			<Type>read</Type>
 			<Interprete>
