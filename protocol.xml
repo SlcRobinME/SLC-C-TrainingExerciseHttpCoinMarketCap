@@ -551,18 +551,11 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
+			<!-- SuppressValidator 2.5.1 Not enough data -->
 			<Alarm>
 				<Monitored>true</Monitored>
-				<CL>1000</CL>
-				<MaL>5000</MaL>
-				<MiL>7000</MiL>
-				<WaL>8000</WaL>
-				<Normal>9000</Normal>
-				<WaH>10000</WaH>
-				<MiH>11000</MiH>
-				<MaH>12000</MaH>
-				<CH>15000</CH>
 			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -700,18 +693,11 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
+			<!-- SuppressValidator 2.5.1 Not enough data -->
 			<Alarm>
 				<Monitored>true</Monitored>
-				<CL>500000000000</CL>
-				<MaL>1000000000000</MaL>
-				<MiL>1500000000000</MiL>
-				<WaL>2000000000000</WaL>
-				<Normal>3000000000000</Normal>
-				<WaH>4000000000000</WaH>
-				<MiH>5000000000000</MiH>
-				<MaH>7000000000000</MaH>
-				<CH>10000000000000</CH>
 			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -749,18 +735,11 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
+			<!-- SuppressValidator 2.5.1 Not enough data -->
 			<Alarm>
 				<Monitored>true</Monitored>
-				<CL>10000000000</CL>
-				<MaL>30000000000</MaL>
-				<MiL>50000000000</MiL>
-				<WaL>80000000000</WaL>
-				<Normal>120000000000</Normal>
-				<WaH>200000000000</WaH>
-				<MiH>300000000000</MiH>
-				<MaH>500000000000</MaH>
-				<CH>1000000000000</CH>
 			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -798,18 +777,11 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
+			<!-- SuppressValidator 2.5.1 Not enough data -->
 			<Alarm>
 				<Monitored>true</Monitored>
-				<CL>10000000000</CL>
-				<MaL>30000000000</MaL>
-				<MiL>50000000000</MiL>
-				<WaL>70000000000</WaL>
-				<Normal>100000000000</Normal>
-				<WaH>150000000000</WaH>
-				<MiH>200000000000</MiH>
-				<MaH>300000000000</MaH>
-				<CH>500000000000</CH>
 			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -847,18 +819,11 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
+			<!-- SuppressValidator 2.5.1 Not enough data -->
 			<Alarm>
 				<Monitored>true</Monitored>
-				<CL>50000000000</CL>
-				<MaL>100000000000</MaL>
-				<MiL>150000000000</MiL>
-				<WaL>180000000000</WaL>
-				<Normal>220000000000</Normal>
-				<WaH>280000000000</WaH>
-				<MiH>350000000000</MiH>
-				<MaH>450000000000</MaH>
-				<CH>600000000000</CH>
 			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -1172,15 +1137,13 @@
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 Not enough data -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-10</CL>
@@ -1215,15 +1178,13 @@
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 Not enough data -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-20</CL>
@@ -1258,15 +1219,13 @@
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 Not enough data -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-30</CL>
@@ -1380,18 +1339,11 @@
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
 			<!-- /SuppressValidator 2.9.7 -->
+			<!-- SuppressValidator 2.5.1 Not enough data -->
 			<Alarm>
 				<Monitored>true</Monitored>
-				<CL>1</CL>
-				<MaL>5</MaL>
-				<MiL>10</MiL>
-				<WaL>20</WaL>
-				<Normal>50</Normal>
-				<WaH>100</WaH>
-				<MiH>200</MiH>
-				<MaH>500</MaH>
-				<CH>1000</CH>
 			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -1414,15 +1366,13 @@
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 Not enough data -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-30</CL>
@@ -1487,15 +1437,13 @@
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 Not enough data -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-30</CL>
@@ -1560,15 +1508,13 @@
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 Not enough data -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Decimals>2</Decimals>
 				<Units>%</Units>
-				<Range>
-					<Low>-100</Low>
-					<High>100</High>
-				</Range>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Alarm>
 				<Monitored>true</Monitored>
 				<CL>-50</CL>
