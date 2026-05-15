@@ -112,7 +112,7 @@
 			Assert.AreEqual(NotAvailable.Numeric, row.Latestlistingstablepercentchange24h_1007);
 			Assert.AreEqual(NotAvailable.Numeric, row.Latestlistingstablemarketcapusd_1008);
 			Assert.AreEqual(NotAvailable.Numeric, row.Latestlistingstablevolume24husd_1009);
-			Assert.AreEqual(NotAvailable.LongDouble, row.Latestlistingstablemaxsupply_1011);
+			Assert.AreEqual(NotAvailable.NumericNegative, row.Latestlistingstablemaxsupply_1011);
 			Assert.AreEqual(NotAvailable.DateTime, row.Latestlistingstablelastupdated_1012);
 		}
 
@@ -363,7 +363,7 @@
 		}
 
 		[TestMethod]
-		[DataRow(null, NotAvailable.LongDouble)]
+		[DataRow(null, NotAvailable.NumericNegative)]
 		[DataRow(0d, 0d)]
 		[DataRow(42.5, 42.5)]
 		[DataRow(-0.5, -0.5)]
