@@ -8,7 +8,7 @@
 -->
 
 <Protocol xmlns="http://www.skyline.be/protocol">
-	<Name>Exercise HTTP CoinMarketCap</Name>
+	<Name>Exercise HTTP CoinMarketCap DFA</Name>
 	<Description>Exercise HTTP CoinMarketCap DataMiner connector</Description>
 	<Version>1.0.0.1</Version>
 	<IntegrationID>DMS-DRV-0001</IntegrationID>
@@ -18,7 +18,7 @@
 	<DeviceOID>1</DeviceOID>
 	<ElementType>Monitor</ElementType>
 	<Type relativeTimers="true">http</Type>
-	<Display defaultPage="General" pageOrder="General"/>
+	<Display defaultPage="General" pageOrder="General" wideColumnPages=""/>
 	<SNMP includepages="true">auto</SNMP>
 
 	<Compliancies>
@@ -27,74 +27,412 @@
 	</Compliancies>
 
 	<Params>
-		<Param id="2">
-			<Name>AfterStartup</Name>
-			<Description>After Startup</Description>
-			<Type>dummy</Type>
+		<Param id="10" trending="false">
+			<Name>getLatestListingsResponseCode</Name>
+			<Description>Latest Listings Response Code</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
 		</Param>
+		
+		<Param id="11">
+			<Name>criptocurrencies</Name>
+			<Description>Criptocurrencies</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<!-- SuppressValidator 2.51.1 No need for the Discreets tag as its dynamic
+ -->
+			<Measurement>
+				<Type>discreet</Type>
+			</Measurement>
+			<!-- /SuppressValidator 2.51.1 -->
+		</Param>
+		<Param id="12" setter="true">
+			<Name>criptocurrencies</Name>
+			<Description>Criptocurrencies</Description>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets dependencyId="13" />
+			</Measurement>
+		</Param>
+		<Param id="13" trending="false">
+			<Name>criptocurrencieValues</Name>
+			<Description>Criptocurrencie Values</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>Bitcoin</DefaultValue>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		
+		<Param id="14" trending="false">
+			<Name>token</Name>
+			<Description>Token</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>Bearer jWgYFWyQzYAR9ZAm0mvESEKBeerEYw3rYwVEOUvm2Y0=</DefaultValue>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="15">
+			<Name>getLatestListingsResponse</Name>
+			<Description>CoinMarketCap Response</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+		</Param>
+		
+		
+		<Param id="16" trending="false">
+			<Name>Name</Name>
+			<Description>Name</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="17" trending="false">
+			<Name>symbol</Name>
+			<Description>Symbol</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="18" trending="false">
+			<Name>max_supply</Name>
+			<Description>Max Supply</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>4</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="19" trending="false">
+			<Name>circulating_supply</Name>
+			<Description>Circulating Supply</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="20" trending="false">
+			<Name>price</Name>
+			<Description>Price</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+				<Units>$</Units>
+				<Decimals>2</Decimals>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="21" trending="false">
+			<Name>marketCap</Name>
+			<Description>Market Cap</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+				<Units>$</Units>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="22" trending="false">
+			<Name>marketCapDominance</Name>
+			<Description>Market Cap Dominance</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>4</Row>
+					</Position>
+				</Positions>
+				<Units>%</Units>
+				<Decimals>2</Decimals>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="23" trending="false">
+			<Name>volume24h</Name>
+			<Description>Volume 24h</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="24" trending="false">
+			<Name>percentChange24h</Name>
+			<Description>Percent Change 24h</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+				<Units>%</Units>
+				<Decimals>2</Decimals>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		
 	</Params>
 
 	<QActions>
+		<!-- SuppressValidator 3.42.1 Newer version -->
 		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile" />
-		<QAction id="2" name="After Startup" encoding="csharp" triggers="2" />
+		<!-- /SuppressValidator 3.42.1 -->
+		<!-- SuppressValidator 3.42.1 Newer version -->
+		<QAction id="3" name="getLatestListings" encoding="csharp" triggers="15">
+		</QAction>
+		<!-- /SuppressValidator 3.42.1 -->
+		<QAction id="4" name="coinInfo" encoding="csharp" triggers="12">
+		</QAction>
 	</QActions>
 
+	<HTTP>
+		<Session id="1" name="coinMarketCapGet">
+			<Connection id="1" name="getCriptoLatestListings">
+				<Request verb="GET" url="/api/custom/coinmarketcap?content=latestlistings">
+					<Headers>
+						<!-- SuppressValidator 8.3.1 Needed header -->
+						<Header key="Authorization" pid="14"/>
+						<!-- /SuppressValidator 8.3.1 -->
+					</Headers>
+				</Request>
+				<Response statusCode="10">
+					<Content pid="15"></Content>
+				</Response>
+			</Connection>
+		</Session>
+	</HTTP>
+
 	<Groups>
-		<Group id="2">
-			<Name>After Startup</Name>
-			<Description>After Startup</Description>
-			<Type>poll action</Type>
+		<Group id="1">
+			<Name>getLatestListingsData</Name>
+			<Description>Fetch Latest Listings</Description>
+			<Type>poll</Type>
 			<Content>
-				<Action>2</Action>
+				<Session>1</Session>
 			</Content>
 		</Group>
 	</Groups>
 
 	<Triggers>
-		<Trigger id="1">
-			<Name>After Startup</Name>
-			<On>protocol</On>
-			<Time>after startup</Time>
-			<Type>action</Type>
-			<Content>
-				<Id>1</Id>
-			</Content>
-		</Trigger>
 	</Triggers>
 
 	<Actions>
-		<Action id="1">
-			<Name>After Startup Group</Name>
-			<On id="2">group</On>
-			<Type>execute next</Type>
-		</Action>
-		<Action id="2">
-			<Name>After Startup QAction</Name>
-			<On id="2">parameter</On>
-			<Type>run actions</Type>
-		</Action>
 	</Actions>
 
 	<Timers>
 		<Timer id="1">
-			<Name>Fast Timer (10s)</Name>
-			<Time initial="true">10000</Time>
+			<Name>60s timer</Name>
+			<Time initial="true">60000</Time>
 			<Interval>75</Interval>
 			<Content>
-			</Content>
-		</Timer>
-		<Timer id="2">
-			<Name>Medium Timer (1m)</Name>
-			<Time initial="true" dataDisplay="30000">60000</Time>
-			<Interval>75</Interval>
-			<Content>
-			</Content>
-		</Timer>
-		<Timer id="3">
-			<Name>Slow Timer (1h)</Name>
-			<Time initial="true">3600000</Time>
-			<Interval>75</Interval>
-			<Content>
+				<Group>1</Group>
 			</Content>
 		</Timer>
 	</Timers>

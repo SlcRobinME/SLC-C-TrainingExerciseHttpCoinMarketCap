@@ -8,12 +8,89 @@ namespace Skyline.DataMiner.Scripting
 {
 public static class Parameter
 {
+	/// <summary>PID: 10 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int getlatestlistingsresponsecode_10 = 10;
+	/// <summary>PID: 10 | Type: read</summary>
+	public const int getlatestlistingsresponsecode = 10;
+	/// <summary>PID: 11 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int criptocurrencies_11 = 11;
+	/// <summary>PID: 11 | Type: read</summary>
+	public const int criptocurrencies = 11;
+	/// <summary>PID: 13 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int criptocurrencievalues_13 = 13;
+	/// <summary>PID: 13 | Type: read</summary>
+	public const int criptocurrencievalues = 13;
+	/// <summary>PID: 14 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int token_14 = 14;
+	/// <summary>PID: 14 | Type: read</summary>
+	public const int token = 14;
+	/// <summary>PID: 15 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int getlatestlistingsresponse_15 = 15;
+	/// <summary>PID: 15 | Type: read</summary>
+	public const int getlatestlistingsresponse = 15;
+	/// <summary>PID: 16 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int name_16 = 16;
+	/// <summary>PID: 16 | Type: read</summary>
+	public const int name = 16;
+	/// <summary>PID: 17 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int symbol_17 = 17;
+	/// <summary>PID: 17 | Type: read</summary>
+	public const int symbol = 17;
+	/// <summary>PID: 18 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int max_supply_18 = 18;
+	/// <summary>PID: 18 | Type: read</summary>
+	public const int max_supply = 18;
+	/// <summary>PID: 19 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int circulating_supply_19 = 19;
+	/// <summary>PID: 19 | Type: read</summary>
+	public const int circulating_supply = 19;
+	/// <summary>PID: 20 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int price_20 = 20;
+	/// <summary>PID: 20 | Type: read</summary>
+	public const int price = 20;
+	/// <summary>PID: 21 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int marketcap_21 = 21;
+	/// <summary>PID: 21 | Type: read</summary>
+	public const int marketcap = 21;
+	/// <summary>PID: 22 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int marketcapdominance_22 = 22;
+	/// <summary>PID: 22 | Type: read</summary>
+	public const int marketcapdominance = 22;
+	/// <summary>PID: 23 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int volume24h_23 = 23;
+	/// <summary>PID: 23 | Type: read</summary>
+	public const int volume24h = 23;
+	/// <summary>PID: 24 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int percentchange24h_24 = 24;
+	/// <summary>PID: 24 | Type: read</summary>
+	public const int percentchange24h = 24;
 	public class Write
 	{
+		/// <summary>PID: 12 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int criptocurrencies_12 = 12;
+		/// <summary>PID: 12 | Type: write</summary>
+		public const int criptocurrencies = 12;
 	}
 }
 public class WriteParameters
 {
+	/// <summary>PID: 12  | Type: write</summary>
+	public System.Object Criptocurrencies {get { return Protocol.GetParameter(12); }set { Protocol.SetParameter(12, value); }}
 	public SLProtocolExt Protocol;
 	public WriteParameters(SLProtocolExt protocol)
 	{
@@ -22,13 +99,112 @@ public class WriteParameters
 }
 public interface SLProtocolExt : SLProtocol
 {
-	object Afterstartup_dummy { get; set; }
+	object Getlatestlistingsresponsecode_10 { get; set; }
+	object Getlatestlistingsresponsecode { get; set; }
+	object Criptocurrencies_11 { get; set; }
+	object Criptocurrencies { get; set; }
+	object Criptocurrencies_12 { get; set; }
+	object Criptocurrencievalues_13 { get; set; }
+	object Criptocurrencievalues { get; set; }
+	object Token_14 { get; set; }
+	object Token { get; set; }
+	object Getlatestlistingsresponse_15 { get; set; }
+	object Getlatestlistingsresponse { get; set; }
+	object Name_16 { get; set; }
+	object Name { get; set; }
+	object Symbol_17 { get; set; }
+	object Symbol { get; set; }
+	object Max_supply_18 { get; set; }
+	object Max_supply { get; set; }
+	object Circulating_supply_19 { get; set; }
+	object Circulating_supply { get; set; }
+	object Price_20 { get; set; }
+	object Price { get; set; }
+	object Marketcap_21 { get; set; }
+	object Marketcap { get; set; }
+	object Marketcapdominance_22 { get; set; }
+	object Marketcapdominance { get; set; }
+	object Volume24h_23 { get; set; }
+	object Volume24h { get; set; }
+	object Percentchange24h_24 { get; set; }
+	object Percentchange24h { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 {
-	/// <summary>PID: 2  | Type: dummy</summary>
-	public System.Object Afterstartup_dummy {get { return GetParameter(2); }set { SetParameter(2, value); }}
+	/// <summary>PID: 10  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Getlatestlistingsresponsecode_10 {get { return GetParameter(10); }set { SetParameter(10, value); }}
+	/// <summary>PID: 10  | Type: read</summary>
+	public System.Object Getlatestlistingsresponsecode {get { return GetParameter(10); }set { SetParameter(10, value); }}
+	/// <summary>PID: 11  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Criptocurrencies_11 {get { return GetParameter(11); }set { SetParameter(11, value); }}
+	/// <summary>PID: 11  | Type: read</summary>
+	public System.Object Criptocurrencies {get { return GetParameter(11); }set { SetParameter(11, value); }}
+	/// <summary>PID: 12  | Type: write</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Criptocurrencies_12 {get { return GetParameter(12); }set { SetParameter(12, value); }}
+	/// <summary>PID: 13  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Criptocurrencievalues_13 {get { return GetParameter(13); }set { SetParameter(13, value); }}
+	/// <summary>PID: 13  | Type: read</summary>
+	public System.Object Criptocurrencievalues {get { return GetParameter(13); }set { SetParameter(13, value); }}
+	/// <summary>PID: 14  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Token_14 {get { return GetParameter(14); }set { SetParameter(14, value); }}
+	/// <summary>PID: 14  | Type: read</summary>
+	public System.Object Token {get { return GetParameter(14); }set { SetParameter(14, value); }}
+	/// <summary>PID: 15  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Getlatestlistingsresponse_15 {get { return GetParameter(15); }set { SetParameter(15, value); }}
+	/// <summary>PID: 15  | Type: read</summary>
+	public System.Object Getlatestlistingsresponse {get { return GetParameter(15); }set { SetParameter(15, value); }}
+	/// <summary>PID: 16  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Name_16 {get { return GetParameter(16); }set { SetParameter(16, value); }}
+	/// <summary>PID: 16  | Type: read</summary>
+	public System.Object Name {get { return GetParameter(16); }set { SetParameter(16, value); }}
+	/// <summary>PID: 17  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Symbol_17 {get { return GetParameter(17); }set { SetParameter(17, value); }}
+	/// <summary>PID: 17  | Type: read</summary>
+	public System.Object Symbol {get { return GetParameter(17); }set { SetParameter(17, value); }}
+	/// <summary>PID: 18  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Max_supply_18 {get { return GetParameter(18); }set { SetParameter(18, value); }}
+	/// <summary>PID: 18  | Type: read</summary>
+	public System.Object Max_supply {get { return GetParameter(18); }set { SetParameter(18, value); }}
+	/// <summary>PID: 19  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Circulating_supply_19 {get { return GetParameter(19); }set { SetParameter(19, value); }}
+	/// <summary>PID: 19  | Type: read</summary>
+	public System.Object Circulating_supply {get { return GetParameter(19); }set { SetParameter(19, value); }}
+	/// <summary>PID: 20  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Price_20 {get { return GetParameter(20); }set { SetParameter(20, value); }}
+	/// <summary>PID: 20  | Type: read</summary>
+	public System.Object Price {get { return GetParameter(20); }set { SetParameter(20, value); }}
+	/// <summary>PID: 21  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Marketcap_21 {get { return GetParameter(21); }set { SetParameter(21, value); }}
+	/// <summary>PID: 21  | Type: read</summary>
+	public System.Object Marketcap {get { return GetParameter(21); }set { SetParameter(21, value); }}
+	/// <summary>PID: 22  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Marketcapdominance_22 {get { return GetParameter(22); }set { SetParameter(22, value); }}
+	/// <summary>PID: 22  | Type: read</summary>
+	public System.Object Marketcapdominance {get { return GetParameter(22); }set { SetParameter(22, value); }}
+	/// <summary>PID: 23  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Volume24h_23 {get { return GetParameter(23); }set { SetParameter(23, value); }}
+	/// <summary>PID: 23  | Type: read</summary>
+	public System.Object Volume24h {get { return GetParameter(23); }set { SetParameter(23, value); }}
+	/// <summary>PID: 24  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Percentchange24h_24 {get { return GetParameter(24); }set { SetParameter(24, value); }}
+	/// <summary>PID: 24  | Type: read</summary>
+	public System.Object Percentchange24h {get { return GetParameter(24); }set { SetParameter(24, value); }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{
