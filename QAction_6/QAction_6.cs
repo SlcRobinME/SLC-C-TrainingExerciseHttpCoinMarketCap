@@ -25,6 +25,8 @@ public static class QAction
                 LogType.Information,
                 LogLevel.NoLogging
             );
+
+            protocol.SetParameter(41, "/api/custom/coinmarketcap?content=category&id=" + categoryId);
         }
 		catch (Exception ex)
 		{

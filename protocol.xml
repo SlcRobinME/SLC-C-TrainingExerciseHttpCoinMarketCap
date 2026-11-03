@@ -418,7 +418,6 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		
 		<Param id="38">
 			<Name>getCategoriesResponse</Name>
 			<Description>Categories Response</Description>
@@ -428,6 +427,49 @@
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+		</Param>
+		
+		<Param id="39" trending="false">
+			<Name>getCategoryResponseCode</Name>
+			<Description>Category Response Code</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="40">
+			<Name>getCategoryResponse</Name>
+			<Description>Category Response</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+		</Param>
+		<Param id="41" trending="false">
+			<Name>categoryRequestUrl</Name>
+			<Description>Category Request Url</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
 		</Param>
 		
 		<Param id="100">
@@ -446,6 +488,7 @@
 				<ColumnOption idx="8" pid="109" type="retrieved" options="" />
 				<ColumnOption idx="9" pid="110" type="retrieved" options="" />
 				<ColumnOption idx="10" pid="111" type="retrieved" options="" />
+				<ColumnOption idx="11" pid="112" type="custom" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>tableInformation</Subtext>
@@ -461,7 +504,7 @@
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:102|1-103|2-104|3-105|4-106|5-107|6-108|7-109|8-110|9-111|10-101|0,width:107-100-100-122-117-138-129-100-107-156-100,sort:STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:101|0-102|1-103|2-104|3-105|4-106|5-107|6-108|7-109|8-110|9-111|10-112|11,width:0-122-100-100-122-117-138-129-100-107-156-116,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-STRING,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="101" trending="false">
@@ -718,6 +761,9 @@
 		<QAction id="6" name="refreshCategories" encoding="csharp" triggers="112" row="true">
 		</QAction>
 		<!-- /SuppressValidator 3.42.1 -->
+		
+		<QAction id="7" name="parseCategory" encoding="csharp" triggers="40">
+		</QAction>
 	</QActions>
 
 	<HTTP>
@@ -748,6 +794,19 @@
 				</Response>
 			</Connection>
 		</Session>
+
+		<Session id="2" name="coinMarketCapCategory">
+			<Connection id="1" name="getCriptoCategory">
+				<Request verb="GET" url="pid:41">
+					<Headers>
+						<Header key="Authorization" pid="14"/>
+					</Headers>
+				</Request>
+				<Response statusCode="39">
+					<Content pid="40"></Content>
+				</Response>
+			</Connection>
+		</Session>
 	</HTTP>
 
 	<Groups>
@@ -759,12 +818,34 @@
 				<Session>1</Session>
 			</Content>
 		</Group>
+		<Group id="2">
+			<Name>getCategoryData</Name>
+			<Description>Fetch single category</Description>
+			<Type>poll</Type>
+			<Content>
+				<Session>2</Session>
+			</Content>
+		</Group>
 	</Groups>
 
 	<Triggers>
+		<Trigger id="1">
+			<Name>On category url set</Name>
+			<On id="41">parameter</On>
+			<Time>set</Time>
+			<Type>action</Type>
+			<Content>
+				<Id>1</Id>
+			</Content>
+		</Trigger>
 	</Triggers>
 
 	<Actions>
+		<Action id="1">
+			<Name>Run category group</Name>
+			<On id="2">group</On>
+			<Type>execute</Type>
+		</Action>
 	</Actions>
 
 	<Timers>

@@ -88,6 +88,21 @@ public static class Parameter
 	public const int getcategoriesresponse_38 = 38;
 	/// <summary>PID: 38 | Type: read</summary>
 	public const int getcategoriesresponse = 38;
+	/// <summary>PID: 39 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int getcategoryresponsecode_39 = 39;
+	/// <summary>PID: 39 | Type: read</summary>
+	public const int getcategoryresponsecode = 39;
+	/// <summary>PID: 40 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int getcategoryresponse_40 = 40;
+	/// <summary>PID: 40 | Type: read</summary>
+	public const int getcategoryresponse = 40;
+	/// <summary>PID: 41 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categoryrequesturl_41 = 41;
+	/// <summary>PID: 41 | Type: read</summary>
+	public const int categoryrequesturl = 41;
 	public class Write
 	{
 		/// <summary>PID: 12 | Type: write</summary>
@@ -95,11 +110,6 @@ public static class Parameter
 		public const int criptocurrencies_12 = 12;
 		/// <summary>PID: 12 | Type: write</summary>
 		public const int criptocurrencies = 12;
-		/// <summary>PID: 112 | Type: write</summary>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int categoryrefresh_112 = 112;
-		/// <summary>PID: 112 | Type: write</summary>
-		public const int categoryrefresh = 112;
 	}
 	public class Categories
 	{
@@ -168,6 +178,11 @@ public static class Parameter
 			public const int categorylastupdated = 111;
 			public class Write
 			{
+				/// <summary>PID: 112 | Type: write</summary>
+				[EditorBrowsable(EditorBrowsableState.Never)]
+				public const int categoryrefresh_112 = 112;
+				/// <summary>PID: 112 | Type: write</summary>
+				public const int categoryrefresh = 112;
 			}
 		}
 		public class Idx
@@ -279,6 +294,12 @@ public interface SLProtocolExt : SLProtocol
 	object Getcategoriesresponsecode { get; set; }
 	object Getcategoriesresponse_38 { get; set; }
 	object Getcategoriesresponse { get; set; }
+	object Getcategoryresponsecode_39 { get; set; }
+	object Getcategoryresponsecode { get; set; }
+	object Getcategoryresponse_40 { get; set; }
+	object Getcategoryresponse { get; set; }
+	object Categoryrequesturl_41 { get; set; }
+	object Categoryrequesturl { get; set; }
 	object Categoryid_101 { get; set; }
 	object Categoryid { get; set; }
 	object Categoryname_102 { get; set; }
@@ -392,6 +413,21 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Getcategoriesresponse_38 {get { return GetParameter(38); }set { SetParameter(38, value); }}
 	/// <summary>PID: 38  | Type: read</summary>
 	public System.Object Getcategoriesresponse {get { return GetParameter(38); }set { SetParameter(38, value); }}
+	/// <summary>PID: 39  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Getcategoryresponsecode_39 {get { return GetParameter(39); }set { SetParameter(39, value); }}
+	/// <summary>PID: 39  | Type: read</summary>
+	public System.Object Getcategoryresponsecode {get { return GetParameter(39); }set { SetParameter(39, value); }}
+	/// <summary>PID: 40  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Getcategoryresponse_40 {get { return GetParameter(40); }set { SetParameter(40, value); }}
+	/// <summary>PID: 40  | Type: read</summary>
+	public System.Object Getcategoryresponse {get { return GetParameter(40); }set { SetParameter(40, value); }}
+	/// <summary>PID: 41  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoryrequesturl_41 {get { return GetParameter(41); }set { SetParameter(41, value); }}
+	/// <summary>PID: 41  | Type: read</summary>
+	public System.Object Categoryrequesturl {get { return GetParameter(41); }set { SetParameter(41, value); }}
 	/// <summary>PID: 101  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoryid_101 {get { return GetParameter(101); }set { SetParameter(101, value); }}
@@ -523,8 +559,12 @@ public class CategoriesQActionRow : QActionTableRow
 	public System.Object Categorylastupdated_111 { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
 	/// <summary>PID: 111 | Type: read</summary>
 	public System.Object Categorylastupdated { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
-	public CategoriesQActionRow() : base(0, 11) { }
-	public CategoriesQActionRow(System.Object[] oRow) : base(0, 11, oRow) { }
+	/// <summary>PID: 112 | Type: write</summary>
+	public System.Object Categoryrefresh_112 { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	/// <summary>PID: 112 | Type: write</summary>
+	public System.Object Categoryrefresh { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	public CategoriesQActionRow() : base(0, 12) { }
+	public CategoriesQActionRow(System.Object[] oRow) : base(0, 12, oRow) { }
 	public static implicit operator CategoriesQActionRow(System.Object[] source) { return new CategoriesQActionRow(source); }
 	public static implicit operator System.Object[](CategoriesQActionRow source) { return source.ToObjectArray(); }
 }

@@ -24,6 +24,7 @@
     <Project Path="QAction_4/QAction_4.csproj" />
     <Project Path="QAction_5/QAction_5.csproj" />
     <Project Path="QAction_6/QAction_6.csproj" />
+    <Project Path="QAction_7/QAction_7.csproj" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path="protocol.xml" />
