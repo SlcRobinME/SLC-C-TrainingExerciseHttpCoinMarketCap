@@ -715,7 +715,7 @@
 				<Type options="datetime">number</Type>
 			</Measurement>
 		</Param>
-		<Param id="112" setter="true">
+		<Param id="112">
 			<Name>categoryRefresh</Name>
 			<Description>Refresh Category</Description>
 			<Type>write</Type>
