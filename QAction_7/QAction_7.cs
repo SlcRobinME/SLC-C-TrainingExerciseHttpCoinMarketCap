@@ -19,7 +19,7 @@ public static class QAction
 		try
 		{
             string code = Convert.ToString(protocol.GetParameter(Parameter.getcategoryresponsecode_39));
-            if (code != "200")
+            if (code.Contains("200"))
             {
                 protocol.Log($"QA{protocol.QActionID}|Category request failed, status: {code}", LogType.Error, LogLevel.NoLogging);
                 return;
