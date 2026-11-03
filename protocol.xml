@@ -488,7 +488,7 @@
 				<ColumnOption idx="8" pid="109" type="retrieved" options="" />
 				<ColumnOption idx="9" pid="110" type="retrieved" options="" />
 				<ColumnOption idx="10" pid="111" type="retrieved" options="" />
-				<ColumnOption idx="11" pid="112" type="custom" options="" />
+				<ColumnOption idx="11" pid="112" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>tableInformation</Subtext>
@@ -504,7 +504,7 @@
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:101|0-102|1-103|2-104|3-105|4-106|5-107|6-108|7-109|8-110|9-111|10-112|11,width:0-122-100-100-122-117-138-129-100-107-156-116,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:102|1-103|2-104|3-105|4-106|5-107|6-108|7-109|8-110|9-111|10-112|11-101|0,width:122-100-100-122-117-138-129-100-107-156-116-0,sort:STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-STRING-STRING,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="101" trending="false">
@@ -762,8 +762,10 @@
 		</QAction>
 		<!-- /SuppressValidator 3.42.1 -->
 		
+		<!-- SuppressValidator 3.42.1 We are using the newer version -->
 		<QAction id="7" name="parseCategory" encoding="csharp" triggers="40">
 		</QAction>
+		<!-- /SuppressValidator 3.42.1 -->
 	</QActions>
 
 	<HTTP>
@@ -797,7 +799,7 @@
 
 		<Session id="2" name="coinMarketCapCategory">
 			<Connection id="1" name="getCriptoCategory">
-				<Request verb="GET" url="pid:41">
+				<Request verb="GET" pid="41">
 					<Headers>
 						<Header key="Authorization" pid="14"/>
 					</Headers>
@@ -832,7 +834,7 @@
 		<Trigger id="1">
 			<Name>On category url set</Name>
 			<On id="41">parameter</On>
-			<Time>set</Time>
+			<Time>change</Time>
 			<Type>action</Type>
 			<Content>
 				<Id>1</Id>

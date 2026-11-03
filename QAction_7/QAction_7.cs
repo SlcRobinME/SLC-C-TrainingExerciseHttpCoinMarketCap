@@ -18,14 +18,20 @@ public static class QAction
 	{
 		try
 		{
-            string code = Convert.ToString(protocol.GetParameter(39));
+            string code = Convert.ToString(protocol.GetParameter(Parameter.getcategoryresponsecode_39));
             if (code != "200")
             {
                 protocol.Log($"QA{protocol.QActionID}|Category request failed, status: {code}", LogType.Error, LogLevel.NoLogging);
                 return;
             }
 
-            string json = Convert.ToString(protocol.GetParameter(40));
+            protocol.Log(
+                "Parsing row",
+                LogType.Information,
+                LogLevel.NoLogging
+            );
+
+            string json = Convert.ToString(protocol.GetParameter(Parameter.getcategoryresponse_40));
             JToken data = JObject.Parse(json)["data"];
 
             string id = (string)data["id"];
