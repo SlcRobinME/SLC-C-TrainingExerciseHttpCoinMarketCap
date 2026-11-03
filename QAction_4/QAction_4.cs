@@ -1,11 +1,11 @@
-using Newtonsoft.Json.Linq;
-using Skyline.DataMiner.Scripting;
-using Skyline.DataMiner.Utils.Protocol.Extension;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json.Linq;
+using Skyline.DataMiner.Scripting;
+using Skyline.DataMiner.Utils.Protocol.Extension;
 
 /// <summary>
 /// DataMiner QAction Class: coinInfo.
@@ -20,13 +20,16 @@ public static class QAction
 	{
 		try
 		{
-            string json = Convert.ToString(protocol.GetParameter(Parameter.getlatestlistingsresponse_15));
-			string selectedCoin = Convert.ToString(protocol.GetParameter(Parameter.criptocurrencies_11));
+            object[] values = (object[])protocol.GetParameters(new uint[]
+            {
+                Parameter.getlatestlistingsresponse_15,
+                Parameter.cryptocurrencies_11,
+            });
 
-            if (String.IsNullOrEmpty(selectedCoin))
-                return;
+            string json = Convert.ToString(values[0]);
+            string selectedCoin = Convert.ToString(values[1]);
 
-            if (String.IsNullOrEmpty(json))
+            if (String.IsNullOrEmpty(selectedCoin) || String.IsNullOrEmpty(json))
                 return;
 
             JObject response = JObject.Parse(json);

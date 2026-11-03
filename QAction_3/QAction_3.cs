@@ -1,10 +1,9 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Skyline.DataMiner.Scripting;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Skyline.DataMiner.Scripting;
 
 /// <summary>
 /// DataMiner QAction Class: getLatestListings.
@@ -37,8 +36,9 @@ public static class QAction
                 options.Add(name);
             }
 
+            options.Sort();
             var values = String.Join(";", options);
-            protocol.SetParameter(Parameter.criptocurrencievalues_13, values);
+            protocol.SetParameter(Parameter.cryptocurrencievalues_13, values);
         }
 		catch (Exception ex)
 		{

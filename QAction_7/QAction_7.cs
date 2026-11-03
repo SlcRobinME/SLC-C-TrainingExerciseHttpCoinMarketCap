@@ -1,9 +1,9 @@
-using Newtonsoft.Json.Linq;
-using Skyline.DataMiner.Scripting;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Newtonsoft.Json.Linq;
+using Skyline.DataMiner.Scripting;
 
 /// <summary>
 /// DataMiner QAction Class: parseCategory.
@@ -18,20 +18,21 @@ public static class QAction
 	{
 		try
 		{
-            string code = Convert.ToString(protocol.GetParameter(Parameter.getcategoryresponsecode_39));
-            if (code.Contains("200"))
+            object[] values = (object[])protocol.GetParameters(new uint[]
+            {
+                Parameter.getcategoryresponsecode_39,
+                Parameter.getcategoryresponse_40,
+            });
+
+            string code = Convert.ToString(values[0]);
+            string json = Convert.ToString(values[1]);
+            
+            if (!code.Contains("200"))
             {
                 protocol.Log($"QA{protocol.QActionID}|Category request failed, status: {code}", LogType.Error, LogLevel.NoLogging);
                 return;
             }
 
-            protocol.Log(
-                "Parsing row",
-                LogType.Information,
-                LogLevel.NoLogging
-            );
-
-            string json = Convert.ToString(protocol.GetParameter(Parameter.getcategoryresponse_40));
             JToken data = JObject.Parse(json)["data"];
 
             string id = (string)data["id"];

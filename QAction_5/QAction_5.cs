@@ -1,9 +1,9 @@
-using Newtonsoft.Json.Linq;
-using Skyline.DataMiner.Scripting;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Newtonsoft.Json.Linq;
+using Skyline.DataMiner.Scripting;
 using Skyline.DataMiner.Utils.Protocol.Extension;
 
 /// <summary>
@@ -33,19 +33,19 @@ public static class QAction
             {
                 CategoriesQActionRow row = new CategoriesQActionRow
                 {
-                    Categoryid_101 = (string)category["id"],
-                    Categoryname_102 = (string)category["name"],
-                    Categorytitle_103 = (string)category["title"],
-                    Categorydesc_104 = (string)category["description"],
+                    Categoryid_1001 = (string)category["id"],
+                    Categoryname_1002 = (string)category["name"],
+                    Categorytitle_1003 = (string)category["title"],
+                    Categorydesc_1004 = (string)category["description"],
 
-                    Categorynumtokens_105 = GetDouble(category["num_tokens"]),
-                    Categoryavgpricechange_106 = GetDouble(category["avg_price_change"]),
-                    Categorymarketcap_107 = GetDouble(category["market_cap"]),
-                    Categorymarketcapchange_108 = GetDouble(category["market_cap_change"]),
-                    Categoryvolume_109 = GetDouble(category["volume"]),
-                    Categoryvolumechange_110 = GetDouble(category["volume_change"]),
+                    Categorynumtokens_1005 = GetDouble(category["num_tokens"]),
+                    Categoryavgpricechange_1006 = GetDouble(category["avg_price_change"]),
+                    Categorymarketcap_1007 = GetDouble(category["market_cap"]),
+                    Categorymarketcapchange_1008 = GetDouble(category["market_cap_change"]),
+                    Categoryvolume_1009 = GetDouble(category["volume"]),
+                    Categoryvolumechange_1010 = GetDouble(category["volume_change"]),
 
-                    Categorylastupdated_111 = GetDateTime(category["last_updated"]),
+                    Categorylastupdated_1011 = GetDateTime(category["last_updated"]),
                 };
 
                 rows.Add(row);

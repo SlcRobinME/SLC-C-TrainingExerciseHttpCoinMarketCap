@@ -34,7 +34,7 @@
 			<Information>
 			</Information>
 			<Interprete>
-				<RawType>numeric text</RawType>
+				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
@@ -45,11 +45,14 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="11">
-			<Name>criptocurrencies</Name>
-			<Description>Criptocurrencies</Description>
+			<Name>cryptocurrencies</Name>
+			<Description>Cryptocurrencies</Description>
 			<Type>read</Type>
+			<Information>
+				<Subtext>Cryptocurrency currently selected in the dropdown</Subtext>
+			</Information>
 			<Interprete>
 				<RawType>other</RawType>
 				<Type>string</Type>
@@ -74,8 +77,8 @@
 			<!-- /SuppressValidator 2.51.1 -->
 		</Param>
 		<Param id="12" setter="true">
-			<Name>criptocurrencies</Name>
-			<Description>Criptocurrencies</Description>
+			<Name>cryptocurrencies</Name>
+			<Description>Cryptocurrencies</Description>
 			<Type>write</Type>
 			<Interprete>
 				<RawType>other</RawType>
@@ -98,8 +101,8 @@
 			</Measurement>
 		</Param>
 		<Param id="13" trending="false">
-			<Name>criptocurrencieValues</Name>
-			<Description>Criptocurrencie Values</Description>
+			<Name>cryptocurrencieValues</Name>
+			<Description>Cryptocurrencie Values</Description>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>other</RawType>
@@ -114,24 +117,54 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		
-		<Param id="14" trending="false">
+
+		<Param id="14" trending="false" save="true">
 			<Name>token</Name>
-			<Description>Token</Description>
+			<Description>Bearer Token</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Bearer token for the CoinMarketCap endpoint</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
-				<DefaultValue>Bearer jWgYFWyQzYAR9ZAm0mvESEKBeerEYw3rYwVEOUvm2Y0=</DefaultValue>
 			</Interprete>
 			<Display>
-				<RTDisplay>false</RTDisplay>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
 			</Display>
 			<Measurement>
+				<Type options="password">string</Type>
+			</Measurement>
+		</Param>
+		<Param id="114" setter="true">
+			<Name>token</Name>
+			<Description>Bearer Token</Description>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
 				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="password">string</Type>
 			</Measurement>
 		</Param>
 		<Param id="15">
@@ -144,13 +177,14 @@
 				<LengthType>next param</LengthType>
 			</Interprete>
 		</Param>
-		
-		
+
+
 		<Param id="16" trending="false">
 			<Name>name</Name>
 			<Description>Name</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Name of the selected cryptocurrency</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -176,6 +210,7 @@
 			<Description>Symbol</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Ticker symbol of the selected cryptocurrency</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -188,7 +223,7 @@
 					<Position>
 						<Page>General</Page>
 						<Column>1</Column>
-						<Row>2</Row>
+						<Row>1</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -201,6 +236,7 @@
 			<Description>Max Supply</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Maximum number of coins that will ever exist</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -230,6 +266,7 @@
 			<Description>Circulating Supply</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Number of coins currently in circulation</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -244,7 +281,7 @@
 					<Position>
 						<Page>General</Page>
 						<Column>1</Column>
-						<Row>5</Row>
+						<Row>4</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -259,6 +296,7 @@
 			<Description>Price</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Current price in USD</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -275,7 +313,9 @@
 						<Row>2</Row>
 					</Position>
 				</Positions>
+				<!-- SuppressValidator 2.9.4 Needed unit to show value -->
 				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
 				<Decimals>2</Decimals>
 			</Display>
 			<!-- /SuppressValidator 2.11.1 -->
@@ -288,6 +328,7 @@
 			<Description>Market Cap</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Total market capitalization in USD</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -318,63 +359,7 @@
 			<Description>Market Cap Dominance</Description>
 			<Type>read</Type>
 			<Information>
-			</Information>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.11.1 No range for this param -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>1</Column>
-						<Row>4</Row>
-					</Position>
-				</Positions>
-				<Units>%</Units>
-				<Decimals>2</Decimals>
-			</Display>
-			<!-- /SuppressValidator 2.11.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="23" trending="false">
-			<Name>volume24h</Name>
-			<Description>Volume 24h</Description>
-			<Type>read</Type>
-			<Information>
-			</Information>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.11.1 No range for this param -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>5</Row>
-					</Position>
-				</Positions>
-				<Units>$</Units>
-			</Display>
-			<!-- /SuppressValidator 2.11.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="24" trending="false">
-			<Name>percentChange24h</Name>
-			<Description>Percent Change 24h</Description>
-			<Type>read</Type>
-			<Information>
+				<Subtext>Share of the total crypto market cap, in percent</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -399,7 +384,68 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
+		<Param id="23" trending="false">
+			<Name>volume24h</Name>
+			<Description>Volume 24h</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Trading volume over the last 24 hours in USD</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.11.1 No range for this param -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+				<!-- SuppressValidator 2.9.4 Needed unit to show value -->
+				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
+			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="24" trending="false">
+			<Name>percentChange24h</Name>
+			<Description>Percent Change 24h</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Price change over the last 24 hours, in percent</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.11.1 No range for this param -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+				<Units>%</Units>
+				<Decimals>2</Decimals>
+			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+
 		<Param id="37" trending="false">
 			<Name>getCategoriesResponseCode</Name>
 			<Description>Categories Response Code</Description>
@@ -407,7 +453,7 @@
 			<Information>
 			</Information>
 			<Interprete>
-				<RawType>numeric text</RawType>
+				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
@@ -428,13 +474,13 @@
 				<LengthType>next param</LengthType>
 			</Interprete>
 		</Param>
-		
+
 		<Param id="39" trending="false">
 			<Name>getCategoryResponseCode</Name>
 			<Description>Category Response Code</Description>
 			<Type>read</Type>
 			<Interprete>
-				<RawType>numeric text</RawType>
+				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
@@ -471,24 +517,26 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		
-		<Param id="100">
+
+		<!-- SuppressValidator 2.78.1 Volatile not needed for this table -->
+		<!-- SuppressValidator 2.53.1 Table name add after the column name -->
+		<Param id="1000">
 			<Name>categories</Name>
 			<Description>Categories</Description>
 			<Type>array</Type>
-			<ArrayOptions index="0" options=";naming=/102">
-				<ColumnOption idx="0" pid="101" type="retrieved" options="" />
-				<ColumnOption idx="1" pid="102" type="retrieved" options="" />
-				<ColumnOption idx="2" pid="103" type="retrieved" options="" />
-				<ColumnOption idx="3" pid="104" type="retrieved" options="" />
-				<ColumnOption idx="4" pid="105" type="retrieved" options="" />
-				<ColumnOption idx="5" pid="106" type="retrieved" options="" />
-				<ColumnOption idx="6" pid="107" type="retrieved" options="" />
-				<ColumnOption idx="7" pid="108" type="retrieved" options="" />
-				<ColumnOption idx="8" pid="109" type="retrieved" options="" />
-				<ColumnOption idx="9" pid="110" type="retrieved" options="" />
-				<ColumnOption idx="10" pid="111" type="retrieved" options="" />
-				<ColumnOption idx="11" pid="112" type="retrieved" options="" />
+			<ArrayOptions index="0" options=";naming=/1002">
+				<ColumnOption idx="0" pid="1001" type="retrieved" options="" />
+				<ColumnOption idx="1" pid="1002" type="retrieved" options="" />
+				<ColumnOption idx="2" pid="1003" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="1004" type="retrieved" options="" />
+				<ColumnOption idx="4" pid="1005" type="retrieved" options="" />
+				<ColumnOption idx="5" pid="1006" type="retrieved" options="" />
+				<ColumnOption idx="6" pid="1007" type="retrieved" options="" />
+				<ColumnOption idx="7" pid="1008" type="retrieved" options="" />
+				<ColumnOption idx="8" pid="1009" type="retrieved" options="" />
+				<ColumnOption idx="9" pid="1010" type="retrieved" options="" />
+				<ColumnOption idx="10" pid="1011" type="retrieved" options="" />
+				<ColumnOption idx="11" pid="1012" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>tableInformation</Subtext>
@@ -504,14 +552,19 @@
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:102|1-103|2-104|3-105|4-106|5-107|6-108|7-109|8-110|9-111|10-112|11-101|0,width:122-100-100-122-117-138-129-100-107-156-116-0,sort:STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-STRING-STRING,lines:25,filter:true">table</Type>
+				<!-- SuppressValidator 2.31.9 Sorting by datetime not needed -->
+				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4-1006|5-1007|6-1008|7-1009|8-1010|9-1011|10-1012|11,width:0-107-100-100-122-117-138-129-100-107-156-100,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-STRING,lines:25,filter:true">table</Type>
+				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
-		<Param id="101" trending="false">
+		<!-- /SuppressValidator 2.53.1 -->
+		<!-- /SuppressValidator 2.78.1 -->
+		<Param id="1001" trending="false">
 			<Name>categoryId</Name>
-			<Description>ID</Description>
+			<Description>ID (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Unique category ID, used as the row key</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -525,11 +578,12 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="102" trending="false">
+		<Param id="1002" trending="false">
 			<Name>categoryName</Name>
-			<Description>Category Name</Description>
+			<Description>Category Name (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Name of the category, used as the display key</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -543,11 +597,12 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="103" trending="false">
+		<Param id="1003" trending="false">
 			<Name>categoryTitle</Name>
-			<Description>Title</Description>
+			<Description>Title (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Title of the category</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -561,11 +616,12 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="104" trending="false">
+		<Param id="1004" trending="false">
 			<Name>categoryDesc</Name>
-			<Description>Description</Description>
+			<Description>Description (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Description of the category</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -579,127 +635,152 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="105" trending="false">
+		<Param id="1005" trending="false">
 			<Name>categoryNumTokens</Name>
-			<Description>Number of Tokens</Description>
+			<Description>Number of Tokens (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Number of tokens in the category</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 No range for this parameter -->
+			<!-- SuppressValidator 2.9.7 No unit for this parameter -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<!-- /SuppressValidator 2.11.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="106" trending="false">
+		<Param id="1006" trending="false">
 			<Name>categoryAvgPriceChange</Name>
-			<Description>Avg Price Change</Description>
+			<Description>Avg Price Change (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Average price change of the category's tokens, in percent</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 No range for this parameter -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>%</Units>
 				<Decimals>2</Decimals>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="107" trending="false">
+		<Param id="1007" trending="false">
 			<Name>categoryMarketCap</Name>
-			<Description>Category Market Cap</Description>
+			<Description>Category Market Cap (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Combined market capitalization of the category in USD</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 No range for this parameter -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
+				<!-- SuppressValidator 2.9.4 Needed unit to show value -->
 				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="108" trending="false">
+		<Param id="1008" trending="false">
 			<Name>categoryMarketCapChange</Name>
-			<Description>Market Cap Change</Description>
+			<Description>Market Cap Change (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Change in category market cap, in percent</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 No range for this parameter -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>%</Units>
 				<Decimals>2</Decimals>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="109" trending="false">
+		<Param id="1009" trending="false">
 			<Name>categoryVolume</Name>
-			<Description>Volume</Description>
+			<Description>Volume (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Trading volume of the category in USD</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 No range for this parameter -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
+				<!-- SuppressValidator 2.9.4 Needed unit to show value -->
 				<Units>$</Units>
+				<!-- /SuppressValidator 2.9.4 -->
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="110" trending="false">
+		<Param id="1010" trending="false">
 			<Name>categoryVolumeChange</Name>
-			<Description>Volume Change</Description>
+			<Description>Volume Change (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Change in category trading volume, in percent</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<!-- SuppressValidator 2.11.1 No range for this parameter -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>%</Units>
 				<Decimals>2</Decimals>
 			</Display>
+			<!-- /SuppressValidator 2.11.1 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="111" trending="false">
+		<Param id="1011" trending="false">
 			<Name>categoryLastUpdated</Name>
-			<Description>Last Updated</Description>
+			<Description>Last Updated (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Time the category was last updated by CoinMarketCap</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -715,10 +796,13 @@
 				<Type options="datetime">number</Type>
 			</Measurement>
 		</Param>
-		<Param id="112">
+		<Param id="1012">
 			<Name>categoryRefresh</Name>
-			<Description>Refresh Category</Description>
+			<Description>Refresh (Categories)</Description>
 			<Type>write</Type>
+			<Information>
+				<Subtext>Refreshes the data of this category</Subtext>
+			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<LengthType>fixed</LengthType>
@@ -738,7 +822,7 @@
 				</Discreets>
 			</Measurement>
 		</Param>
-		
+
 	</Params>
 
 	<QActions>
@@ -758,12 +842,16 @@
 		</QAction>
 		<!-- /SuppressValidator 3.42.1 -->
 		<!-- SuppressValidator 3.42.1 Using newer version -->
-		<QAction id="6" name="refreshCategories" encoding="csharp" triggers="112" row="true">
+		<QAction id="6" name="refreshCategories" encoding="csharp" triggers="1012" row="true">
 		</QAction>
 		<!-- /SuppressValidator 3.42.1 -->
-		
+
 		<!-- SuppressValidator 3.42.1 We are using the newer version -->
 		<QAction id="7" name="parseCategory" encoding="csharp" triggers="40">
+		</QAction>
+		<!-- /SuppressValidator 3.42.1 -->
+		<!-- SuppressValidator 3.42.1 We are using the newer version -->
+		<QAction id="8" name="setToken" encoding="csharp" triggers="114">
 		</QAction>
 		<!-- /SuppressValidator 3.42.1 -->
 	</QActions>
